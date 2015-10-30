@@ -1,0 +1,39 @@
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "पूर्ण"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "रद्द करें"
+
+msgid "IDS_ST_HEADER_NOTIFICATIONS_ABB"
+msgstr "अधिसूचनाएँ"
+
+msgid "IDS_ST_BODY_ALLOW_OR_BLOCK_NOTIFICATIONS_FROM_INDIVIDUAL_APPLICATIONS"
+msgstr "व्यक्तिगत एप्लीकेशंस से अधिसूचनाएँ अनुमत या अवरुद्ध करें।"
+
+msgid "IDS_ST_HEADER_DO_NOT_DISTURB_ABB"
+msgstr "परेशान न करें"
+
+msgid "IDS_ST_BODY_MUTE_ALL_ALERTS_AND_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ONLY_AND_NOT_IN_POP_UPS_OR_ON_THE_STATUS_BAR_MSG"
+msgstr "सभी सतर्क मूक करें और अधिसूचनाएँ केवल अधिसूचना पैनल में दिखाएँ न कि पॉप-अप्स या स्थिति पट्टी में। आप नीचे इस मोड से निकाली जाने वाली एप्लीकेशंस चुन सकते हैं।"
+
+msgid "IDS_ST_HEADER_INCLUDED_APPS_ABB"
+msgstr "शामिल एप्स"
+
+msgid "IDS_ST_HEADER_APP_NOTIFICATIONS_ABB"
+msgstr "एप अधिसूचनाएँ"
+
+msgid "IDS_ST_BODY_SELECT_THE_APPLICATIONS_YOU_WANT_TO_RECEIVE_NOTIFICATIONS_FROM_BELOW"
+msgstr "नीचे उन एप्लीकेशंस को चुनें, जिससे आप अधिसूचनाएँ प्राप्त करना चाहते हैं।"
+
+msgid "IDS_ST_BODY_DO_NOT_DISTURB_IS_ENABLED_NOTIFICATIONS_FROM_THE_APPLICATIONS_YOU_HAVE_SELECTED_BELOW_WILL_ONLY_BE_SHOWN_IN_THE_NOTIFICATION_PANEL"
+msgstr "परेशान न करें सक्षम है। आपके द्वारा नीचे चुनी गई एप्लीकेशंस की अधिसूचनाएँ केवल अधिसूचना पैनल में ही दिखाई देंगी।"
+
+msgid "IDS_ST_BUTTON_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "निकाले गए एप्स प्रबंधित करें"
+
+msgid "IDS_ST_HEADER_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "निकाले गए एप्स प्रबंधित करें"
+
+msgid "IDS_ST_HEADER_EXCLUDED_APPS_ABB"
+msgstr "निकाले गए एप्स"
+

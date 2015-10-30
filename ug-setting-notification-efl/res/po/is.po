@@ -1,0 +1,39 @@
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "LOKIÐ"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "HÆTTA VIÐ"
+
+msgid "IDS_ST_HEADER_NOTIFICATIONS_ABB"
+msgstr "Tilkynningar"
+
+msgid "IDS_ST_BODY_ALLOW_OR_BLOCK_NOTIFICATIONS_FROM_INDIVIDUAL_APPLICATIONS"
+msgstr "Leyfa eða útiloka tilkynningar tiltekinna forrita."
+
+msgid "IDS_ST_HEADER_DO_NOT_DISTURB_ABB"
+msgstr "Ónáðið ekki"
+
+msgid "IDS_ST_BODY_MUTE_ALL_ALERTS_AND_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ONLY_AND_NOT_IN_POP_UPS_OR_ON_THE_STATUS_BAR_MSG"
+msgstr "Slökkva á áminningum og birta tilkynningar aðeins á tilkynningaskjánum, ekki í sprettigluggum eða á stöðustikunni. Hægt er að velja forrit sem eru undanþegin þessari stillingu hér að neðan."
+
+msgid "IDS_ST_HEADER_INCLUDED_APPS_ABB"
+msgstr "Innifalin forrit"
+
+msgid "IDS_ST_HEADER_APP_NOTIFICATIONS_ABB"
+msgstr "Forritatilkynningar"
+
+msgid "IDS_ST_BODY_SELECT_THE_APPLICATIONS_YOU_WANT_TO_RECEIVE_NOTIFICATIONS_FROM_BELOW"
+msgstr "Veldu forritin hér að neðan sem þú vilt fá tilkynningar frá."
+
+msgid "IDS_ST_BODY_DO_NOT_DISTURB_IS_ENABLED_NOTIFICATIONS_FROM_THE_APPLICATIONS_YOU_HAVE_SELECTED_BELOW_WILL_ONLY_BE_SHOWN_IN_THE_NOTIFICATION_PANEL"
+msgstr "Kveikt er á „Ónáðið ekki“. Tilkynningar frá völdu forritunum hér að neðan verða eingöngu birtar á tilkynningaskjánum."
+
+msgid "IDS_ST_BUTTON_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "Stjórna undanskildum forritum"
+
+msgid "IDS_ST_HEADER_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "Stjórna undanskildum"
+
+msgid "IDS_ST_HEADER_EXCLUDED_APPS_ABB"
+msgstr "Undanskilin forrit"
+

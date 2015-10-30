@@ -1,0 +1,39 @@
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "בוצע"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "ביטול"
+
+msgid "IDS_ST_HEADER_NOTIFICATIONS_ABB"
+msgstr "התראות"
+
+msgid "IDS_ST_BODY_ALLOW_OR_BLOCK_NOTIFICATIONS_FROM_INDIVIDUAL_APPLICATIONS"
+msgstr "התר או חסום התראות מיישומים ספציפיים."
+
+msgid "IDS_ST_HEADER_DO_NOT_DISTURB_ABB"
+msgstr "נא לא להפריע"
+
+msgid "IDS_ST_BODY_MUTE_ALL_ALERTS_AND_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ONLY_AND_NOT_IN_POP_UPS_OR_ON_THE_STATUS_BAR_MSG"
+msgstr "השתק את כל התראות השעון המעורר והצג התראות בחלונית ההתראות בלבד ולא בחלונות קופצים או בשורת המצב. תוכל לבחור יישומים שלא ייכללו במצב זה להלן."
+
+msgid "IDS_ST_HEADER_INCLUDED_APPS_ABB"
+msgstr "יישומים כלולים"
+
+msgid "IDS_ST_HEADER_APP_NOTIFICATIONS_ABB"
+msgstr "התראות יישומים"
+
+msgid "IDS_ST_BODY_SELECT_THE_APPLICATIONS_YOU_WANT_TO_RECEIVE_NOTIFICATIONS_FROM_BELOW"
+msgstr "בחר להלן את היישומים שתרצה לקבל מהם התראות."
+
+msgid "IDS_ST_BODY_DO_NOT_DISTURB_IS_ENABLED_NOTIFICATIONS_FROM_THE_APPLICATIONS_YOU_HAVE_SELECTED_BELOW_WILL_ONLY_BE_SHOWN_IN_THE_NOTIFICATION_PANEL"
+msgstr "מצב 'נא לא להפריע' מופעל. התראות מהיישומים שבחרת להלן יוצגו רק בחלונית ההתראות."
+
+msgid "IDS_ST_BUTTON_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "ניהול יישומים שאינם כלולים"
+
+msgid "IDS_ST_HEADER_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "ניהול יישומים שאינם כלולים"
+
+msgid "IDS_ST_HEADER_EXCLUDED_APPS_ABB"
+msgstr "יישומים שאינם כלולים"
+

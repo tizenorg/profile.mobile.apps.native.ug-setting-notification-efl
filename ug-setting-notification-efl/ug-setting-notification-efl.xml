@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://tizen.org/ns/packages" package="ug-setting-notification-efl" version="0.0.1" install-location="internal-only">
+    <label>Notification Center</label>
+    <author email="samsung@samsung.com" href="www.samsung.com">Samsung</author>
+    <description>Notification Setting</description>
+	<ui-application appid="ug-setting-notification-do-not-disturb-efl" exec="/usr/apps/ug-setting-notification-efl/bin/ug-setting-notification-do-not-disturb-efl" ui-gadget="true" nodisplay="true" multiple="true" type="capp" taskmanage="false" process-pool="true">
+		<icon>ug-setting-notification-efl.png</icon>
+		<label>do not disturb</label>
+	</ui-application>	
+	<ui-application appid="ug-setting-notification-app-notifications-efl" exec="/usr/apps/ug-setting-notification-efl/bin/ug-setting-notification-app-notifications-efl" ui-gadget="true" nodisplay="true" multiple="true" type="capp" taskmanage="false" process-pool="true">
+		<icon>ug-setting-notification-efl.png</icon>
+		<label>app notification</label>
+	</ui-application>	
+
+	
+	<privileges>
+		<privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+		<privilege>http://tizen.org/privilege/packagemanager.install</privilege>
+		<privilege>http://tizen.org/privilege/packagemanager.setting</privilege>
+	</privileges>
+</manifest>
+
+

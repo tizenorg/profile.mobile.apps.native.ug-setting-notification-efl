@@ -1,0 +1,39 @@
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "ГОТОВО"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "ОТКАЖИ"
+
+msgid "IDS_ST_HEADER_NOTIFICATIONS_ABB"
+msgstr "Известувања"
+
+msgid "IDS_ST_BODY_ALLOW_OR_BLOCK_NOTIFICATIONS_FROM_INDIVIDUAL_APPLICATIONS"
+msgstr "Дозволувајте или блокирајте известувања од поединечни апликации."
+
+msgid "IDS_ST_HEADER_DO_NOT_DISTURB_ABB"
+msgstr "Не вознемирувај"
+
+msgid "IDS_ST_BODY_MUTE_ALL_ALERTS_AND_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ONLY_AND_NOT_IN_POP_UPS_OR_ON_THE_STATUS_BAR_MSG"
+msgstr "Стиши ги сите предупредувања и прикажувај известувања само во таблата за известувања, а не во појавни прозорци или на статусната лента. Може да изберете кои апликации да се изземат од овој режим долу."
+
+msgid "IDS_ST_HEADER_INCLUDED_APPS_ABB"
+msgstr "Вклучени апликации"
+
+msgid "IDS_ST_HEADER_APP_NOTIFICATIONS_ABB"
+msgstr "Известув. за апликации"
+
+msgid "IDS_ST_BODY_SELECT_THE_APPLICATIONS_YOU_WANT_TO_RECEIVE_NOTIFICATIONS_FROM_BELOW"
+msgstr "Изберете ги апликациите од коишто сакате да примате известувања подолу."
+
+msgid "IDS_ST_BODY_DO_NOT_DISTURB_IS_ENABLED_NOTIFICATIONS_FROM_THE_APPLICATIONS_YOU_HAVE_SELECTED_BELOW_WILL_ONLY_BE_SHOWN_IN_THE_NOTIFICATION_PANEL"
+msgstr "Активирано е Не вознемирувај. Известувањата од апликациите избрани подолу ќе се прикажуваат само на таблата за известувања."
+
+msgid "IDS_ST_BUTTON_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "Уреди исклучени апликации"
+
+msgid "IDS_ST_HEADER_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "Уреди исклуч. аплик."
+
+msgid "IDS_ST_HEADER_EXCLUDED_APPS_ABB"
+msgstr "Исклучени апликации"
+

@@ -1,0 +1,39 @@
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "KÉSZ"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "MÉGSE"
+
+msgid "IDS_ST_HEADER_NOTIFICATIONS_ABB"
+msgstr "Értesítések"
+
+msgid "IDS_ST_BODY_ALLOW_OR_BLOCK_NOTIFICATIONS_FROM_INDIVIDUAL_APPLICATIONS"
+msgstr "Engedélyezheti vagy blokkolhatja az egyes alkalmazások értesítéseit."
+
+msgid "IDS_ST_HEADER_DO_NOT_DISTURB_ABB"
+msgstr "Ne zavarjanak"
+
+msgid "IDS_ST_BODY_MUTE_ALL_ALERTS_AND_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ONLY_AND_NOT_IN_POP_UPS_OR_ON_THE_STATUS_BAR_MSG"
+msgstr "Minden jelzést elnémít, és az értesítések csak az értesítési panelen jelennek meg, előugró ablakként vagy az állapotsorban nem. Alább kijelölheti azokat az alkalmazásokat, amelyeket szeretne kizárni ebből az üzemmódból."
+
+msgid "IDS_ST_HEADER_INCLUDED_APPS_ABB"
+msgstr "Nem kizárt alkalmazások"
+
+msgid "IDS_ST_HEADER_APP_NOTIFICATIONS_ABB"
+msgstr "Alkalm. értesítései"
+
+msgid "IDS_ST_BODY_SELECT_THE_APPLICATIONS_YOU_WANT_TO_RECEIVE_NOTIFICATIONS_FROM_BELOW"
+msgstr "Jelölje ki alább azokat az alkalmazásokat, amelyeknek az értesítéseit fogadni szeretné."
+
+msgid "IDS_ST_BODY_DO_NOT_DISTURB_IS_ENABLED_NOTIFICATIONS_FROM_THE_APPLICATIONS_YOU_HAVE_SELECTED_BELOW_WILL_ONLY_BE_SHOWN_IN_THE_NOTIFICATION_PANEL"
+msgstr "Ne zavarjanak üzemmódban van. Csak azoknak az alkalmazásoknak az értesítései jelennek meg az értesítési panelen, amelyeket alább kijelölt."
+
+msgid "IDS_ST_BUTTON_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "Kizárt alkalmazások kezelése"
+
+msgid "IDS_ST_HEADER_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "Kizárt alk. kezelése"
+
+msgid "IDS_ST_HEADER_EXCLUDED_APPS_ABB"
+msgstr "Kizárt alkalmazások"
+

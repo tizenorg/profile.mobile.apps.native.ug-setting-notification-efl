@@ -1,0 +1,39 @@
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "HOTOVO"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "ZRUŠIŤ"
+
+msgid "IDS_ST_HEADER_NOTIFICATIONS_ABB"
+msgstr "Oznámenia"
+
+msgid "IDS_ST_BODY_ALLOW_OR_BLOCK_NOTIFICATIONS_FROM_INDIVIDUAL_APPLICATIONS"
+msgstr "Môžete povoliť alebo blokovať oznámenia z jednotlivých aplikácií."
+
+msgid "IDS_ST_HEADER_DO_NOT_DISTURB_ABB"
+msgstr "Nerušiť"
+
+msgid "IDS_ST_BODY_MUTE_ALL_ALERTS_AND_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ONLY_AND_NOT_IN_POP_UPS_OR_ON_THE_STATUS_BAR_MSG"
+msgstr "Stíšia sa všetky upozornenia a oznámenia sa budú zobrazovať iba na paneli oznámení, a nie v kontextových oknách ani na stavovom riadku. Nižšie môžete vybrať aplikácie, ktoré sa vylúčia z tohto režimu."
+
+msgid "IDS_ST_HEADER_INCLUDED_APPS_ABB"
+msgstr "Zahrnuté aplikácie"
+
+msgid "IDS_ST_HEADER_APP_NOTIFICATIONS_ABB"
+msgstr "Aplikačné oznámenia"
+
+msgid "IDS_ST_BODY_SELECT_THE_APPLICATIONS_YOU_WANT_TO_RECEIVE_NOTIFICATIONS_FROM_BELOW"
+msgstr "Nižšie vyberte aplikácie, z ktorých chcete prijímať oznámenia."
+
+msgid "IDS_ST_BODY_DO_NOT_DISTURB_IS_ENABLED_NOTIFICATIONS_FROM_THE_APPLICATIONS_YOU_HAVE_SELECTED_BELOW_WILL_ONLY_BE_SHOWN_IN_THE_NOTIFICATION_PANEL"
+msgstr "Režim Nerušiť je zapnutý. Oznámenia z aplikácií vybratých nižšie sa budú zobrazovať iba na paneli oznámení."
+
+msgid "IDS_ST_BUTTON_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "Spravovať vylúčené aplikácie"
+
+msgid "IDS_ST_HEADER_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "Správa vylúč. aplik."
+
+msgid "IDS_ST_HEADER_EXCLUDED_APPS_ABB"
+msgstr "Vylúčené aplikácie"
+

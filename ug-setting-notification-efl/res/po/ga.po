@@ -1,0 +1,39 @@
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "DÉANTA"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "CUIR AR CEAL"
+
+msgid "IDS_ST_HEADER_NOTIFICATIONS_ABB"
+msgstr "Fógraí"
+
+msgid "IDS_ST_BODY_ALLOW_OR_BLOCK_NOTIFICATIONS_FROM_INDIVIDUAL_APPLICATIONS"
+msgstr "Ceadaigh fógraí ó fheidhmchláir aonair nó cuir bac orthu."
+
+msgid "IDS_ST_HEADER_DO_NOT_DISTURB_ABB"
+msgstr "Ná cuir isteach orm"
+
+msgid "IDS_ST_BODY_MUTE_ALL_ALERTS_AND_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ONLY_AND_NOT_IN_POP_UPS_OR_ON_THE_STATUS_BAR_MSG"
+msgstr "Balbhaigh gach foláireamh agus ná taispeáin fógraí ach amháin sa phainéal fógraí, agus ní i míreanna aníos ná ar an mbarra stádais. Is féidir leat na feidhmchláir a eiseofar ón mód seo a roghnú thíos."
+
+msgid "IDS_ST_HEADER_INCLUDED_APPS_ABB"
+msgstr "Feidhmchláir iniata"
+
+msgid "IDS_ST_HEADER_APP_NOTIFICATIONS_ABB"
+msgstr "Fógraí feidhmchlár"
+
+msgid "IDS_ST_BODY_SELECT_THE_APPLICATIONS_YOU_WANT_TO_RECEIVE_NOTIFICATIONS_FROM_BELOW"
+msgstr "Roghnaigh na feidhmchláir thíos ar mian leat fógraí a fháil uathu."
+
+msgid "IDS_ST_BODY_DO_NOT_DISTURB_IS_ENABLED_NOTIFICATIONS_FROM_THE_APPLICATIONS_YOU_HAVE_SELECTED_BELOW_WILL_ONLY_BE_SHOWN_IN_THE_NOTIFICATION_PANEL"
+msgstr "Ná cuir isteach orm cumasaithe. Ní thaispeánfar fógraí ó na feidhmchláir atá roghnaithe agat thíos ach sa phainéal fógraí."
+
+msgid "IDS_ST_BUTTON_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "Bainistigh f.chláir eisiata"
+
+msgid "IDS_ST_HEADER_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "Bainist. f.ch. eisiata"
+
+msgid "IDS_ST_HEADER_EXCLUDED_APPS_ABB"
+msgstr "Feidhmchláir eisiata"
+

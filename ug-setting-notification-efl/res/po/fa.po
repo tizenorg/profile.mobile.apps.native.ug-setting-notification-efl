@@ -1,0 +1,39 @@
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "انجام شد"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "لغو"
+
+msgid "IDS_ST_HEADER_NOTIFICATIONS_ABB"
+msgstr "اعلان‌ها"
+
+msgid "IDS_ST_BODY_ALLOW_OR_BLOCK_NOTIFICATIONS_FROM_INDIVIDUAL_APPLICATIONS"
+msgstr "اعلان‌های هر برنامه را مسدود کنید یا به آنها اجازه دهید."
+
+msgid "IDS_ST_HEADER_DO_NOT_DISTURB_ABB"
+msgstr "مزاحم نشوید"
+
+msgid "IDS_ST_BODY_MUTE_ALL_ALERTS_AND_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ONLY_AND_NOT_IN_POP_UPS_OR_ON_THE_STATUS_BAR_MSG"
+msgstr "همه هشدارها بی‌صدا شده و اعلان‌ها فقط در صفحه اعلان و نه در پنجره‌های بازشو یا در نوار وضعیت نمایش داده شوند. می‌توانید برنامه‌های مورد نظر برای خارج شدن از این حالت را از زیر انتخاب کنید."
+
+msgid "IDS_ST_HEADER_INCLUDED_APPS_ABB"
+msgstr "برنامه‌های شامل شده"
+
+msgid "IDS_ST_HEADER_APP_NOTIFICATIONS_ABB"
+msgstr "اعلان‌های برنامه"
+
+msgid "IDS_ST_BODY_SELECT_THE_APPLICATIONS_YOU_WANT_TO_RECEIVE_NOTIFICATIONS_FROM_BELOW"
+msgstr "برنامه‌هایی که می‌خواهید از آنها اعلان دریافت کنید را از زیر انتخاب نمایید."
+
+msgid "IDS_ST_BODY_DO_NOT_DISTURB_IS_ENABLED_NOTIFICATIONS_FROM_THE_APPLICATIONS_YOU_HAVE_SELECTED_BELOW_WILL_ONLY_BE_SHOWN_IN_THE_NOTIFICATION_PANEL"
+msgstr "حالت مزاحم نشوید فعال است. اعلان‌های برنامه‌هایی که در زیر انتخاب کرده‌اید، فقط در صفحه اعلان نمایش داده می‌شوند."
+
+msgid "IDS_ST_BUTTON_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "مدیریت برنامه‌های شامل نشده"
+
+msgid "IDS_ST_HEADER_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "مدیریت برنامه‌های شامل نشده"
+
+msgid "IDS_ST_HEADER_EXCLUDED_APPS_ABB"
+msgstr "برنامه‌های شامل نشده"
+

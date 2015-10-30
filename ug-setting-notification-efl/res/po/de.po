@@ -1,0 +1,39 @@
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "FERTIG"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "ABBRECHEN"
+
+msgid "IDS_ST_HEADER_NOTIFICATIONS_ABB"
+msgstr "Benachrichtigungen"
+
+msgid "IDS_ST_BODY_ALLOW_OR_BLOCK_NOTIFICATIONS_FROM_INDIVIDUAL_APPLICATIONS"
+msgstr "Benachrichtigungen von einzelnen Anwendungen erlauben oder sperren."
+
+msgid "IDS_ST_HEADER_DO_NOT_DISTURB_ABB"
+msgstr "Nicht stören"
+
+msgid "IDS_ST_BODY_MUTE_ALL_ALERTS_AND_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ONLY_AND_NOT_IN_POP_UPS_OR_ON_THE_STATUS_BAR_MSG"
+msgstr "Alle Alarme stummschalten und Benachrichtigungen nur im Benachrichtigungsfeld und nicht in Pop-ups oder auf der Statusleiste anzeigen. Sie können die in diesem Modus auszuführenden Anwendungen unten auswählen."
+
+msgid "IDS_ST_HEADER_INCLUDED_APPS_ABB"
+msgstr "Eingeschlossene Apps"
+
+msgid "IDS_ST_HEADER_APP_NOTIFICATIONS_ABB"
+msgstr "App-Benachrichtigungen"
+
+msgid "IDS_ST_BODY_SELECT_THE_APPLICATIONS_YOU_WANT_TO_RECEIVE_NOTIFICATIONS_FROM_BELOW"
+msgstr "Wählen Sie unten die Anwendungen aus, von denen Sie Benachrichtigungen erhalten möchten."
+
+msgid "IDS_ST_BODY_DO_NOT_DISTURB_IS_ENABLED_NOTIFICATIONS_FROM_THE_APPLICATIONS_YOU_HAVE_SELECTED_BELOW_WILL_ONLY_BE_SHOWN_IN_THE_NOTIFICATION_PANEL"
+msgstr "„Nicht stören“ ist aktiviert. Benachrichtigungen von den Anwendungen, die Sie unten ausgewählt haben, werden nur im Benachrichtigungsfeld angezeigt."
+
+msgid "IDS_ST_BUTTON_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "Ausgeschlossene Apps verwalten"
+
+msgid "IDS_ST_HEADER_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "Ausgeschlossene Apps"
+
+msgid "IDS_ST_HEADER_EXCLUDED_APPS_ABB"
+msgstr "Ausgeschlossene Apps"
+

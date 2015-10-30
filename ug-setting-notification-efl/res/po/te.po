@@ -1,0 +1,39 @@
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "పూర్తయింది"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "రద్దు చేయి"
+
+msgid "IDS_ST_HEADER_NOTIFICATIONS_ABB"
+msgstr "నోటిఫికేషన్‌లు"
+
+msgid "IDS_ST_BODY_ALLOW_OR_BLOCK_NOTIFICATIONS_FROM_INDIVIDUAL_APPLICATIONS"
+msgstr "అప్లికేషన్‌ల నుండి నోటిఫికేషన్‌లను విడివిడిగా అనుమతించండి లేదా నిరోధించండి."
+
+msgid "IDS_ST_HEADER_DO_NOT_DISTURB_ABB"
+msgstr "అంతరాయం కలిగించవద్దు"
+
+msgid "IDS_ST_BODY_MUTE_ALL_ALERTS_AND_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ONLY_AND_NOT_IN_POP_UPS_OR_ON_THE_STATUS_BAR_MSG"
+msgstr "అన్ని హెచ్చరికలను మ్యూట్ చేసి, పాప్-అప్‌లు లేదా స్థితి బార్‌లో కాకుండా నోటిఫికేషన్ ప్యానెల్‌లో మాత్రమే నోటిఫికేషన్‌లను చూపుతుంది. మీరు ఈ కింది మోడ్ నుండి మినహాయించడానికి అప్లికేషన్‌లను దిగువ ఎంచుకోవచ్చు."
+
+msgid "IDS_ST_HEADER_INCLUDED_APPS_ABB"
+msgstr "చేర్చబడిన అప్లికేషన్‌లు"
+
+msgid "IDS_ST_HEADER_APP_NOTIFICATIONS_ABB"
+msgstr "అప్లి. నోటిఫికేషన్‌లు"
+
+msgid "IDS_ST_BODY_SELECT_THE_APPLICATIONS_YOU_WANT_TO_RECEIVE_NOTIFICATIONS_FROM_BELOW"
+msgstr "దిగువ మీరు నోటిఫికేషన్‌లను స్వీకరించాలనుకుంటున్న అప్లికేషన్‌లను ఎంచుకోండి."
+
+msgid "IDS_ST_BODY_DO_NOT_DISTURB_IS_ENABLED_NOTIFICATIONS_FROM_THE_APPLICATIONS_YOU_HAVE_SELECTED_BELOW_WILL_ONLY_BE_SHOWN_IN_THE_NOTIFICATION_PANEL"
+msgstr "అంతరాయం కలిగించవద్దు ప్రారంభించబడింది. మీరు దిగువ ఎంచుకున్న అప్లికేషన్‌ల నుండి నోటిఫికేషన్‌లు కేవలం నోటిఫికేషన్ ప్యానెల్‌లో మాత్రమే చూపబడతాయి."
+
+msgid "IDS_ST_BUTTON_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "మినహాయించిన అప్లి. నిర్వహించు"
+
+msgid "IDS_ST_HEADER_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "మినహాయించిన అప్లి. నిర్వహించు"
+
+msgid "IDS_ST_HEADER_EXCLUDED_APPS_ABB"
+msgstr "మినహాయించబడిన అప్లికేషన్‌లు"
+
