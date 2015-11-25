@@ -94,18 +94,6 @@
 #define _APPS_SE(fmt, arg...)  SECURE_LOG(LOG_ERROR, LOG_TAG_APPS, " "fmt, ##arg)
 #endif
 
-#ifdef ADD_FILE_LOG
-#define _F(fmt, arg...) do { \
-	FILE *fp;\
-	fp = fopen("/opt/usr/apps/org.tizen.w-home/data/logs", "a+");\
-	if (NULL == fp) break;\
-	fprintf(fp, "[%s:%d] "fmt"\n", __func__, __LINE__, ##arg); \
-	fclose(fp);\
-} while (0)
-#else
-#define _F(fmt, arg...) ;
-#endif
-
 #define retvm_if_timer(timer, expr, val, fmt, arg...) do { \
 	if (expr) { \
 		_E(fmt, ##arg); \
