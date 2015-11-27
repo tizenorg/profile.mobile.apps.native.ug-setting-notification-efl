@@ -52,10 +52,10 @@ static void _done_button_cb(void *data, Evas_Object *obj, void *event_info)
 {
 	NOTISET_DBG("");
 
-	ug_data* u_data = get_ug_data();
+	ug_data* u_data = data;
 	Eina_List *list = NULL;
 
-	elm_naviframe_item_pop(data);
+	elm_naviframe_item_pop(u_data->naviframe);
 
 	EVAS_OBJECT_DELIF(u_data->done_button);
 	EVAS_OBJECT_DELIF(u_data->cancel_button);
@@ -90,9 +90,9 @@ static void _done_button_cb(void *data, Evas_Object *obj, void *event_info)
 
 void _cancel_button_cb(void *data, Evas_Object *obj, void *event_info)
 {
+	ug_data* u_data = data;
 	ret_if(!data);
-	elm_naviframe_item_pop(data);
-	ug_data* u_data = get_ug_data();
+	elm_naviframe_item_pop(u_data->naviframe);
 
 	EVAS_OBJECT_DELIF(u_data->done_button);
 	EVAS_OBJECT_DELIF(u_data->cancel_button);
@@ -102,7 +102,7 @@ void _cancel_button_cb(void *data, Evas_Object *obj, void *event_info)
 void exception_application_clicked_cb(void *data, Evas_Object *obj, void *event_info)
 {
 	NOTISET_DBG("");
-	ug_data* u_data = get_ug_data();
+	ug_data* u_data = data;
 	ret_if(!u_data);
 
 	Elm_Object_Item* navi_item = NULL;
@@ -120,7 +120,7 @@ void exception_application_clicked_cb(void *data, Evas_Object *obj, void *event_
 	/* Title Cancel Button */
 	cancel_btn = elm_button_add(u_data->naviframe);
 	elm_object_style_set(cancel_btn, "naviframe/title_left");
-	evas_object_smart_callback_add(cancel_btn, "clicked", _cancel_button_cb, u_data->naviframe);
+	evas_object_smart_callback_add(cancel_btn, "clicked", _cancel_button_cb, u_data);
 	elm_object_text_set(cancel_btn, APP_STRING("IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"));
 	elm_object_item_part_content_set(navi_item, "title_left_btn", cancel_btn);
 	u_data->cancel_button = cancel_btn;
@@ -128,7 +128,7 @@ void exception_application_clicked_cb(void *data, Evas_Object *obj, void *event_
 	/* Title Done Button */
 	done_btn = elm_button_add(u_data->naviframe);
 	elm_object_style_set(done_btn, "naviframe/title_right");
-	evas_object_smart_callback_add(done_btn, "clicked", _done_button_cb, u_data->naviframe);
+	evas_object_smart_callback_add(done_btn, "clicked", _done_button_cb, u_data);
 	elm_object_text_set(done_btn, APP_STRING("IDS_TPLATFORM_ACBUTTON_DONE_ABB"));
 	elm_object_item_part_content_set(navi_item, "title_right_btn", done_btn);
 	u_data->done_button = done_btn;
