@@ -27,6 +27,7 @@ BuildRequires: pkgconfig(dlog)
 BuildRequires: edje-bin
 BuildRequires: cmake
 BuildRequires: gettext-tools
+#BuildRequires: model-build-features
 BuildRequires: pkgconfig(notification)
 BuildRequires: pkgconfig(pkgmgr)
 BuildRequires: pkgconfig(pkgmgr-info)
@@ -34,7 +35,6 @@ BuildRequires: pkgconfig(capi-appfw-package-manager)
 BuildRequires: pkgconfig(capi-system-system-settings)
 BuildRequires: pkgconfig(capi-appfw-app-manager)
 BuildRequires: pkgconfig(capi-appfw-application)
-BuildRequires: pkgconfig(libtzplatform-config)
 
 
 %description
@@ -58,22 +58,13 @@ cp %{SOURCE1001} .
 
 
 %build
-%define _pkg_dir %{TZ_SYS_RO_APP}/%{name}
-%define _pkg_lib_dir %{_pkg_dir}/lib
-
-%define _sys_icons_dir %{TZ_SYS_RO_ICONS}
-%define _sys_packages_dir %{TZ_SYS_RO_PACKAGES}
-%define _sys_license_dir %{TZ_SYS_SHARE}/license
-%define _sys_smack_dir %{TZ_SYS_SMACK}/accesses.d
-
-%define _bin_path %{TZ_SYS_RO_APP}/%{name}/bin
-%define _link_path /home/owner/apps_rw/%{name}/lib/ug
+%define bin_path /usr/apps/%{name}/bin
+%define lib_path /usr/apps/%{name}/lib/ug
+%define link_path /home/owner/apps_rw/%{name}/lib/ug
 
 export CFLAGS="$CFLAGS -DTIZEN_DEBUG_ENABLE"
 export CXXFLAGS="$CXXFLAGS -DTIZEN_DEBUG_ENABLE"
 export FFLAGS="$FFLAGS -DTIZEN_DEBUG_ENABLE"
-export LDFLAGS="${LDFLAGS} -Wl,--hash-style=both -Wl,--rpath=%{_pkg_lib_dir} -Wl,--as-needed -Wl,-zdefs"
-
 
 %if 0%{?tizen_build_binary_release_type_eng}
 export CFLAGS="$CFLAGS -DTIZEN_ENGINEER_MODE"
@@ -81,23 +72,21 @@ export CXXFLAGS="$CXXFLAGS -DTIZEN_ENGINEER_MODE"
 export FFLAGS="$FFLAGS -DTIZEN_ENGINEER_MODE"
 %endif
 
-%cmake . -DCMAKE_INSTALL_PREFIX=%{_pkg_dir} \
-	-DENABLE_ATTACH_PANEL=%{_enable_attach_panel} \
-	-DSYS_ICONS_DIR=%{_sys_icons_dir} \
-	-DSYS_PACKAGES_DIR=%{_sys_packages_dir} \
-	-DSYS_LICENSE_DIR=%{_sys_license_dir} \
-	-DSYS_SMACK_DIR=%{_sys_smack_dir}
-
+%cmake .
 make -j2
 
 %install
 %make_install
-mkdir -p %{buildroot}%{_bin_path}
-mkdir -p %{buildroot}%{_link_path}
-ln -sf %{TZ_SYS_BIN}/ug-client %{buildroot}%{_bin_path}/ug-setting-notification-efl
-ln -sf %{TZ_SYS_BIN}/ug-client %{buildroot}%{_bin_path}/ug-setting-notification-do-not-disturb-efl
-ln -sf %{TZ_SYS_BIN}/ug-client %{buildroot}%{_bin_path}/ug-setting-notification-app-notifications-efl
-ln -sf %{lib_path}/libug-setting-notification-do-not-disturb-efl.so %{buildroot}%{_link_path}/libug-setting-notification-do-not-disturb-efl.so
+mkdir -p %{buildroot}%{bin_path}
+mkdir -p %{buildroot}%{link_path}
+mkdir -p /etc/smack/accesses.d/
+ln -sf /usr/bin/ug-client %{buildroot}%{bin_path}/ug-setting-notification-efl
+ln -sf /usr/bin/ug-client %{buildroot}%{bin_path}/ug-setting-notification-do-not-disturb-efl
+ln -sf /usr/bin/ug-client %{buildroot}%{bin_path}/ug-setting-notification-app-notifications-efl
+ln -sf %{lib_path}/libug-setting-notification-do-not-disturb-efl.so %{buildroot}%{link_path}/libug-setting-notification-do-not-disturb-efl.so
+
+
+mkdir -p %{buildroot}/usr/apps/%{name}/res
 
 %post -n %{name} -p /sbin/ldconfig
 
@@ -107,10 +96,12 @@ ln -sf %{lib_path}/libug-setting-notification-do-not-disturb-efl.so %{buildroot}
 %files
 %manifest %{name}.manifest
 %defattr(-,root,root,-)
-%{_pkg_dir}/*
-%{_link_path}/*
+%{_prefix}/apps/%{name}/*
+%{link_path}/*
 %{_prefix}/share/packages/%{name}.xml
-%{_sys_smack_dir}/%{name}.efl
+/etc/smack/accesses.d/%{name}.efl
 %{_datarootdir}/license/%{name}
 %{_datadir}/icons/default/small/%{name}.png
-%{_pkg_dir}/res/locale/*/LC_MESSAGES/*
+
+/usr/apps/%{name}/res/locale/*/LC_MESSAGES/*
+
