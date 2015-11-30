@@ -43,6 +43,7 @@ This package will be loaded into a Settings Application.
 User can control the behaviour of notification of each application individually.
 
 
+
 %description
 ug-setting-notification-do-not-disturb-efl.
 %package -n ug-setting-notification-do-not-disturb-efl
@@ -57,10 +58,8 @@ Description: do not disturb efl
 cp %{SOURCE1001} .
 
 
+
 %build
-%define bin_path /usr/apps/%{name}/bin
-%define lib_path /usr/apps/%{name}/lib/ug
-%define link_path /home/owner/apps_rw/%{name}/lib/ug
 
 export CFLAGS="$CFLAGS -DTIZEN_DEBUG_ENABLE"
 export CXXFLAGS="$CXXFLAGS -DTIZEN_DEBUG_ENABLE"
@@ -77,16 +76,16 @@ make -j2
 
 %install
 %make_install
-mkdir -p %{buildroot}%{bin_path}
-mkdir -p %{buildroot}%{link_path}
-mkdir -p /etc/smack/accesses.d/
-ln -sf /usr/bin/ug-client %{buildroot}%{bin_path}/ug-setting-notification-efl
-ln -sf /usr/bin/ug-client %{buildroot}%{bin_path}/ug-setting-notification-do-not-disturb-efl
-ln -sf /usr/bin/ug-client %{buildroot}%{bin_path}/ug-setting-notification-app-notifications-efl
-ln -sf %{lib_path}/libug-setting-notification-do-not-disturb-efl.so %{buildroot}%{link_path}/libug-setting-notification-do-not-disturb-efl.so
+mkdir -p %{buildroot}/usr/apps/ug-setting-notification-efl/bin
+ln -sf /usr/bin/ug-client %{buildroot}/usr/apps/ug-setting-notification-efl/bin/ug-setting-notification-efl
+ln -sf /usr/bin/ug-client %{buildroot}/usr/apps/ug-setting-notification-efl/bin/ug-setting-notification-do-not-disturb-efl
+ln -sf /usr/bin/ug-client %{buildroot}/usr/apps/ug-setting-notification-efl/bin/ug-setting-notification-app-notifications-efl
 
 
-mkdir -p %{buildroot}/usr/apps/%{name}/res
+#mkdir -p %{buildroot}/usr/ug/bin
+#ln -sf /usr/bin/ug-client %{buildroot}/usr/ug/bin/ug-setting-notification-efl
+
+mkdir -p %{buildroot}/usr/apps/ug-setting-notification-efl/res
 
 %post -n %{name} -p /sbin/ldconfig
 
@@ -97,11 +96,9 @@ mkdir -p %{buildroot}/usr/apps/%{name}/res
 %manifest %{name}.manifest
 %defattr(-,root,root,-)
 %{_prefix}/apps/%{name}/*
-%{link_path}/*
 %{_prefix}/share/packages/%{name}.xml
-/etc/smack/accesses.d/%{name}.efl
 %{_datarootdir}/license/%{name}
-%{_datadir}/icons/default/small/%{name}.png
+%{_datadir}/icons/default/small/ug-setting-notification-efl.png
 
-/usr/apps/%{name}/res/locale/*/LC_MESSAGES/*
+/usr/apps/ug-setting-notification-efl/res/locale/*/LC_MESSAGES/*
 
