@@ -15,7 +15,6 @@
  *
  */
 
-#include <tzplatform_config.h>
 #include "pkgmgr-setting-info.h"
 #include "common-efl.h"
 
@@ -123,7 +122,7 @@ Evas_Object* create_icon(Evas_Object *parent, char* icon)
 	Evas_Object *img = elm_image_add(parent);
 
 	if(access(icon, 0) == -1) {
-		icon = strdup(tzplatform_mkpath(TZ_SYS_RO_ICONS, "default/small/ug-setting-notification-efl.png"));
+		icon = strdup("/usr/share/icons/default/small/ug-setting-notification-efl.png");
 	}
 	
 	elm_image_file_set(img, icon, NULL);
@@ -133,6 +132,9 @@ Evas_Object* create_icon(Evas_Object *parent, char* icon)
 	
 	return img;
 }
+
+
+
 
 static char *gl_group_index_text_get_cb(void *data, Evas_Object *obj, const char *part)
 {
