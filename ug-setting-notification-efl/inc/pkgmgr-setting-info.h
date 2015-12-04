@@ -22,10 +22,6 @@
 #include <tizen.h>
 #include "log.h"
 
-
-#define DEFAULT_ICON IMAGEDIR"/unknown.png"
-
-
 typedef struct {
 	/* innate features */
 	char *appid;
