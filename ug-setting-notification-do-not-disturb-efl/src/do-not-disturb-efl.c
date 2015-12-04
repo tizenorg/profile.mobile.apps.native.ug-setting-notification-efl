@@ -21,6 +21,7 @@
 #include <libintl.h>
 #include <ui-gadget-module.h>
 #include <package_manager.h>
+#include <tzplatform_config.h>
 #include "do-not-disturb-efl.h"
 #include "pkgmgr-setting-info.h"
 #include "excepted-apps-efl.h"
@@ -279,7 +280,7 @@ int UG_MODULE_INIT(struct ug_module_ops *ops)
 	ops->priv = ugd;
 	ops->opt = UG_OPT_INDICATOR_ENABLE;
 
-	if (bindtextdomain(PKGNAME, "/usr/apps/ug-setting-notification-efl/res/locale") == NULL) {
+	if (bindtextdomain(PKGNAME, tzplatform_mkpath(TZ_SYS_RO_APP, "ug-setting-notification-efl/res/locale"))== NULL) {
 		/* Failed to allocate memory for allocating heap for store the path of LOCALE directory */
 	}
 

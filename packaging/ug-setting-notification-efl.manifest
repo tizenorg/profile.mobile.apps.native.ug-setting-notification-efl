@@ -1,13 +1,5 @@
 <manifest>
-	<define>
-		<domain name="ug-setting-notification-efl" />
-	</define>
 	<request>
-		<domain name="ug-setting-notification-efl" />
+		<domain name="_"/>
 	</request>
-	<assign>
-		<filesystem path="/usr/share/icons/default/small/ug-setting-notification-efl.png" label="_"/>
-      <filesystem path="/opt/usr/apps/ug-setting-notification-efl/res/*" label="_"/>
-	</assign>
-
 </manifest>

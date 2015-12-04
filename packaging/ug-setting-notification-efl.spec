@@ -27,7 +27,6 @@ BuildRequires: pkgconfig(dlog)
 BuildRequires: edje-bin
 BuildRequires: cmake
 BuildRequires: gettext-tools
-#BuildRequires: model-build-features
 BuildRequires: pkgconfig(notification)
 BuildRequires: pkgconfig(pkgmgr)
 BuildRequires: pkgconfig(pkgmgr-info)
@@ -35,6 +34,7 @@ BuildRequires: pkgconfig(capi-appfw-package-manager)
 BuildRequires: pkgconfig(capi-system-system-settings)
 BuildRequires: pkgconfig(capi-appfw-app-manager)
 BuildRequires: pkgconfig(capi-appfw-application)
+BuildRequires: pkgconfig(libtzplatform-config)
 
 
 %description
@@ -57,10 +57,7 @@ Description: do not disturb efl
 %setup -q
 cp %{SOURCE1001} .
 
-
-
 %build
-
 export CFLAGS="$CFLAGS -DTIZEN_DEBUG_ENABLE"
 export CXXFLAGS="$CXXFLAGS -DTIZEN_DEBUG_ENABLE"
 export FFLAGS="$FFLAGS -DTIZEN_DEBUG_ENABLE"
@@ -71,34 +68,27 @@ export CXXFLAGS="$CXXFLAGS -DTIZEN_ENGINEER_MODE"
 export FFLAGS="$FFLAGS -DTIZEN_ENGINEER_MODE"
 %endif
 
-%cmake .
+%cmake . -DCMAKE_INSTALL_PREFIX=%{TZ_SYS_RO_UG} \
+	  -DTZ_SYS_RO_PACKAGES=%{TZ_SYS_RO_PACKAGES} \
+	  -DSYS_SHARE_DIR=%{TZ_SYS_SHARE}
+	
 make -j2
 
 %install
 %make_install
-mkdir -p %{buildroot}/usr/apps/ug-setting-notification-efl/bin
-ln -sf /usr/bin/ug-client %{buildroot}/usr/apps/ug-setting-notification-efl/bin/ug-setting-notification-efl
-ln -sf /usr/bin/ug-client %{buildroot}/usr/apps/ug-setting-notification-efl/bin/ug-setting-notification-do-not-disturb-efl
-ln -sf /usr/bin/ug-client %{buildroot}/usr/apps/ug-setting-notification-efl/bin/ug-setting-notification-app-notifications-efl
 
-
-#mkdir -p %{buildroot}/usr/ug/bin
-#ln -sf /usr/bin/ug-client %{buildroot}/usr/ug/bin/ug-setting-notification-efl
-
-mkdir -p %{buildroot}/usr/apps/ug-setting-notification-efl/res
+mkdir -p %{buildroot}%{TZ_SYS_RO_UG}/bin/
+ln -sf /usr/bin/ug-client %{buildroot}%{TZ_SYS_RO_UG}/bin/ug-setting-notification-efl
+ln -sf /usr/bin/ug-client %{buildroot}%{TZ_SYS_RO_UG}/bin/ug-setting-notification-do-not-disturb-efl
+ln -sf /usr/bin/ug-client %{buildroot}%{TZ_SYS_RO_UG}/bin/ug-setting-notification-app-notifications-efl
 
 %post -n %{name} -p /sbin/ldconfig
 
 %postun -n %{name} -p /sbin/ldconfig
 
-
 %files
 %manifest %{name}.manifest
 %defattr(-,root,root,-)
-%{_prefix}/apps/%{name}/*
-%{_prefix}/share/packages/%{name}.xml
-%{_datarootdir}/license/%{name}
-%{_datadir}/icons/default/small/ug-setting-notification-efl.png
-
-/usr/apps/ug-setting-notification-efl/res/locale/*/LC_MESSAGES/*
-
+%{TZ_SYS_RO_UG}/*
+%{TZ_SYS_RO_PACKAGES}/*
+%{TZ_SYS_SHARE}/license/%{name}
