@@ -30,7 +30,6 @@
 #include "common-efl.h"
 
 
-ug_data* get_ug_data(_);
 
 
 
