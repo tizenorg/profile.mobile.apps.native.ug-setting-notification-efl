@@ -29,25 +29,8 @@
  * @{
  */
 
-ug_data *g_ug_data = NULL;
 
 static Evas_Object* _create_do_not_disturb_gl(ug_data *ugd);
-static void _append_item_in_list(Evas_Object* genlist);
-
-ug_data* get_ug_data(_)
-{
-	return g_ug_data;
-}
-
-static void _do_not_disturb_check_changed_cb(void *data, Evas_Object *obj, void *event_info)
-{
-	NOTISET_DBG("");
-	char *appid = (char*)data;
-
-	Eina_Bool state = elm_check_state_get(obj);
-	set_do_not_disturb(state);
-	NOTISET_DBG("do_not_disturb check value = %s", state==false ? "FALSE":"TRUE");
-}
 
 
 static Eina_Bool _notifiacation_setting_main_pop_cb(void *data, Elm_Object_Item * it)
@@ -99,8 +82,10 @@ static void _create_main_view(void *data)
 	ug_data *ugd = (ug_data *) data;
 	ret_if(!ugd);
 
-	g_ug_data = ugd;
-	g_ug_data->list_main = _create_do_not_disturb_gl(ugd);
+	ug_data *g_ugd;
+
+	g_ugd = ugd;
+	g_ugd->list_main = _create_do_not_disturb_gl(ugd);
 
 	/* back Button */
 	Evas_Object *back_btn = elm_button_add(ugd->naviframe);
@@ -108,8 +93,8 @@ static void _create_main_view(void *data)
 	evas_object_smart_callback_add(back_btn, "clicked", back_button_cb, ugd->naviframe);
 
 	/* Push to naviframe */
-	g_ug_data->navi_item = elm_naviframe_item_push(ugd->naviframe, APP_STRING("IDS_ST_HEADER_DO_NOT_DISTURB_ABB"), back_btn, NULL, g_ug_data->list_main, NULL);
-	elm_naviframe_item_pop_cb_set(g_ug_data->navi_item, _notifiacation_setting_main_pop_cb, ugd);
+	g_ugd->navi_item = elm_naviframe_item_push(ugd->naviframe, APP_STRING("IDS_ST_HEADER_DO_NOT_DISTURB_ABB"), back_btn, NULL, g_ugd->list_main, NULL);
+	elm_naviframe_item_pop_cb_set(g_ugd->navi_item, _notifiacation_setting_main_pop_cb, ugd);
 
 	/* Bottom Button */
 	Evas_Object *bottom_box = elm_box_add(ugd->naviframe);
@@ -124,8 +109,8 @@ static void _create_main_view(void *data)
 	evas_object_size_hint_weight_set(bottom_button, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
 	evas_object_size_hint_align_set(bottom_button, EVAS_HINT_FILL, 0.5);
 	elm_object_translatable_text_set(bottom_button, APP_STRING("IDS_ST_BUTTON_MANAGE_EXCLUDED_APPS_ABB"));
-	evas_object_smart_callback_add(bottom_button, "clicked", exception_application_clicked_cb, g_ug_data);
-	elm_object_item_part_content_set(g_ug_data->navi_item, "toolbar", bottom_box);
+	evas_object_smart_callback_add(bottom_button, "clicked", exception_application_clicked_cb, g_ugd);
+	elm_object_item_part_content_set(g_ugd->navi_item, "toolbar", bottom_box);
 	elm_box_pack_start(bottom_box, bottom_button);
 }
 
