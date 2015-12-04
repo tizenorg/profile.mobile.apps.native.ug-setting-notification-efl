@@ -34,7 +34,7 @@ void create_app_notification_list()
 	bool allow_to_notify = false;
 	bool do_not_disturb_except = false;
 	notification_setting_h setting_array = NULL;
-	notification_setting_h *temp = NULL;
+	notification_setting_h temp = NULL;
 	item_info_s *item_info = NULL;
 
 	remove_all_apps_list();
@@ -87,7 +87,7 @@ void create_do_not_disturb_application_list()
 	bool allow_to_notify = false;
 	bool do_not_disturb_except = false;
 	notification_setting_h setting_array = NULL;
-	notification_setting_h *temp = NULL;
+	notification_setting_h temp = NULL;
 
 	remove_excepted_apps_list();
 	setting_info = calloc(1, sizeof(setting_info_s));
@@ -212,30 +212,30 @@ bool set_allow_to_nofity(char *pkg_name, bool state)
 	NOTISET_DBG("");
 	int err = NOTIFICATION_ERROR_NONE;
 
-	notification_system_setting_h system_setting = NULL;
+	notification_setting_h setting = NULL;
 
-	err = notification_setting_get_setting_by_package_name(pkg_name, &system_setting);
-	if (err != NOTIFICATION_ERROR_NONE || system_setting == NULL) {
+	err = notification_setting_get_setting_by_package_name(pkg_name, &setting);
+	if (err != NOTIFICATION_ERROR_NONE || setting == NULL) {
 		NOTISET_ERR("notification_setting_get_setting_by_package_name [%d]\n", err);
 		goto out;
 	}
 
-	notification_setting_set_allow_to_notify(system_setting, state);
+	notification_setting_set_allow_to_notify(setting, state);
 	NOTISET_DBG("notification_setting_set_allow_to_notify [%d]\n", state);
 
-	err = notification_setting_update_setting(system_setting);
+	err = notification_setting_update_setting(setting);
 	if (err != NOTIFICATION_ERROR_NONE) { 
 		NOTISET_ERR("notification_setting_update_setting [%d]\n", err);
 		goto out;
 	}
 
-	if (system_setting)
-		notification_system_setting_free_system_setting(system_setting);
+	if (setting)
+		notification_setting_free_notification(setting);
 	return true;
 
 out:
-	if (system_setting)
-		notification_system_setting_free_system_setting(system_setting);
+	if (setting)
+		notification_setting_free_notification(setting);
 	
 	return false;
 
@@ -247,29 +247,29 @@ bool set_excepted_apps(char *pkg_name, bool state)
 
 	int err = NOTIFICATION_ERROR_NONE;
 
-	notification_system_setting_h system_setting = NULL;
+	notification_setting_h setting = NULL;
 
-	err = notification_setting_get_setting_by_package_name(pkg_name, &system_setting);
-	if (err != NOTIFICATION_ERROR_NONE || system_setting == NULL) {
+	err = notification_setting_get_setting_by_package_name(pkg_name, &setting);
+	if (err != NOTIFICATION_ERROR_NONE || setting == NULL) {
 		NOTISET_ERR("notification_setting_get_setting_by_package_name [%d]\n", err);
 		goto out;
 	}
 
-	notification_setting_set_do_not_disturb_except(system_setting, state);
+	notification_setting_set_do_not_disturb_except(setting, state);
 	NOTISET_DBG("notification_setting_set_do_not_disturb_except [%s] [%d]\n", pkg_name, state);
 
-	err = notification_setting_update_setting(system_setting);
+	err = notification_setting_update_setting(setting);
 	if (err != NOTIFICATION_ERROR_NONE) {
 		NOTISET_ERR("notification_setting_update_setting err[%d]\n", err);
 	}
 
-	if (system_setting)
-		notification_system_setting_free_system_setting(system_setting);
+	if (setting)
+		notification_setting_free_notification(setting);
 	return true;
 
 out:
-	if (system_setting)
-		notification_system_setting_free_system_setting(system_setting);
+	if (setting)
+		notification_setting_free_notification(setting);
 
 	return false;
 

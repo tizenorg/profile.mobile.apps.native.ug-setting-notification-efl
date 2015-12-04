@@ -23,6 +23,7 @@
 #include "log.h"
 #include "notification-setting-info.h"
 #include "common-efl.h"
+#include "do-not-disturb-efl.h"
 
 static Evas_Object* _create_edit_exception_apps_list(ug_data *ugd)
 {
