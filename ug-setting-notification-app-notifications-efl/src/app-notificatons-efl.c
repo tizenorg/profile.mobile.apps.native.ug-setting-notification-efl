@@ -29,7 +29,6 @@
  * @{
  */
 
-ug_data *g_ug_data = NULL;
 
 static Eina_Bool _notifiacation_setting_main_pop_cb(void *data, Elm_Object_Item * it)
 {
@@ -72,10 +71,8 @@ static void _create_main_view(void *data)
 	ug_data *ugd = (ug_data *) data;
 	ret_if(!ugd);
 
-	g_ug_data = ugd;
-	
 	/* Create genlist */
-	g_ug_data->list_main = _create_app_notification_gl(ugd);
+	ugd->list_main = _create_app_notification_gl(ugd);
 
 	/* back Button */
 	Evas_Object *back_btn = elm_button_add(ugd->naviframe);
@@ -83,8 +80,8 @@ static void _create_main_view(void *data)
 	evas_object_smart_callback_add(back_btn, "clicked", back_button_cb, ugd->naviframe);
 
 	/* Push to naviframe */
-	g_ug_data->navi_item = elm_naviframe_item_push(ugd->naviframe, APP_STRING("IDS_ST_HEADER_APP_NOTIFICATIONS_ABB"), back_btn, NULL, g_ug_data->list_main, NULL);
-	elm_naviframe_item_pop_cb_set(g_ug_data->navi_item, _notifiacation_setting_main_pop_cb, ugd);
+	ugd->navi_item = elm_naviframe_item_push(ugd->naviframe, APP_STRING("IDS_ST_HEADER_APP_NOTIFICATIONS_ABB"), back_btn, NULL, ugd->list_main, NULL);
+	elm_naviframe_item_pop_cb_set(ugd->navi_item, _notifiacation_setting_main_pop_cb, ugd);
 
 }
 
