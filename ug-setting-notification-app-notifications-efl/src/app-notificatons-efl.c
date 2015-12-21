@@ -240,7 +240,7 @@ int UG_MODULE_INIT(struct ug_module_ops *ops)
 	ops->priv = ugd;
 	ops->opt = UG_OPT_INDICATOR_ENABLE;
 
-	if (bindtextdomain(PKGNAME, tzplatform_mkpath(TZ_SYS_RO_APP, "ug-setting-notification-efl/res/locale")) == NULL) {
+	if (bindtextdomain(PKGNAME, tzplatform_mkpath(TZ_SYS_RO_UG, "res/locale")) == NULL) {
 		/* Failed to allocate memory for allocating heap for store the path of LOCALE directory */
 	}
 
