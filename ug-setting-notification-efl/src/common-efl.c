@@ -118,7 +118,8 @@ void gl_contracted_cb(void *data EINA_UNUSED, Evas_Object *obj EINA_UNUSED, void
 void gl_del_cb(void *data, Evas_Object *obj EINA_UNUSED)
 {
 }
-Evas_Object* create_icon(Evas_Object *parent, char* icon)
+
+static Evas_Object* _create_icon(Evas_Object *parent, char* icon)
 {
 	Evas_Object *img = elm_image_add(parent);
 
@@ -126,6 +127,7 @@ Evas_Object* create_icon(Evas_Object *parent, char* icon)
 		icon = strdup(tzplatform_mkpath(TZ_SYS_RO_ICONS, "default/small/ug-setting-notification-efl.png"));
 	}
 	
+
 	elm_image_file_set(img, icon, NULL);
 	evas_object_color_set(img, 255, 255, 255, 255);
 	evas_object_size_hint_align_set(img, EVAS_HINT_FILL, EVAS_HINT_FILL);
@@ -134,14 +136,12 @@ Evas_Object* create_icon(Evas_Object *parent, char* icon)
 	return img;
 }
 
-
-
-
 static char *gl_group_index_text_get_cb(void *data, Evas_Object *obj, const char *part)
 {
 	char *text = (char*)data;
 
-	if (!strcmp(part, "elm.text.main")) {
+
+	if (!strcmp(part, "elm.text.end")) {
 		return strdup(text);
 	}
 
@@ -152,7 +152,7 @@ void append_gl_group_index(Evas_Object *genlist, char* text) {
 	Elm_Genlist_Item_Class *itc = elm_genlist_item_class_new();
 	ret_if(!itc);
 
-	itc->item_style = "groupindex";
+	itc->item_style = "group_index";
 	itc->func.text_get = gl_group_index_text_get_cb;
 	itc->func.content_get = NULL;
 	itc->func.del = gl_del_cb;
@@ -213,28 +213,29 @@ static Evas_Object* gl_content_get_cb(void *data, Evas_Object *obj, const char *
 	item_info_s *data_list = data;
 	if (!strcmp(part, "elm.swallow.icon") || !strcmp(part, "elm.icon.left") ) {
 		content = elm_layout_add(obj);
-		elm_layout_theme_set(content, "layout", "list/C/type.1", "default");
-		Evas_Object *icon = create_icon(content, data_list->icon);
+		//elm_layout_theme_set(content, "layout", "list/C/type.1", "default");
+		Evas_Object *icon = _create_icon(content, data_list->icon);
 		elm_layout_content_set(content, "elm.swallow.content", icon);
+		return content;
 	}
 
-	if (data_list->item_style == ITEM_STYLE_DEFAULT && !strcmp(part, "elm.swallow.end")) {
-			content = elm_check_add(obj);
-			elm_object_style_set(content, "default");
-			elm_check_state_set(content, data_list->do_not_disturb_except);
-			evas_object_show(content);
-			evas_object_pass_events_set(content, 1);
-			evas_object_smart_callback_add(content, "changed", _excepted_check_changed_cb, data_list);
-			evas_object_propagate_events_set(content, 0);
+	if (!strcmp(part, "elm.swallow.end")) {
+		content = elm_check_add(obj);
+		elm_object_style_set(content, "on&off");
+		elm_check_state_set(content, data_list->do_not_disturb_except);
+		evas_object_show(content);
+		evas_object_pass_events_set(content, 1);
+		evas_object_smart_callback_add(content, "changed", _excepted_check_changed_cb, data_list);
+		evas_object_propagate_events_set(content, 0);
 		return content;
 	} else if (data_list->item_style == ITEM_STYLE_ONE_LINE && !strcmp(part, "elm.icon.right")) {
-			content = elm_check_add(obj);
-			elm_object_style_set(content, "on&off");
-			elm_check_state_set(content, data_list->allow_to_notify);
-			evas_object_show(content);
-			evas_object_pass_events_set(content, 1);
-			evas_object_smart_callback_add(content, "changed", _allow_to_nofity_check_changed_cb, data_list);
-			evas_object_propagate_events_set(content, 0);
+		content = elm_check_add(obj);
+		elm_object_style_set(content, "on&off");
+		elm_check_state_set(content, data_list->allow_to_notify);
+		evas_object_show(content);
+		evas_object_pass_events_set(content, 1);
+		evas_object_smart_callback_add(content, "changed", _allow_to_nofity_check_changed_cb, data_list);
+		evas_object_propagate_events_set(content, 0);
 		return content;
 	}
 
