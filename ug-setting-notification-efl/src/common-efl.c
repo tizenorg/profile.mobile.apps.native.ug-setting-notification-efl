@@ -19,6 +19,8 @@
 #include "pkgmgr-setting-info.h"
 #include "common-efl.h"
 
+#define ICON_SIZE 82
+
 Evas_Object *create_layout(Evas_Object *parent)
 {
 	Evas_Object *layout = NULL;
@@ -128,10 +130,9 @@ static Evas_Object* _create_icon(Evas_Object *parent, char* icon)
 	}
 
 	elm_image_file_set(img, icon, NULL);
-	evas_object_color_set(img, 255, 255, 255, 255);
-	evas_object_size_hint_align_set(img, EVAS_HINT_FILL, EVAS_HINT_FILL);
-	evas_object_size_hint_weight_set(img, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+	evas_object_size_hint_min_set(img, ICON_SIZE, ICON_SIZE);
 	return img;
+
 }
 
 static char *gl_group_index_text_get_cb(void *data, Evas_Object *obj, const char *part)
@@ -210,10 +211,9 @@ static Evas_Object* gl_content_get_cb(void *data, Evas_Object *obj, const char *
 
 	item_info_s *data_list = data;
 	if (!strcmp(part, "elm.swallow.icon") || !strcmp(part, "elm.icon.left") ) {
-		content = elm_layout_add(obj);
-		Evas_Object *icon = _create_icon(content, data_list->icon);
-		elm_layout_content_set(content, "elm.swallow.content", icon);
-		return content;
+		Evas_Object *icon = _create_icon(obj, data_list->icon);
+		evas_object_show(icon);
+		return icon;
 	}
 
 	if (!strcmp(part, "elm.swallow.end")) {
