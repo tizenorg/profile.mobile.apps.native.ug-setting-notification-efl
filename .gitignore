@@ -1,0 +1,10 @@
+Debug/
+Release/
+crash-info
+.sign
+.checkers
+*~
+/SA_Report
+.rds_delta
+.sdk_delta.info
+.settings/

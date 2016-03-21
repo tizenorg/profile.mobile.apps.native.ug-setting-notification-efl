@@ -1,0 +1,39 @@
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "ГОТОВО"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "ОТМЕНА"
+
+msgid "IDS_ST_HEADER_NOTIFICATIONS_ABB"
+msgstr "Уведомления"
+
+msgid "IDS_ST_BODY_ALLOW_OR_BLOCK_NOTIFICATIONS_FROM_INDIVIDUAL_APPLICATIONS"
+msgstr "Разрешить или запретить уведомления от отдельных приложений."
+
+msgid "IDS_ST_HEADER_DO_NOT_DISTURB_ABB"
+msgstr "Не беспокоить"
+
+msgid "IDS_ST_BODY_MUTE_ALL_ALERTS_AND_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ONLY_AND_NOT_IN_POP_UPS_OR_ON_THE_STATUS_BAR_MSG"
+msgstr "Отключает звук для всех оповещений и отображает уведомления только на панели уведомлений, а не во всплывающих окнах или строке состояния. Можно выбрать приложения, которым будет позволено выводить уведомления в этом режиме."
+
+msgid "IDS_ST_HEADER_INCLUDED_APPS_ABB"
+msgstr "Включенные приложения"
+
+msgid "IDS_ST_HEADER_APP_NOTIFICATIONS_ABB"
+msgstr "Уведомления приложений"
+
+msgid "IDS_ST_BODY_SELECT_THE_APPLICATIONS_YOU_WANT_TO_RECEIVE_NOTIFICATIONS_FROM_BELOW"
+msgstr "Выберите из приведенного ниже списка приложения, от которых нужно получать уведомления."
+
+msgid "IDS_ST_BODY_DO_NOT_DISTURB_IS_ENABLED_NOTIFICATIONS_FROM_THE_APPLICATIONS_YOU_HAVE_SELECTED_BELOW_WILL_ONLY_BE_SHOWN_IN_THE_NOTIFICATION_PANEL"
+msgstr "Включен режим “Не беспокоить”. На панели уведомлений будут отображаться уведомления только от тех приложений, которые выбраны из приведенного ниже списка."
+
+msgid "IDS_ST_BUTTON_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "Управл. исключ. приложениями"
+
+msgid "IDS_ST_HEADER_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "Упр. исключ. прилож."
+
+msgid "IDS_ST_HEADER_EXCLUDED_APPS_ABB"
+msgstr "Исключенные приложения"
+

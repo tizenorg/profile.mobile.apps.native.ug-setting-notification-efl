@@ -1,0 +1,39 @@
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "ДАЙЫН"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "БАС ТАРТУ"
+
+msgid "IDS_ST_HEADER_NOTIFICATIONS_ABB"
+msgstr "Хабарландырулар"
+
+msgid "IDS_ST_BODY_ALLOW_OR_BLOCK_NOTIFICATIONS_FROM_INDIVIDUAL_APPLICATIONS"
+msgstr "Жеке қолданбалардан келген хабарландыруларға рұқсат беру не оларды бұғаттау."
+
+msgid "IDS_ST_HEADER_DO_NOT_DISTURB_ABB"
+msgstr "Мазаламаңыз"
+
+msgid "IDS_ST_BODY_MUTE_ALL_ALERTS_AND_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ONLY_AND_NOT_IN_POP_UPS_OR_ON_THE_STATUS_BAR_MSG"
+msgstr "Барлық ескертулердің дыбысын өшіріп, хабарландыруларды қалқымалы терезелерде не күй жолағында емес, тек хабарландыру тақтасында ғана көрсетіңіз. Төмендегі осы режимнен шығарылу үшін, қолданбаларды таңдауға болады."
+
+msgid "IDS_ST_HEADER_INCLUDED_APPS_ABB"
+msgstr "Қосылған қолданбалар"
+
+msgid "IDS_ST_HEADER_APP_NOTIFICATIONS_ABB"
+msgstr "Қолданба хабарландыр."
+
+msgid "IDS_ST_BODY_SELECT_THE_APPLICATIONS_YOU_WANT_TO_RECEIVE_NOTIFICATIONS_FROM_BELOW"
+msgstr "Төменде хабарландыруларды алғыңыз келетін қолданбаларды таңдаңыз."
+
+msgid "IDS_ST_BODY_DO_NOT_DISTURB_IS_ENABLED_NOTIFICATIONS_FROM_THE_APPLICATIONS_YOU_HAVE_SELECTED_BELOW_WILL_ONLY_BE_SHOWN_IN_THE_NOTIFICATION_PANEL"
+msgstr "“Мазаламаңыз” режимі қосылды. Төменде таңдалған қолданбалардан келген хабарландырулар тек хабарландырулар тақтасында көрсетіледі."
+
+msgid "IDS_ST_BUTTON_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "Шығарыл. қолданбаларды басқару"
+
+msgid "IDS_ST_HEADER_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "Шығ. қолдан. басқару"
+
+msgid "IDS_ST_HEADER_EXCLUDED_APPS_ABB"
+msgstr "Шығарылған қолданбалар"
+

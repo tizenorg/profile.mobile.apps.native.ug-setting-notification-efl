@@ -1,0 +1,39 @@
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "ಮುಗಿದಿದೆ"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "ರದ್ದುಮಾಡಿ"
+
+msgid "IDS_ST_HEADER_NOTIFICATIONS_ABB"
+msgstr "ಪ್ರಕಟಣೆಗಳು"
+
+msgid "IDS_ST_BODY_ALLOW_OR_BLOCK_NOTIFICATIONS_FROM_INDIVIDUAL_APPLICATIONS"
+msgstr "ಪ್ರತ್ಯೇಕ ಅನ್ವಯಿಸುವಿಕೆಗಳಿಂದ ಪ್ರಕಟಣೆಗಳನ್ನು ಅನುಮತಿಸಿ ಅಥವಾ ನಿರ್ಬಂಧಿಸಿ."
+
+msgid "IDS_ST_HEADER_DO_NOT_DISTURB_ABB"
+msgstr "ಅಡಚಣೆ ಮಾಡಬೇಡಿ"
+
+msgid "IDS_ST_BODY_MUTE_ALL_ALERTS_AND_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ONLY_AND_NOT_IN_POP_UPS_OR_ON_THE_STATUS_BAR_MSG"
+msgstr "ಎಲ್ಲ ಎಚ್ಚರಿಕೆಗಳನ್ನು ಮ್ಯೂಟ್ ಮಾಡಿ ಮತ್ತು ಪ್ರಕಟಣೆ ಪ್ಯಾನೆಲ್‌ನಲ್ಲಿ ಮಾತ್ರ ಪ್ರಕಟಣೆಗಳನ್ನು ತೋರಿಸಿ, ಹಾಗೂ ಪಾಪ್-ಅಪ್‌ಗಳಲ್ಲಾಗಲೀ ಅಥವಾ ಸ್ಥಿತಿ ಪಟ್ಟಿಯಲ್ಲಾಗಲೀ ತೋರಿಸಬೇಡಿ. ನೀವು ಈ ಮೋಡ್‌ನಿಂದ ಹೊರತುಪಡಿಸಬೇಕಿರುವ ಅನ್ವಯಿಸುವಿಕೆಗಳನ್ನು ಕೆಳಗೆ ಆಯ್ಕೆ ಮಾಡಬಹುದು."
+
+msgid "IDS_ST_HEADER_INCLUDED_APPS_ABB"
+msgstr "ಸೇರಿಸಿರುವ ಅನ್ವಯಿಸುವಿಕೆಗಳು"
+
+msgid "IDS_ST_HEADER_APP_NOTIFICATIONS_ABB"
+msgstr "ಅನ್ವಯಿಸುವಿಕೆ ಪ್ರಕಟಣೆ."
+
+msgid "IDS_ST_BODY_SELECT_THE_APPLICATIONS_YOU_WANT_TO_RECEIVE_NOTIFICATIONS_FROM_BELOW"
+msgstr "ನೀವು ಪ್ರಕಟಣೆಗಳನ್ನು ಸ್ವೀಕರಿಸಲು ಬಯಸುವ ಅನ್ವಯಿಸುವಿಕೆಗಳನ್ನು ಕೆಳಗೆ ಆಯ್ಕೆಮಾಡಿ."
+
+msgid "IDS_ST_BODY_DO_NOT_DISTURB_IS_ENABLED_NOTIFICATIONS_FROM_THE_APPLICATIONS_YOU_HAVE_SELECTED_BELOW_WILL_ONLY_BE_SHOWN_IN_THE_NOTIFICATION_PANEL"
+msgstr "ಅಡಚಣೆ ಮಾಡಬೇಡಿ ಶಕ್ತಗೊಳಿಸಲಾಗಿದೆ. ನೀವು ಕೆಳಗೆ ಆಯ್ಕೆ ಮಾಡಿರುವ ಅನ್ವಯಿಸುವಿಕೆಗಳ ಪ್ರಕಟಣೆಗಳನ್ನು ಮಾತ್ರವೇ ಪ್ರಕಟಣೆ ಪ್ಯಾನೆಲ್‌ನಲ್ಲಿ ತೋರಿಸಲಾಗುತ್ತದೆ."
+
+msgid "IDS_ST_BUTTON_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "ಹೊರತಾಗಿಸಿದ ಆಪ್ಸ್ ನಿರ್ವಹಿಸಿ"
+
+msgid "IDS_ST_HEADER_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "ಹೊರತಾಗಿಸಿದ ಆಪ್ಸ್ ನಿರ್ವಹಿಸಿ"
+
+msgid "IDS_ST_HEADER_EXCLUDED_APPS_ABB"
+msgstr "ಹೊರತುಪಡಿಸಿದ ಅನ್ವಯಿಸುವಿಕೆಗಳು"
+

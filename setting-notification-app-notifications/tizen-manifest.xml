@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<manifest xmlns="http://tizen.org/ns/packages" api-version="3.0" package="org.tizen.setting-notification-app-notifications" version="1.0.0">
+    <profile name="mobile" />
+    <ui-application appid="org.tizen.setting-notification-app-notifications" exec="setting-notification-app-notifications" multiple="false" nodisplay="false" taskmanage="true" type="capp">
+        <label>setting-notification-app-notifications</label>
+        <icon>setting-notification-app-notifications.png</icon>
+    </ui-application>
+    <privileges>
+        <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+    </privileges>
+    <feature name="http://tizen.org/feature/screen.size.all"/>
+</manifest>

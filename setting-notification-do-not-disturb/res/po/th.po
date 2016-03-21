@@ -1,0 +1,39 @@
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "เรียบร้อย"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "ยกเลิก"
+
+msgid "IDS_ST_HEADER_NOTIFICATIONS_ABB"
+msgstr "การแจ้งเตือน"
+
+msgid "IDS_ST_BODY_ALLOW_OR_BLOCK_NOTIFICATIONS_FROM_INDIVIDUAL_APPLICATIONS"
+msgstr "อนุญาต หรือบล็อคการแจ้งเตือนจากแอพพลิเคชั่นตัวใดตัวหนึ่ง"
+
+msgid "IDS_ST_HEADER_DO_NOT_DISTURB_ABB"
+msgstr "ห้ามรบกวน"
+
+msgid "IDS_ST_BODY_MUTE_ALL_ALERTS_AND_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ONLY_AND_NOT_IN_POP_UPS_OR_ON_THE_STATUS_BAR_MSG"
+msgstr "ปิดเสียงการเตือนทั้งหมด และแสดงการแจ้งเตือนในแผงการแจ้งเตือนเท่านั้น และไม่แสดงในป๊อปอัพ หรือบนแถบสถานะ คุณสามารถเลือกแอพพลิเคชั่นที่จะไม่ถูกรวมอยู่ในโหมดนี้ได้ที่ด้านล่าง"
+
+msgid "IDS_ST_HEADER_INCLUDED_APPS_ABB"
+msgstr "แอพที่รวมไว้"
+
+msgid "IDS_ST_HEADER_APP_NOTIFICATIONS_ABB"
+msgstr "การแจ้งเตือนแอพ"
+
+msgid "IDS_ST_BODY_SELECT_THE_APPLICATIONS_YOU_WANT_TO_RECEIVE_NOTIFICATIONS_FROM_BELOW"
+msgstr "เลือกแอพพลิเคชั่นที่คุณต้องการรับการแจ้งเตือนจากด้านล่าง"
+
+msgid "IDS_ST_BODY_DO_NOT_DISTURB_IS_ENABLED_NOTIFICATIONS_FROM_THE_APPLICATIONS_YOU_HAVE_SELECTED_BELOW_WILL_ONLY_BE_SHOWN_IN_THE_NOTIFICATION_PANEL"
+msgstr "เปิดใช้งาน ห้ามรบกวน แล้ว การแจ้งเตือนจากแอพพลิเคชั่นที่คุณเลือกด้านล่างจะแสดงในแผงการแจ้งเตือนเท่านั้น"
+
+msgid "IDS_ST_BUTTON_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "จัดการแอพที่ไม่ได้รวมไว้"
+
+msgid "IDS_ST_HEADER_MANAGE_EXCLUDED_APPS_ABB"
+msgstr "จัดการแอพที่ไม่ได้รวมไว้"
+
+msgid "IDS_ST_HEADER_EXCLUDED_APPS_ABB"
+msgstr "แอพที่ไม่รวม"
+
