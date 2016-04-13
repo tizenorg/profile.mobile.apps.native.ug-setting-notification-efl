@@ -146,8 +146,7 @@ static char *gl_group_index_text_get_cb(void *data, Evas_Object *obj, const char
 {
 	char *text = (char*)data;
 
-
-	if (!strcmp(part, "elm.text.end")) {
+	if (!strcmp(part, "elm.text")) {
 		return strdup(text);
 	}
 
