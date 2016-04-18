@@ -24,6 +24,9 @@
 #include "excepted-apps-efl.h"
 #include "common-efl.h"
 
+#define DO_NOT_DISTURB_OP "http://tizen.org/appcontrol/operation/setting/do_not_disturb"
+#define APP_NOTIFICATIONS_OP "http://tizen.org/appcontrol/operation/setting/app_notifications"
+
 typedef enum
 {
 	NOTIF_APP_TYPE,
@@ -244,8 +247,13 @@ static void on_app_control(app_control_h app_control, void *user_data)
 
 	NOTISET_DBG("%s", op_str);
 
-	// TODO: impl choice of necessary view
-	ugd->layout = _create_fullview(ugd->win, ugd, NOTIF_APP_TYPE);
+	app_type type = NOTIF_APP_TYPE;
+	if (strcmp(DO_NOT_DISTURB_OP, op_str) == 0)
+	{
+	    type = DO_NOT_DISTURB_APP_TYPE;
+	}
+
+	ugd->layout = _create_fullview(ugd->win, ugd, type);
 	elm_object_content_set(ugd->win, ugd->layout);
 
 	free(op_str);
