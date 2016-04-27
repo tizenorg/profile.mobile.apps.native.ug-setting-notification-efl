@@ -129,8 +129,7 @@ static Evas_Object* _create_icon(Evas_Object *parent, char* icon)
 		char* res_path = app_get_resource_path();
 		if (res_path) {
 			char buf[PATH_MAX] = {0, };
-			strcat(buf, res_path);
-			strcat(buf, "images/unknown.png");
+			snprintf(buf, PATH_MAX, "%s%s", res_path, "images/unknown.png");
 			icon = strdup(buf);
 			free(res_path);
 		}
