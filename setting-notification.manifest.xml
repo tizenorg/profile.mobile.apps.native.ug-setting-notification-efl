@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns="http://tizen.org/ns/packages" api-version="3.0" package="org.tizen.setting-notification" version="0.1.33">
-	<label>Homescreen setting</label>
+	<label>Setting notification</label>
 	<description>Setting notification AppControl</description>
-	<ui-application appid="org.tizen.setting-notification" exec="/usr/apps/org.tizen.setting-notification/bin/setting-notification" launch_mode="caller" nodisplay="true" taskmanage="false" multiple="false" type="capp" hw-acceleration="use-GL">
+	<ui-application appid="org.tizen.setting-notification" exec="/usr/apps/org.tizen.setting-notification/bin/setting-notification" launch_mode="caller" nodisplay="true" taskmanage="false" multiple="false" type="capp" hw-acceleration="on" process-pool="true">
 		<icon>/usr/share/icons/default/small/setting-notification.png</icon>
 		<label>setting-notification</label>
 	</ui-application>
