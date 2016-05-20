@@ -221,7 +221,7 @@ static Evas_Object* gl_content_get_cb(void *data, Evas_Object *obj, const char *
 		return icon;
 	}
 
-	if (!strcmp(part, "elm.swallow.end")) {
+	if (data_list->item_style == ITEM_STYLE_DEFAULT) {
 		content = elm_check_add(obj);
 		elm_object_style_set(content, "on&off");
 		elm_check_state_set(content, data_list->do_not_disturb_except);
@@ -230,7 +230,7 @@ static Evas_Object* gl_content_get_cb(void *data, Evas_Object *obj, const char *
 		evas_object_smart_callback_add(content, "changed", _excepted_check_changed_cb, data_list);
 		evas_object_propagate_events_set(content, 0);
 		return content;
-	} else if (data_list->item_style == ITEM_STYLE_ONE_LINE && !strcmp(part, "elm.icon.right")) {
+	} else if (data_list->item_style == ITEM_STYLE_ONE_LINE) {
 		content = elm_check_add(obj);
 		elm_object_style_set(content, "on&off");
 		elm_check_state_set(content, data_list->allow_to_notify);
