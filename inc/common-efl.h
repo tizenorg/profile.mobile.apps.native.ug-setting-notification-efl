@@ -86,12 +86,14 @@ void gl_realized_cb(void *data EINA_UNUSED, Evas_Object *obj EINA_UNUSED, void *
 void gl_longpressed_cb(void *data EINA_UNUSED, Evas_Object *obj EINA_UNUSED, void *event_info);
 
 void gl_selected_cb(void *data, Evas_Object *obj EINA_UNUSED, void *event_info);
+void gl_selected_allow_all_cb(void *data, Evas_Object *obj EINA_UNUSED, void *event_info);
 void gl_contracted_cb(void *data EINA_UNUSED, Evas_Object *obj EINA_UNUSED, void *event_info);
 void gl_del_cb(void *data, Evas_Object *obj EINA_UNUSED);
 
 void append_gl_group_index(Evas_Object *genlist, char* text);
 void append_gl_item_list(Evas_Object *genlist, Eina_List* list, int style);
 void append_gl_start_option(Evas_Object *genlist, char *style, char *ugName);
+Elm_Widget_Item *append_gl_allow_all(Evas_Object *genlist);
 
 
 void back_button_cb(void *data, Evas_Object *obj, void *event_info);

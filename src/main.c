@@ -33,6 +33,8 @@ typedef enum
 	DO_NOT_DISTURB_APP_TYPE
 } app_type;
 
+ug_data g_ug_data;
+
 static Evas_Object *_create_win()
 {
 	/* Window: */
@@ -118,6 +120,7 @@ Evas_Object* _create_app_notification_gl(ug_data *ugd)
 	evas_object_smart_callback_add(genlist, "longpressed", gl_longpressed_cb, NULL);
 	evas_object_smart_callback_add(genlist, "contracted", gl_contracted_cb, NULL);
 
+	append_gl_allow_all(genlist);
 	append_gl_start_option(genlist, "multiline", "app-notifications");
 	append_gl_item_list(genlist, get_all_apps_list(), ITEM_STYLE_ONE_LINE);
 
@@ -275,10 +278,6 @@ int main(int argc, char *argv[])
 {
 	NOTISET_DBG("app init !!!");
 
-	ug_data *ugd = calloc(1, sizeof(ug_data));
-	if (!ugd)
-		return -1;
-
 	ui_app_lifecycle_callback_s event_callback;
 	memset(&event_callback, 0x00, sizeof(ui_app_lifecycle_callback_s));
 
@@ -287,7 +286,7 @@ int main(int argc, char *argv[])
 	event_callback.app_control = on_app_control;
 
 	app_event_handler_h ev = NULL;
-	ui_app_add_event_handler(&ev, APP_EVENT_LANGUAGE_CHANGED, on_language, ugd);
+	ui_app_add_event_handler(&ev, APP_EVENT_LANGUAGE_CHANGED, on_language, &g_ug_data);
 
-	return ui_app_main(argc, argv, &event_callback, &ugd);
+	return ui_app_main(argc, argv, &event_callback, &g_ug_data);
 }
