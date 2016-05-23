@@ -149,6 +149,47 @@ Eina_List *get_all_apps_list()
 	return setting_info->all_apps_list;
 }
 
+bool get_allow_all()
+{
+	item_info_s *item = NULL;
+	Eina_List *list = get_all_apps_list();
+
+	int count = eina_list_count(list);
+	NOTISET_DBG("count %d", count);
+
+	if (count == 0)
+		return false;
+
+	while (list) {
+		item = (item_info_s*)eina_list_data_get(list);
+		if(item && !item->allow_to_notify)
+			return false;
+		list = eina_list_next(list);
+	}
+
+	return true;
+}
+
+void set_allow_all(bool state)
+{
+	NOTISET_DBG("");
+
+	item_info_s *item = NULL;
+	Eina_List *list = get_all_apps_list();
+
+	int count = eina_list_count(list);
+	NOTISET_DBG("count %d", count);
+
+	while (list) {
+		item = (item_info_s*)eina_list_data_get(list);
+		if(item) {
+			bool res = set_allow_to_nofity(item->appid, state);
+			if (res)
+				item->allow_to_notify = state;
+		}
+		list = eina_list_next(list);
+	}
+}
 
 Eina_List *get_not_excepted_apps_list()
 {

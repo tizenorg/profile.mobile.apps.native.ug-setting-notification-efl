@@ -35,6 +35,8 @@ void set_do_not_disturb(bool state);
 bool set_allow_to_nofity(char *pkg_name, bool state);
 bool set_excepted_apps(char *pkg_name, bool state);
 
+bool get_allow_all();
+void set_allow_all(bool state);
 Eina_List *get_all_apps_list();
 Eina_List *get_excepted_apps_list();
 Eina_List *get_not_excepted_apps_list();

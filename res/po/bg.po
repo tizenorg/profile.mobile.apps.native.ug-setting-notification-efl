@@ -37,3 +37,39 @@ msgstr "Управл. изкл. прил."
 msgid "IDS_ST_HEADER_EXCLUDED_APPS_ABB"
 msgstr "Изключени приложения"
 
+msgid "IDS_QP_BODY_SELECT_THE_APPS_YOU_WANT_TO_RECEIVE_NOTIFICATIONS_FROM_BELOW"
+msgstr "Изберете приложенията по-долу, от които искате да получавате уведомления."
+
+msgid "IDS_QP_HEADER_ALLOW_NOTIFICATIONS_FROM_ABB"
+msgstr "Позволяване на уведомления от"
+
+msgid "IDS_ST_MBODY_ALLOW_ALL"
+msgstr "Позволяване на всички"
+
+msgid "IDS_QP_TAB4_ALL_M_RECEIVED_ALL"
+msgstr "Всички"
+
+msgid "IDS_CST_OPT_CONTACTS_ONLY"
+msgstr "Само контакти"
+
+msgid "IDS_QP_TAB4_NONE_M_BLOCEKD"
+msgstr "Няма"
+
+msgid "IDS_ST_OPT_DONT_SHOW_AGAIN_ABB"
+msgstr "Да не се показва повече"
+
+msgid "IDS_ST_BODY_MUTE_ALL_ALERTS_AND_ONLY_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ADD_APPS_BELOW_TO_ALLOW_EXCEPTIONS"
+msgstr "Изключете звука на всички известия и показвайте уведомления само в панела за уведомления. Добавете приложения по-долу, за да позволите изключения."
+
+msgid "IDS_ST_MBODY_SET_SCHEDULE_M_TIME"
+msgstr "Задаване на график"
+
+msgid "IDS_ST_SK_SELECT_LITE"
+msgstr "Избери"
+
+msgid "IDS_ST_BODY_START_TIME"
+msgstr "Начално време"
+
+msgid "IDS_ST_BODY_END_TIME"
+msgstr "Краен час"
+

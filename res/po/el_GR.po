@@ -37,3 +37,39 @@ msgstr "Διαχ. εξαιρ. εφαρμ."
 msgid "IDS_ST_HEADER_EXCLUDED_APPS_ABB"
 msgstr "Εξαιρούμενες εφαρμογές"
 
+msgid "IDS_QP_BODY_SELECT_THE_APPS_YOU_WANT_TO_RECEIVE_NOTIFICATIONS_FROM_BELOW"
+msgstr "Επιλέξτε παρακάτω τις εφαρμογές από τις οποίες θέλετε να λαμβάνετε ειδοποιήσεις."
+
+msgid "IDS_QP_HEADER_ALLOW_NOTIFICATIONS_FROM_ABB"
+msgstr "Επιτρέπονται ειδοποιήσεις από"
+
+msgid "IDS_ST_MBODY_ALLOW_ALL"
+msgstr "Αποδοχή όλων"
+
+msgid "IDS_QP_TAB4_ALL_M_RECEIVED_ALL"
+msgstr "Όλες"
+
+msgid "IDS_CST_OPT_CONTACTS_ONLY"
+msgstr "Μόνο επαφές"
+
+msgid "IDS_QP_TAB4_NONE_M_BLOCEKD"
+msgstr "Καμία"
+
+msgid "IDS_ST_OPT_DONT_SHOW_AGAIN_ABB"
+msgstr "Να μην εμφανιστεί ξανά"
+
+msgid "IDS_ST_BODY_MUTE_ALL_ALERTS_AND_ONLY_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ADD_APPS_BELOW_TO_ALLOW_EXCEPTIONS"
+msgstr "Να γίνει σίγαση όλων των ειδοποιήσεων και να εμφανίζονται ειδοποιήσεις μόνο στον πίνακα ειδοποιήσεων. Προσθέστε παρακάτω εφαρμογές για να ορίσετε εξαιρέσεις."
+
+msgid "IDS_ST_MBODY_SET_SCHEDULE_M_TIME"
+msgstr "Ορισμός προγράμματος"
+
+msgid "IDS_ST_SK_SELECT_LITE"
+msgstr "Επιλογή"
+
+msgid "IDS_ST_BODY_START_TIME"
+msgstr "Ώρα έναρξης"
+
+msgid "IDS_ST_BODY_END_TIME"
+msgstr "Ώρα λήξης"
+

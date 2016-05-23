@@ -37,3 +37,39 @@ msgstr "ഒഴിവാ. ആപ്ലി. മാനേജ് ചെ."
 msgid "IDS_ST_HEADER_EXCLUDED_APPS_ABB"
 msgstr "ഒഴിവാക്കപ്പെട്ട ആപ്ലിക്കേഷനുകൾ"
 
+msgid "IDS_QP_BODY_SELECT_THE_APPS_YOU_WANT_TO_RECEIVE_NOTIFICATIONS_FROM_BELOW"
+msgstr "ഏത് ആപ്ലിക്കേഷനുകളിൽ നിന്നാണ് നിങ്ങൾക്ക് അറിയിപ്പുകൾ സ്വീകരിക്കേണ്ടതെന്ന് താഴെ നിന്ന് തിരഞ്ഞെടുക്കുക."
+
+msgid "IDS_QP_HEADER_ALLOW_NOTIFICATIONS_FROM_ABB"
+msgstr "ഇതിൽനിന്നും അറിയിപ്പുകൾ അനുവദിക്കുക"
+
+msgid "IDS_ST_MBODY_ALLOW_ALL"
+msgstr "എല്ലാം അനുവദിക്കുക"
+
+msgid "IDS_QP_TAB4_ALL_M_RECEIVED_ALL"
+msgstr "എല്ലാം"
+
+msgid "IDS_CST_OPT_CONTACTS_ONLY"
+msgstr "കോൺടാക്ടുകൾ മാത്രം"
+
+msgid "IDS_QP_TAB4_NONE_M_BLOCEKD"
+msgstr "ഒന്നുമില്ല"
+
+msgid "IDS_ST_OPT_DONT_SHOW_AGAIN_ABB"
+msgstr "വീണ്ടും കാണിക്കരുത്"
+
+msgid "IDS_ST_BODY_MUTE_ALL_ALERTS_AND_ONLY_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ADD_APPS_BELOW_TO_ALLOW_EXCEPTIONS"
+msgstr "എല്ലാ സൂചനകളും നിശബ്ദമാക്കി അറിയിപ്പ് പാനലിൽ അറിയിപ്പുകൾ മാത്രം കാണിക്കുക. ഒഴിവാക്കലുകൾ അനുവദിക്കുന്നതിനായി താഴെ ആപ്ലിക്കേഷനുകളെ ചേർക്കുക."
+
+msgid "IDS_ST_MBODY_SET_SCHEDULE_M_TIME"
+msgstr "ഷെഡ്യൂൾ ക്രമീകരിക്കുക"
+
+msgid "IDS_ST_SK_SELECT_LITE"
+msgstr "തിരഞ്ഞെ."
+
+msgid "IDS_ST_BODY_START_TIME"
+msgstr "ആരംഭ സമയം"
+
+msgid "IDS_ST_BODY_END_TIME"
+msgstr "അവസാനിക്കുന്ന സമയം"
+

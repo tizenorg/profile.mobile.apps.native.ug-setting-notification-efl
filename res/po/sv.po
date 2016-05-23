@@ -37,3 +37,39 @@ msgstr "Hant. utesl. program"
 msgid "IDS_ST_HEADER_EXCLUDED_APPS_ABB"
 msgstr "Uteslutna program"
 
+msgid "IDS_QP_BODY_SELECT_THE_APPS_YOU_WANT_TO_RECEIVE_NOTIFICATIONS_FROM_BELOW"
+msgstr "Välj de program du vill ta emot aviseringar från nedan."
+
+msgid "IDS_QP_HEADER_ALLOW_NOTIFICATIONS_FROM_ABB"
+msgstr "Tillåt aviseringar från"
+
+msgid "IDS_ST_MBODY_ALLOW_ALL"
+msgstr "Tillåt alla"
+
+msgid "IDS_QP_TAB4_ALL_M_RECEIVED_ALL"
+msgstr "Alla"
+
+msgid "IDS_CST_OPT_CONTACTS_ONLY"
+msgstr "Endast kontakter"
+
+msgid "IDS_QP_TAB4_NONE_M_BLOCEKD"
+msgstr "Inga"
+
+msgid "IDS_ST_OPT_DONT_SHOW_AGAIN_ABB"
+msgstr "Visa inte igen"
+
+msgid "IDS_ST_BODY_MUTE_ALL_ALERTS_AND_ONLY_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ADD_APPS_BELOW_TO_ALLOW_EXCEPTIONS"
+msgstr "Tysta alla alarm och visa bara aviseringar på aviseringspanelen. Lägg till program nedan om du vill tillåta undantag."
+
+msgid "IDS_ST_MBODY_SET_SCHEDULE_M_TIME"
+msgstr "Ange schema"
+
+msgid "IDS_ST_SK_SELECT_LITE"
+msgstr "Välj"
+
+msgid "IDS_ST_BODY_START_TIME"
+msgstr "Starttid"
+
+msgid "IDS_ST_BODY_END_TIME"
+msgstr "Sluttid"
+
