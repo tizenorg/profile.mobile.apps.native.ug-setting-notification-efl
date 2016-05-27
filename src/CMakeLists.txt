@@ -12,6 +12,7 @@ SET(SRCS
 	main.c
 	notification-setting-info.c
     pkgmgr-setting-info.c
+    do-not-disturb-efl.c
 )
 
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/inc/)

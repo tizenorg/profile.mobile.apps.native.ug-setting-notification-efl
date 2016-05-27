@@ -73,13 +73,6 @@ static Eina_Bool _notifiacation_setting_main_pop_cb(void *data, Elm_Object_Item 
 	return EINA_FALSE;
 }
 
-void do_not_disturb_append_item_in_list(Evas_Object* genlist)
-{	
-	append_gl_start_option(genlist, "multiline", "do-not-disturb");
-	append_gl_group_index(genlist, APP_STRING("IDS_ST_HEADER_EXCLUDED_APPS_ABB"));
-	append_gl_item_list(genlist, get_excepted_apps_list(), ITEM_STYLE_ONE_ICON);
-}
-
 static Evas_Object* _create_do_not_disturb_gl(ug_data *ugd)
 {
 	Evas_Object *parent = ugd->naviframe;
@@ -144,23 +137,6 @@ static void _create_do_not_disturb_view(void *data)
 	/* Push to naviframe */
 	ugd->navi_item = elm_naviframe_item_push(ugd->naviframe, APP_STRING("IDS_ST_HEADER_DO_NOT_DISTURB_ABB"), back_btn, NULL, ugd->list_main, NULL);
 	elm_naviframe_item_pop_cb_set(ugd->navi_item, _notifiacation_setting_main_pop_cb, ugd);
-
-	/* Bottom Button */
-	Evas_Object *bottom_box = elm_box_add(ugd->naviframe);
-	evas_object_size_hint_weight_set(bottom_box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-	evas_object_size_hint_align_set(bottom_box, EVAS_HINT_FILL, EVAS_HINT_FILL);
-	elm_box_horizontal_set(bottom_box, EINA_TRUE);
-	evas_object_show(bottom_box);
-
-	Evas_Object *bottom_button = elm_button_add(bottom_box);
-	evas_object_show(bottom_button);
-	elm_object_style_set(bottom_button, "bottom");
-	evas_object_size_hint_weight_set(bottom_button, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-	evas_object_size_hint_align_set(bottom_button, EVAS_HINT_FILL, 0.5);
-	elm_object_translatable_text_set(bottom_button, APP_STRING("IDS_ST_BUTTON_MANAGE_EXCLUDED_APPS_ABB"));
-	evas_object_smart_callback_add(bottom_button, "clicked", exception_application_clicked_cb, ugd);
-	elm_object_item_part_content_set(ugd->navi_item, "toolbar", bottom_box);
-	elm_box_pack_start(bottom_box, bottom_button);
 }
 
 static void _create_notif_view(void *data)
@@ -211,6 +187,7 @@ static bool on_create(void *priv)
 {
 	NOTISET_DBG("START");
 	ug_data *ugd = priv;
+	elm_app_base_scale_set(2.6);
 
 	/* Create window */
 	ugd->win = _create_win();

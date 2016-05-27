@@ -29,5 +29,6 @@
 
 
 void do_not_disturb_append_item_in_list(Evas_Object* genlist);
+Evas_Object *do_not_disturb_allowed_apps_cont_cb(Evas_Object* parent, void *data);
 
 #endif //__DO_NOT_DISTURB_EFL_H__
