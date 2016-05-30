@@ -123,7 +123,7 @@ void gl_del_cb(void *data, Evas_Object *obj EINA_UNUSED)
 {
 }
 
-static Evas_Object* _create_icon(Evas_Object *parent, char* icon)
+Evas_Object* create_icon(Evas_Object *parent, char* icon)
 {
 	Evas_Object *img = elm_image_add(parent);
 
@@ -141,6 +141,21 @@ static Evas_Object* _create_icon(Evas_Object *parent, char* icon)
 	evas_object_size_hint_min_set(img, ICON_SIZE, ICON_SIZE);
 	return img;
 
+}
+
+Evas_Object* create_custom_layout(Evas_Object *parent, char* group_name)
+{
+    Evas_Object *layout = create_layout(parent);
+    char edj_path[PATH_MAX] = {0, };
+
+    char* res_path = app_get_resource_path();
+    if (res_path) {
+        snprintf(edj_path, PATH_MAX, "%s%s", res_path, "edje/setting_notification.edj");
+        free(res_path);
+    }
+
+    elm_layout_file_set(layout, edj_path, group_name);
+    return layout;
 }
 
 static char *gl_group_index_text_get_cb(void *data, Evas_Object *obj, const char *part)
@@ -229,7 +244,7 @@ static Evas_Object* gl_content_get_cb(void *data, Evas_Object *obj, const char *
 
 	item_info_s *data_list = data;
 	if (!strcmp(part, "elm.swallow.icon") || !strcmp(part, "elm.icon.left") ) {
-		Evas_Object *icon = _create_icon(obj, data_list->icon);
+		Evas_Object *icon = create_icon(obj, data_list->icon);
 		evas_object_show(icon);
 		return icon;
 	}
@@ -435,4 +450,55 @@ void back_button_cb(void *data, Evas_Object *obj, void *event_info)
 {
 	ret_if(!data);
 	elm_naviframe_item_pop(data);
+}
+
+typedef struct
+{
+        Evas_Object *(*fullContentCb)(Evas_Object* parent, void *data);
+        void *cbData;
+} full_content_data_s;
+
+static Evas_Object* _gl_full_content_get_cb(void *data, Evas_Object *obj, const char *part)
+{
+    retv_if(!data, NULL);
+    full_content_data_s *content_data = (full_content_data_s *)data;
+    if (!strcmp(part, "elm.swallow.content")) {
+        if(content_data->fullContentCb)
+            return content_data->fullContentCb(obj, content_data->cbData);
+    }
+    return NULL;
+}
+
+static void _gl_full_content_del_cb(void *data, Evas_Object *obj)
+{
+    ret_if(!data);
+    free(data);
+}
+
+void append_gl_full_item(Evas_Object *genlist, Evas_Object *(*fullContentCb)(Evas_Object* parent, void *data), void *cbData)
+{
+    Elm_Genlist_Item_Class *itc = elm_genlist_item_class_new();
+    ret_if(!itc);
+
+    full_content_data_s *data = calloc(1, sizeof(full_content_data_s));
+    if(!data)
+    {
+        elm_genlist_item_class_free(itc);
+        return;
+    }
+    data->fullContentCb = fullContentCb;
+    data->cbData = cbData;
+    itc->item_style = "full";
+    itc->func.content_get = _gl_full_content_get_cb;
+    itc->func.del = _gl_full_content_del_cb;
+
+    Elm_Object_Item *genlist_item = elm_genlist_item_append(genlist,                        /* genlist object */
+                            itc,                            /* item class */
+                            data,                         /* item class user data */
+                            NULL,                           /* parent item */
+                            ELM_GENLIST_ITEM_NONE,          /* item type */
+                            gl_selected_cb,                 /* select smart callback */
+                            NULL);                      /* smart callback user data */
+    elm_genlist_item_select_mode_set(genlist_item, ELM_OBJECT_SELECT_MODE_NONE);
+    elm_genlist_item_class_free(itc);
 }

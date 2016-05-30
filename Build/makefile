@@ -17,7 +17,8 @@ PROJ_ROOT := $(call BSLASH2SLASH,$(PROJPATH))
 -include basedef.mk
 -include tooldef.mk
 -include flags.mk
--include prepost.mk
+# deprecated. use build_def.prop file instead
+#-include prepost.mk
 
 APPTYPE := $(type)
 
@@ -71,11 +72,11 @@ M_OPT = -MMD -MP -MF"$(@:%.o=%.d)"
 FUNC_C2O = $(patsubst %.c,$(OBJ_OUTPUT)/%.o,$(1))
 FUNC_CPP2O = $(patsubst %.cpp,$(OBJ_OUTPUT)/%.o,$(1))
 FUNC_EDC2EDJ = $(patsubst %.edc,$(OUTPUT_DIR)/%.edj,$(1))
-FUNC_PO2MO = $(patsubst %.po,$(OUTPUT_DIR)/res/locale/%/LC_MESSAGES/$(LOWER_APPNAME).mo,$(notdir $(1)))
+FUNC_PO2MO = $(patsubst %.po,$(OUTPUT_DIR)/res/locale/%/LC_MESSAGES/$(subst $(basename $(APPID)).,,$(APPID)).mo,$(notdir $(1)))
 
 
-C_OBJS := $(call FUNC_C2O,$(C_SRCS)) 
-CPP_OBJS := $(call FUNC_CPP2O,$(CPP_SRCS)) 
+C_OBJS := $(call FUNC_C2O,$(C_SRCS))
+CPP_OBJS := $(call FUNC_CPP2O,$(CPP_SRCS))
 OBJS := $(C_OBJS) $(CPP_OBJS)
 EDJ_FILES := $(call FUNC_EDC2EDJ,$(EDCS))
 MO_FILES := $(call FUNC_PO2MO,$(POS))
@@ -121,7 +122,7 @@ INCS := $(addprefix -I$(PROJ_ROOT)/,$(USER_INC_DIRS)) \
 		$(addprefix -include$(PROJ_ROOT)/,$(USER_INC_FILES)) \
 		$(addprefix -include,$(USER_INC_FILES_ABS))
 
-$(C_OBJS) : $(OBJ_OUTPUT)/%.o : $(PROJ_ROOT)/%.c $(PLATFORM_INCS_FILE)  
+$(C_OBJS) : $(OBJ_OUTPUT)/%.o : $(PROJ_ROOT)/%.c $(PLATFORM_INCS_FILE)
 	@echo '  Building file: $<'
 	@echo '  Invoking: C Compiler'
 	@$(MKDIR) $(MKDIR_OP) $(subst $(BSLASH),/,$(@D))
@@ -141,8 +142,8 @@ CPP_INCS := $(addprefix -I$(PROJ_ROOT)/,$(USER_CPP_INC_DIRS)) \
 		$(addprefix -I,$(USER_CPP_INC_DIRS_ABS)) \
 		$(addprefix -include$(PROJ_ROOT)/,$(USER_CPP_INC_FILES)) \
 		$(addprefix -include,$(USER_CPP_INC_FILES_ABS))
-		
-$(CPP_OBJS) : $(OBJ_OUTPUT)/%.o : $(PROJ_ROOT)/%.cpp $(PLATFORM_INCS_FILE)  
+
+$(CPP_OBJS) : $(OBJ_OUTPUT)/%.o : $(PROJ_ROOT)/%.cpp $(PLATFORM_INCS_FILE)
 	@echo '  Building file: $<'
 	@echo '  Invoking: C++ Compiler'
 	@$(MKDIR) $(MKDIR_OP) $(subst $(BSLASH),/,$(@D))
@@ -163,18 +164,18 @@ preproc : $(OBJ_OUTPUT)
 ifneq ($(strip $(PREBUILD_COMMAND)),)
 ifneq ($(strip $(PREBUILD_DESC)),)
 	@echo $(PREBUILD_DESC)
-endif	
+endif
 	@echo $(shell $(PREBUILD_COMMAND))
-endif	
+endif
 
 
 postproc :
 ifneq ($(strip $(POSTBUILD_COMMAND)),)
 ifneq ($(strip $(POSTBUILD_DESC)),)
 	@echo $(POSTBUILD_DESC)
-endif	
+endif
 	@echo $(shell $(POSTBUILD_COMMAND))
-endif	
+endif
 
 ifneq ($(strip $(PLATFORM_INCS)),)
 $(PLATFORM_INCS_FILE) : $(OBJ_OUTPUT)
@@ -186,7 +187,7 @@ ifneq ($(findstring 3.82,$(MAKE_VERSION)),)
 	$(file > $@,$(PLATFORM_INCS))
 else
 	@echo $(PLATFORM_INCS) > $@
-endif	 
+endif
 endif
 endif
 
@@ -226,7 +227,7 @@ ifneq ($$(strip $(8)),)
 EDC_$(1)_COMPILER_FLAGS += $$(addprefix -fd ,$$($(8)))
 endif
 
-$$(EDJ_FILES) : $$(OUTPUT_DIR)/%.edj : $$(PROJ_ROOT)/%.edc 
+$$(EDJ_FILES) : $$(OUTPUT_DIR)/%.edj : $$(PROJ_ROOT)/%.edc
 	@echo '  Building file: $$<'
 	@echo '  Invoking: EDC Resource Compiler'
 	@$$(MKDIR) $$(MKDIR_OP) $$(subst $$(BSLASH),/,$$(@D))

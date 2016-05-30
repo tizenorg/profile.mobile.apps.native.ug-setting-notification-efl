@@ -9,13 +9,14 @@ type = app
 profile = mobile-3.0
 
 # C Sources
-USER_SRCS = src/excepted-apps-efl.c src/pkgmgr-setting-info.c src/notification-setting-info.c src/main.c src/common-efl.c 
+USER_SRCS = src/excepted-apps-efl.c src/pkgmgr-setting-info.c src/notification-setting-info.c src/main.c src/do-not-disturb-efl.c src/common-efl.c 
+USER_SRCS_ABS = 
 
 # EDC Sources
 USER_EDCS =  
 
 # PO Sources
-USER_POS = res/po/bn.po res/po/is.po res/po/ja_JP.po res/po/gu.po res/po/bg.po res/po/si.po res/po/gl.po res/po/pt_PT.po res/po/pl.po res/po/es_US.po res/po/mk.po res/po/ar.po res/po/uk.po res/po/fi.po res/po/lt.po res/po/ko_KR.po res/po/en.po res/po/et.po res/po/ta.po res/po/hr.po res/po/en_US.po res/po/fa.po res/po/ru_RU.po res/po/el_GR.po res/po/it_IT.po res/po/nl.po res/po/hu.po res/po/te.po res/po/he.po res/po/zh_TW.po res/po/kk.po res/po/eu.po res/po/ca.po res/po/cs.po res/po/fr_CA.po res/po/az.po res/po/fr.po res/po/ro.po res/po/sv.po res/po/ga.po res/po/ka.po res/po/sl.po res/po/pt_BR.po res/po/zh_HK.po res/po/uz.po res/po/ml.po res/po/hi.po res/po/kn.po res/po/tr_TR.po res/po/ur.po res/po/en_PH.po res/po/sk.po res/po/lv.po res/po/sr.po res/po/es_ES.po res/po/zh_CN.po res/po/hy.po res/po/nb.po res/po/th.po res/po/da.po res/po/de.po 
+USER_POS = res/po/bn.po res/po/is.po res/po/gu.po res/po/ja_JP.po res/po/bg.po res/po/si.po res/po/gl.po res/po/pt_PT.po res/po/pl.po res/po/es_US.po res/po/mk.po res/po/ar.po res/po/fi.po res/po/uk.po res/po/lt.po res/po/ko_KR.po res/po/en.po res/po/et.po res/po/ta.po res/po/hr.po res/po/en_US.po res/po/fa.po res/po/ru_RU.po res/po/el_GR.po res/po/it_IT.po res/po/nl.po res/po/hu.po res/po/te.po res/po/he.po res/po/zh_TW.po res/po/kk.po res/po/eu.po res/po/ca.po res/po/cs.po res/po/fr_CA.po res/po/az.po res/po/fr.po res/po/ro.po res/po/sv.po res/po/ga.po res/po/ka.po res/po/sl.po res/po/pt_BR.po res/po/uz.po res/po/zh_HK.po res/po/ml.po res/po/hi.po res/po/kn.po res/po/tr_TR.po res/po/ur.po res/po/en_PH.po res/po/sk.po res/po/lv.po res/po/sr.po res/po/es_ES.po res/po/zh_CN.po res/po/hy.po res/po/nb.po res/po/th.po res/po/da.po res/po/de.po 
 
 # User Defines
 USER_DEFS = 
@@ -49,15 +50,23 @@ USER_LIB_DIRS =
 USER_LIB_DIRS_ABS = 
 
 # EDC Resource Path
-USER_EDCS_IMAGE_DIRS = 
+USER_EDCS_IMAGE_DIRS = edje/images 
 USER_EDCS_IMAGE_DIRS_ABS = 
-USER_EDCS_SOUND_DIRS = 
+USER_EDCS_SOUND_DIRS = edje/sounds 
 USER_EDCS_SOUND_DIRS_ABS = 
-USER_EDCS_FONT_DIRS = 
+USER_EDCS_FONT_DIRS = edje/fonts 
 USER_EDCS_FONT_DIRS_ABS = 
 
 # EDC Flags
-USER_EXT_EDC_KEYS = 
+USER_EXT_EDC_KEYS = EDC0 
+
+USER_EXT_EDC0_EDCS = res/edje/setting_notification.edc 
+USER_EXT_EDC0_EDCS_IMAGE_DIRS = edje/images 
+USER_EXT_EDC0_EDCS_IMAGE_DIRS_ABS = 
+USER_EXT_EDC0_EDCS_SOUND_DIRS = edje/sounds 
+USER_EXT_EDC0_EDCS_SOUND_DIRS_ABS = 
+USER_EXT_EDC0_EDCS_FONT_DIRS = edje/fonts 
+USER_EXT_EDC0_EDCS_FONT_DIRS_ABS = 
 
 # Resource Filter
 USER_RES_INCLUDE = 
