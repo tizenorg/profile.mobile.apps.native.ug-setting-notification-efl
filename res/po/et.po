@@ -73,3 +73,33 @@ msgstr "Alguskellaaeg"
 msgid "IDS_ST_BODY_END_TIME"
 msgstr "Lõppkellaaeg"
 
+msgid "IDS_ST_MBODY_NOBODY_ABB"
+msgstr "Mitte keegi"
+
+msgid "IDS_ST_MBODY_ALLOWED_CALLS_ABB"
+msgstr "Lubatud kõned"
+
+msgid "IDS_ST_HEADER_ALLOW_CALLS_FROM_ABB"
+msgstr "Kõnede lubamine kontaktilt"
+
+msgid "IDS_ST_MBODY_EVERYONE_ABB"
+msgstr "Kõik"
+
+msgid "IDS_ST_MBODY_CONTACTS_ONLY_ABB"
+msgstr "Ainult kontaktid"
+
+msgid "IDS_ST_MBODY_FAVOURITE_CONTACTS_ONLY_ABB"
+msgstr "Ainult lemmikkontaktid"
+
+msgid "IDS_ST_HEADER_REJECT_ALL_CALLS_ABB"
+msgstr "Kõikidest kõnedest keeld."
+
+msgid "IDS_ST_POP_ALL_INCOMING_CALLS_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Kõikidest saabuvatest kõnedest keeldutakse automaatselt."
+
+msgid "IDS_ST_HEADER_REJECT_CALLS_ABB2"
+msgstr "Kõnedest keeldumine"
+
+msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Saabuvatest kõnedest kontaktidelt, kellele te pole luba andnud, keeldutakse automaatselt."
+

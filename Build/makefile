@@ -45,12 +45,16 @@ endif
 
 FIND_FILES = $(shell $(FIND) $(PROJ_ROOT)/$(dir $(1)) -type f -name $(notdir $(1)) -printf '$(dir $(1))%P ')
 
-NORMAL_SRCS := $(filter-out %*.c %*.cpp,$(USER_SRCS))
-WIDLCARD_SRCS := $(filter %*.c %*.cpp,$(USER_SRCS))
+NORMAL_SRCS := $(filter-out %*.c %*.cpp %*.cxx %*.cc %*.c++ %*.C,$(USER_SRCS))
+WIDLCARD_SRCS := $(filter %*.c %*.cpp %*.cxx %*.cc %*.c++ %*.C,$(USER_SRCS))
 ALL_SRCS := $(NORMAL_SRCS) $(foreach var,$(WIDLCARD_SRCS),$(call FIND_FILES,$(var)))
 
 C_SRCS := $(filter %.c,$(ALL_SRCS))
 CPP_SRCS := $(filter %.cpp,$(ALL_SRCS))
+CXX_SRCS := $(filter %.cxx,$(ALL_SRCS))
+CC_SRCS := $(filter %.cc,$(ALL_SRCS))
+CPLUSPLUS_SRCS := $(filter %.c++,$(ALL_SRCS))
+CPRIME_SRCS := $(filter %.C,$(ALL_SRCS))
 
 USER_EDCS := $(subst $(BSLASH),/,$(USER_EDCS))
 NORMAL_EDCS := $(filter-out %*.edc,$(USER_EDCS))
@@ -71,13 +75,21 @@ M_OPT = -MMD -MP -MF"$(@:%.o=%.d)"
 
 FUNC_C2O = $(patsubst %.c,$(OBJ_OUTPUT)/%.o,$(1))
 FUNC_CPP2O = $(patsubst %.cpp,$(OBJ_OUTPUT)/%.o,$(1))
+FUNC_CXX2O = $(patsubst %.cxx,$(OBJ_OUTPUT)/%.o,$(1))
+FUNC_CC2O = $(patsubst %.cc,$(OBJ_OUTPUT)/%.o,$(1))
+FUNC_CPLUSPLUS2O = $(patsubst %.c++,$(OBJ_OUTPUT)/%.o,$(1))
+FUNC_CPRIME2O = $(patsubst %.C,$(OBJ_OUTPUT)/%.o,$(1))
 FUNC_EDC2EDJ = $(patsubst %.edc,$(OUTPUT_DIR)/%.edj,$(1))
 FUNC_PO2MO = $(patsubst %.po,$(OUTPUT_DIR)/res/locale/%/LC_MESSAGES/$(subst $(basename $(APPID)).,,$(APPID)).mo,$(notdir $(1)))
 
 
 C_OBJS := $(call FUNC_C2O,$(C_SRCS))
 CPP_OBJS := $(call FUNC_CPP2O,$(CPP_SRCS))
-OBJS := $(C_OBJS) $(CPP_OBJS)
+CXX_OBJS := $(call FUNC_CXX2O,$(CXX_SRCS))
+CC_OBJS := $(call FUNC_CC2O,$(CC_SRCS))
+CPLUSPLUS_OBJS := $(call FUNC_CPLUSPLUS2O,$(CPLUSPLUS_SRCS))
+CPRIME_OBJS := $(call FUNC_CPRIME2O,$(CPRIME_SRCS))
+OBJS := $(C_OBJS) $(CPP_OBJS) $(CXX_OBJS) $(CC_OBJS) $(CPLUSPLUS_OBJS) $(CPRIME_OBJS)
 EDJ_FILES := $(call FUNC_EDC2EDJ,$(EDCS))
 MO_FILES := $(call FUNC_PO2MO,$(POS))
 DEPS := $(OBJS:.o=.d)
@@ -134,7 +146,7 @@ endif
 	@echo '  Finished building: $<'
 endif
 
-ifneq ($(strip $(CPP_SRCS)),)
+ifneq ($(strip $(CPP_SRCS) $(CXX_SRCS) $(CC_SRCS) $(CPLUSPLUS_SRCS) $(CPRIME_SRCS)),)
 CPPDEFS += $(addprefix -D,$(USER_CPP_DEFS))
 CPPDEFS += $(addprefix -U,$(USER_CPP_UNDEFS))
 
@@ -143,6 +155,7 @@ CPP_INCS := $(addprefix -I$(PROJ_ROOT)/,$(USER_CPP_INC_DIRS)) \
 		$(addprefix -include$(PROJ_ROOT)/,$(USER_CPP_INC_FILES)) \
 		$(addprefix -include,$(USER_CPP_INC_FILES_ABS))
 
+ifneq ($(strip $(CPP_SRCS)),)
 $(CPP_OBJS) : $(OBJ_OUTPUT)/%.o : $(PROJ_ROOT)/%.cpp $(PLATFORM_INCS_FILE)
 	@echo '  Building file: $<'
 	@echo '  Invoking: C++ Compiler'
@@ -153,6 +166,60 @@ else
 	$(CXX) -c $< -o $@ $(CPPDEFS) $(CPP_INCS) -I"pch" $(CPP_COMPILE_FLAGS) $(TC_COMPILER_MISC) $(RS_COMPILER_MISC) -fPIE --sysroot="$(SYSROOT)" -Werror-implicit-function-declaration $(M_OPT) @$(PLATFORM_INCS_FILE)
 endif
 	@echo '  Finished building: $<'
+endif
+
+ifneq ($(strip $(CXX_SRCS)),)
+$(CXX_OBJS) : $(OBJ_OUTPUT)/%.o : $(PROJ_ROOT)/%.cxx $(PLATFORM_INCS_FILE)
+	@echo '  Building file: $<'
+	@echo '  Invoking: C++ Compiler'
+	@$(MKDIR) $(MKDIR_OP) $(subst $(BSLASH),/,$(@D))
+ifeq ($(strip $(APPTYPE)),sharedLib)
+	$(CXX) -c $< -o $@ $(CPPDEFS) $(CPP_INCS) -I"pch" $(CPP_COMPILE_FLAGS) $(TC_COMPILER_MISC) $(RS_COMPILER_MISC) -fPIC --sysroot="$(SYSROOT)" -Werror-implicit-function-declaration $(M_OPT) @$(PLATFORM_INCS_FILE)
+else
+	$(CXX) -c $< -o $@ $(CPPDEFS) $(CPP_INCS) -I"pch" $(CPP_COMPILE_FLAGS) $(TC_COMPILER_MISC) $(RS_COMPILER_MISC) -fPIE --sysroot="$(SYSROOT)" -Werror-implicit-function-declaration $(M_OPT) @$(PLATFORM_INCS_FILE)
+endif
+	@echo '  Finished building: $<'
+endif
+
+ifneq ($(strip $(CC_SRCS)),)
+$(CC_OBJS) : $(OBJ_OUTPUT)/%.o : $(PROJ_ROOT)/%.cc $(PLATFORM_INCS_FILE)
+	@echo '  Building file: $<'
+	@echo '  Invoking: C++ Compiler'
+	@$(MKDIR) $(MKDIR_OP) $(subst $(BSLASH),/,$(@D))
+ifeq ($(strip $(APPTYPE)),sharedLib)
+	$(CXX) -c $< -o $@ $(CPPDEFS) $(CPP_INCS) -I"pch" $(CPP_COMPILE_FLAGS) $(TC_COMPILER_MISC) $(RS_COMPILER_MISC) -fPIC --sysroot="$(SYSROOT)" -Werror-implicit-function-declaration $(M_OPT) @$(PLATFORM_INCS_FILE)
+else
+	$(CXX) -c $< -o $@ $(CPPDEFS) $(CPP_INCS) -I"pch" $(CPP_COMPILE_FLAGS) $(TC_COMPILER_MISC) $(RS_COMPILER_MISC) -fPIE --sysroot="$(SYSROOT)" -Werror-implicit-function-declaration $(M_OPT) @$(PLATFORM_INCS_FILE)
+endif
+	@echo '  Finished building: $<'
+endif
+
+ifneq ($(strip $(CPLUSPLUS_SRCS)),)
+$(CPLUSPLUS_OBJS) : $(OBJ_OUTPUT)/%.o : $(PROJ_ROOT)/%.c++ $(PLATFORM_INCS_FILE)
+	@echo '  Building file: $<'
+	@echo '  Invoking: C++ Compiler'
+	@$(MKDIR) $(MKDIR_OP) $(subst $(BSLASH),/,$(@D))
+ifeq ($(strip $(APPTYPE)),sharedLib)
+	$(CXX) -c $< -o $@ $(CPPDEFS) $(CPP_INCS) -I"pch" $(CPP_COMPILE_FLAGS) $(TC_COMPILER_MISC) $(RS_COMPILER_MISC) -fPIC --sysroot="$(SYSROOT)" -Werror-implicit-function-declaration $(M_OPT) @$(PLATFORM_INCS_FILE)
+else
+	$(CXX) -c $< -o $@ $(CPPDEFS) $(CPP_INCS) -I"pch" $(CPP_COMPILE_FLAGS) $(TC_COMPILER_MISC) $(RS_COMPILER_MISC) -fPIE --sysroot="$(SYSROOT)" -Werror-implicit-function-declaration $(M_OPT) @$(PLATFORM_INCS_FILE)
+endif
+	@echo '  Finished building: $<'
+endif
+
+ifneq ($(strip $(CPRIME_SRCS)),)
+$(CPRIME_OBJS) : $(OBJ_OUTPUT)/%.o : $(PROJ_ROOT)/%.C $(PLATFORM_INCS_FILE)
+	@echo '  Building file: $<'
+	@echo '  Invoking: C++ Compiler'
+	@$(MKDIR) $(MKDIR_OP) $(subst $(BSLASH),/,$(@D))
+ifeq ($(strip $(APPTYPE)),sharedLib)
+	$(CXX) -c $< -o $@ $(CPPDEFS) $(CPP_INCS) -I"pch" $(CPP_COMPILE_FLAGS) $(TC_COMPILER_MISC) $(RS_COMPILER_MISC) -fPIC --sysroot="$(SYSROOT)" -Werror-implicit-function-declaration $(M_OPT) @$(PLATFORM_INCS_FILE)
+else
+	$(CXX) -c $< -o $@ $(CPPDEFS) $(CPP_INCS) -I"pch" $(CPP_COMPILE_FLAGS) $(TC_COMPILER_MISC) $(RS_COMPILER_MISC) -fPIE --sysroot="$(SYSROOT)" -Werror-implicit-function-declaration $(M_OPT) @$(PLATFORM_INCS_FILE)
+endif
+	@echo '  Finished building: $<'
+endif
+
 endif
 
 

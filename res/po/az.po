@@ -73,3 +73,33 @@ msgstr "Başlama vaxtı"
 msgid "IDS_ST_BODY_END_TIME"
 msgstr "Bitmə vaxtı"
 
+msgid "IDS_ST_MBODY_NOBODY_ABB"
+msgstr "Heç kim"
+
+msgid "IDS_ST_MBODY_ALLOWED_CALLS_ABB"
+msgstr "İcazə verilən zənglər"
+
+msgid "IDS_ST_HEADER_ALLOW_CALLS_FROM_ABB"
+msgstr "Zənglərə icazə ver"
+
+msgid "IDS_ST_MBODY_EVERYONE_ABB"
+msgstr "Hər kəs"
+
+msgid "IDS_ST_MBODY_CONTACTS_ONLY_ABB"
+msgstr "Yalnız kontaktlar"
+
+msgid "IDS_ST_MBODY_FAVOURITE_CONTACTS_ONLY_ABB"
+msgstr "Yalnız sevimli kontaktlar"
+
+msgid "IDS_ST_HEADER_REJECT_ALL_CALLS_ABB"
+msgstr "Bütün zəngləri rədd et"
+
+msgid "IDS_ST_POP_ALL_INCOMING_CALLS_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Bütün daxil olan zəglər avtomatik rədd ediləcək."
+
+msgid "IDS_ST_HEADER_REJECT_CALLS_ABB2"
+msgstr "Zəngləri rədd et"
+
+msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "İcazə vermədiyiniz kontaktlardan gələn zənglər avtomatik rədd ediləcək."
+

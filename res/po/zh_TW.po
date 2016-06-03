@@ -73,3 +73,33 @@ msgstr "開始時間"
 msgid "IDS_ST_BODY_END_TIME"
 msgstr "結束時間"
 
+msgid "IDS_ST_MBODY_NOBODY_ABB"
+msgstr "沒有人"
+
+msgid "IDS_ST_MBODY_ALLOWED_CALLS_ABB"
+msgstr "允許的來電"
+
+msgid "IDS_ST_HEADER_ALLOW_CALLS_FROM_ABB"
+msgstr "允許通話來源"
+
+msgid "IDS_ST_MBODY_EVERYONE_ABB"
+msgstr "所有人"
+
+msgid "IDS_ST_MBODY_CONTACTS_ONLY_ABB"
+msgstr "僅限聯絡人"
+
+msgid "IDS_ST_MBODY_FAVOURITE_CONTACTS_ONLY_ABB"
+msgstr "僅限最愛聯絡人"
+
+msgid "IDS_ST_HEADER_REJECT_ALL_CALLS_ABB"
+msgstr "拒接所有來電"
+
+msgid "IDS_ST_POP_ALL_INCOMING_CALLS_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "將自動拒接所有來電。"
+
+msgid "IDS_ST_HEADER_REJECT_CALLS_ABB2"
+msgstr "拒接來電"
+
+msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "將自動拒接未經您允許的聯絡人撥入的來電。"
+
