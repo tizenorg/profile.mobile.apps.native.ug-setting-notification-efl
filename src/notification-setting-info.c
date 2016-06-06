@@ -27,7 +27,7 @@ setting_info_s *setting_info = NULL;
 
 void create_app_notification_list()
 {
-	NOTISET_DBG("");
+    NOTISET_TRACE_BEGIN;
 	int i = 0;
 	int count = 0;
 	char *package_name = NULL;
@@ -80,7 +80,7 @@ void create_app_notification_list()
 
 void create_do_not_disturb_application_list()
 {
-	NOTISET_DBG("");
+	NOTISET_DBG("create_do_not_disturb_application_list");
 	int i = 0;
 	int count = 0;
 	char *package_name = NULL;
@@ -139,13 +139,13 @@ void create_do_not_disturb_application_list()
 
 Eina_List *get_excepted_apps_list()
 {
-	NOTISET_DBG("");
+	NOTISET_TRACE_BEGIN;
 	return setting_info->excepted_list;
 }
 
 Eina_List *get_all_apps_list()
 {
-	NOTISET_DBG("");
+	NOTISET_TRACE_BEGIN;
 	return setting_info->all_apps_list;
 }
 
@@ -172,7 +172,7 @@ bool get_allow_all()
 
 void set_allow_all(bool state)
 {
-	NOTISET_DBG("");
+	NOTISET_TRACE_BEGIN;
 
 	item_info_s *item = NULL;
 	Eina_List *list = get_all_apps_list();
@@ -193,14 +193,14 @@ void set_allow_all(bool state)
 
 Eina_List *get_not_excepted_apps_list()
 {
-	NOTISET_DBG("");
+	NOTISET_TRACE_BEGIN;
 	return setting_info->not_excepted_list;
 }
 
 
 bool get_do_not_disturb() 
 {
-	NOTISET_DBG("");
+	NOTISET_TRACE_BEGIN;
 
 	int err = NOTIFICATION_ERROR_NONE;
 	notification_system_setting_h system_setting = NULL;
@@ -224,7 +224,7 @@ out:
 
 void set_do_not_disturb(bool state) 
 {
-	NOTISET_DBG("");
+	NOTISET_TRACE_BEGIN;
 	int err = NOTIFICATION_ERROR_NONE;
 	notification_system_setting_h system_setting = NULL;
 
@@ -250,7 +250,7 @@ out:
 
 bool set_allow_to_nofity(char *pkg_name, bool state)
 {
-	NOTISET_DBG("");
+	NOTISET_TRACE_BEGIN;
 	int err = NOTIFICATION_ERROR_NONE;
 
 	notification_setting_h setting = NULL;
@@ -283,7 +283,7 @@ out:
 
 bool set_excepted_apps(char *pkg_name, bool state)
 {
-	NOTISET_DBG("");
+	NOTISET_TRACE_BEGIN;
 
 	int err = NOTIFICATION_ERROR_NONE;
 
@@ -316,7 +316,7 @@ out:
 }
 
 static void _remove_apps_list(Eina_List* input_list) {
-	NOTISET_DBG("");
+	NOTISET_TRACE_BEGIN;
 	item_info_s *item_info = NULL;
 
 	if(input_list) {
@@ -332,13 +332,13 @@ static void _remove_apps_list(Eina_List* input_list) {
 
 
 void remove_all_apps_list() {
-	NOTISET_DBG("");
+	NOTISET_TRACE_BEGIN;
 	if(setting_info) {
 		_remove_apps_list(setting_info->all_apps_list);
 	}
 }
 void remove_excepted_apps_list(){
-	NOTISET_DBG("");
+	NOTISET_TRACE_BEGIN;
 	if(setting_info) {
 		_remove_apps_list(setting_info->excepted_list);
 		_remove_apps_list(setting_info->not_excepted_list);

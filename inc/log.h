@@ -25,11 +25,24 @@
 #undef LOG_TAG
 #define LOG_TAG "NOTI-SETTING"
 
+#ifndef LOG
+#define LOG(priority, tag, format, arg...) LOG_(D##priority, tag, format, ##arg)
+#endif
+
+#undef LOG_
+#define LOG_(prio, tag, fmt, arg...) \
+    ({ do { \
+        dlog_print(prio, tag, "%s(%d) > " fmt, __func__, __LINE__, ##arg); \
+    } while (0); })
+
 #define NOTISET_ERR(fmt, arg...)  dlog_print(DLOG_ERROR, LOG_TAG, " "fmt, ##arg)
 #define NOTISET_WARN(fmt, arg...) dlog_print(DLOG_WARN, LOG_TAG, " "fmt, ##arg)
 #define NOTISET_DBG(fmt, arg...)  dlog_print(DLOG_DEBUG, LOG_TAG, " "fmt, ##arg)
 
 #define HAPI __attribute__((visibility("hidden")))
+
+#define NOTISET_TRACE_BEGIN \
+    LOG(LOG_DEBUG, LOG_TAG, "[ENTER]\n");
 
 #if !defined(FREEIF)
 #define FREEIF(p) ({if (p) {free(p); p = NULL; }})

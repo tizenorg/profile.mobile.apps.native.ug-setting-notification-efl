@@ -50,7 +50,7 @@ static Evas_Object* _create_edit_exception_apps_list(ug_data *ugd)
 
 static void _done_button_cb(void *data, Evas_Object *obj, void *event_info)
 {
-	NOTISET_DBG("");
+    NOTISET_TRACE_BEGIN;
 
 	ug_data* u_data = data;
 	Eina_List *list = NULL;
@@ -101,7 +101,7 @@ void _cancel_button_cb(void *data, Evas_Object *obj, void *event_info)
 
 void exception_application_clicked_cb(void *data, Evas_Object *obj, void *event_info)
 {
-	NOTISET_DBG("");
+    NOTISET_TRACE_BEGIN;
 	ug_data* u_data = data;
 	ret_if(!u_data);
 
