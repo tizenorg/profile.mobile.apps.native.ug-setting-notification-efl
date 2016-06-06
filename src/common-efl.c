@@ -17,7 +17,7 @@
 
 #include "pkgmgr-setting-info.h"
 #include "common-efl.h"
-
+#include "set-scedule-info.h"
 
 #define ICON_SIZE 82
 
@@ -111,6 +111,10 @@ void gl_selected_cb(void *data, Evas_Object *obj EINA_UNUSED, void *event_info)
 		elm_check_state_set(check, !elm_check_state_get(check));
 		evas_object_smart_callback_call(check, "changed", NULL);
 	}
+
+	if(data && !strcmp(data, "set-schedule-multiline")) {
+	        gl_set_schedule_selected(&g_ug_data);
+    }
 }
 
 void gl_contracted_cb(void *data EINA_UNUSED, Evas_Object *obj EINA_UNUSED, void *event_info)
@@ -179,13 +183,13 @@ void append_gl_group_index(Evas_Object *genlist, char* text) {
 	itc->func.del = gl_del_cb;
 
 
-	elm_genlist_item_append(genlist,							/* genlist object */
+	elm_genlist_item_append(genlist,					    /* genlist object */
 							itc,							/* item class */
 							strdup(text),					/* item class user data */
 							NULL,							/* parent item */
 							ELM_GENLIST_ITEM_NONE,			/* item type */
 							gl_selected_cb, 				/* select smart callback */
-							NULL);						/* smart callback user data */
+							NULL);						    /* smart callback user data */
 
 
 	elm_genlist_item_class_free(itc);
@@ -193,7 +197,7 @@ void append_gl_group_index(Evas_Object *genlist, char* text) {
 
 static void _excepted_check_changed_cb(void *data, Evas_Object *obj, void *event_info)
 {
-	NOTISET_DBG("");
+    NOTISET_TRACE_BEGIN;
 	item_info_s *data_list = data;
 	ret_if(!data_list);
 
@@ -205,16 +209,22 @@ static void _excepted_check_changed_cb(void *data, Evas_Object *obj, void *event
 
 static void _do_not_disturb_check_changed_cb(void *data, Evas_Object *obj, void *event_info)
 {
-	NOTISET_DBG("");
+    NOTISET_TRACE_BEGIN;
 
 	Eina_Bool state = elm_check_state_get(obj);
 	set_do_not_disturb(state);
 	NOTISET_DBG("do_not_disturb check value = %s", state==false ? "FALSE":"TRUE");
 }
 
+static void _set_schedule_check_changed_cb(void *data, Evas_Object *obj, void *event_info)
+{
+    NOTISET_TRACE_BEGIN;
+    //TODO: Will be done, after receiving API
+}
+
 static void _app_notif_allow_all_check_changed_cb(void *data, Evas_Object *obj, void *event_info)
 {
-	NOTISET_DBG("");
+    NOTISET_TRACE_BEGIN;
 
 	Eina_Bool state = elm_check_state_get(obj);
 	NOTISET_DBG("allow_all check value = %s", state==false ? "FALSE":"TRUE");
@@ -224,7 +234,7 @@ static void _app_notif_allow_all_check_changed_cb(void *data, Evas_Object *obj, 
 
 static void _allow_to_nofity_check_changed_cb(void *data, Evas_Object *obj, void *event_info)
 {
-	NOTISET_DBG("");
+    NOTISET_TRACE_BEGIN;
 	item_info_s *data_list = data;
 	ret_if(!data_list);
 
@@ -287,7 +297,7 @@ static char* gl_text_get_cb(void *data, Evas_Object *obj, const char *part)
 }
 
 void append_gl_item_list(Evas_Object *genlist, Eina_List* list, int style) {
-	NOTISET_DBG("");
+    NOTISET_TRACE_BEGIN;
 
 	Elm_Genlist_Item_Class *itc = elm_genlist_item_class_new();
 	ret_if(!itc);
@@ -348,28 +358,62 @@ static char *_gl_option_text_get_cb(void *data, Evas_Object *obj, const char *pa
 		if (!strcmp(part, "elm.text")) {
 			return strdup(APP_STRING("IDS_ST_HEADER_DO_NOT_DISTURB_ABB"));
 		}
+	} else if(!strcmp(data, "set-schedule-multiline")) {
+	    if (!strcmp("elm.text", part)) {
+	        return strdup(APP_STRING("IDS_ST_MBODY_SET_SCHEDULE_M_TIME"));
+	    }
+	    if (!strcmp("elm.text.multiline", part)) {
+	        snprintf(buf, sizeof(buf), "<font_size=30>%s<br/>%s</font_size>", "M T W T F S S", "10:00 p.m. ~ 7:00 a.m."); //TODO:
+	        return strdup(buf);
+	    }
+	} else if(!strcmp(data, "set-schedule")) {
+        if (!strcmp("elm.text", part)) {
+            return strdup(APP_STRING("IDS_ST_MBODY_SET_SCHEDULE_M_TIME"));
+        }
+	} else if(!strcmp(data, "start-time") && !strcmp("elm.text", part)) {
+	    return strdup(APP_STRING("IDS_ST_BODY_START_TIME"));
+	} else if(!strcmp(data, "end-time") && !strcmp("elm.text", part)) {
+	    return strdup(APP_STRING("IDS_ST_BODY_END_TIME"));
 	}
 	
 	return NULL;
 }
 
-
-
 static Evas_Object* _gl_option_content_get_cb(void *data, Evas_Object *obj, const char *part)
 {
 	retv_if(!data, NULL);
 
-	if (!strcmp(data, "do-not-disturb") &&!strcmp(part, "elm.swallow.end") ) {
-		Evas_Object *check = NULL;
-		check = elm_check_add(obj);
-		elm_object_style_set(check, "on&off");
-		elm_check_state_set(check, get_do_not_disturb());
-		evas_object_show(check);
-		evas_object_pass_events_set(check, 1);
-		evas_object_smart_callback_add(check, "changed", _do_not_disturb_check_changed_cb, NULL);
-		evas_object_propagate_events_set(check, 0); 
-		return check;
+	if (!strcmp(data, "set-schedule") && !strcmp("elm.swallow.end", part)) {
+        Evas_Object *check = elm_check_add(obj);
+        elm_object_style_set(check, "on&off");
+        elm_check_state_set(check, get_schedule());
+        evas_object_show(check);
+        evas_object_pass_events_set(check, 1);
+        evas_object_propagate_events_set(check, 0);
+        evas_object_smart_callback_add(check, "changed", _set_schedule_check_changed_cb, NULL);
+        return check;
 	}
+
+	if(!strcmp(data, "start-time") && !strcmp("elm.swallow.end", part))
+    {
+        return start_end_time_item(obj);
+    }
+
+	if(!strcmp(data, "end-time") && !strcmp("elm.swallow.end", part))
+	{
+	    return start_end_time_item(obj);
+	}
+
+    if(!strcmp(part, "elm.swallow.end") && !strcmp(data, "do-not-disturb")) {
+        Evas_Object *check = elm_check_add(obj);
+        elm_object_style_set(check, "on&off");
+        elm_check_state_set(check, get_schedule());
+        evas_object_show(check);
+        evas_object_pass_events_set(check, 1);
+        evas_object_propagate_events_set(check, 0);
+        evas_object_smart_callback_add(check, "changed", _do_not_disturb_check_changed_cb, NULL);
+        return check;
+    }
 	return NULL;
 }
 
@@ -400,7 +444,7 @@ static char *_gl_app_notif_allow_all_text_get_cb(void *data, Evas_Object *obj, c
 
 Elm_Widget_Item *append_gl_allow_all(Evas_Object *genlist)
 {
-	NOTISET_DBG("");
+    NOTISET_TRACE_BEGIN;
 
 	Elm_Genlist_Item_Class *itc = elm_genlist_item_class_new();
 	if (!itc)
@@ -424,7 +468,7 @@ Elm_Widget_Item *append_gl_allow_all(Evas_Object *genlist)
 }
 
 void append_gl_start_option(Evas_Object *genlist, char *style, char *ugName) {
-	NOTISET_DBG("");
+    NOTISET_TRACE_BEGIN;
 
 	Elm_Genlist_Item_Class *itc = elm_genlist_item_class_new();
 	ret_if(!itc);
@@ -434,13 +478,13 @@ void append_gl_start_option(Evas_Object *genlist, char *style, char *ugName) {
 	itc->func.content_get = _gl_option_content_get_cb;
 	itc->func.del = gl_del_cb;
 	
-	elm_genlist_item_append(genlist,						/* genlist object */
-							itc,							/* item class */
-							ugName,							/* item class user data */
-							NULL,							/* parent item */
-							ELM_GENLIST_ITEM_NONE,			/* item type */
-							gl_selected_cb, 				/* select smart callback */
-							NULL);						/* smart callback user data */
+	elm_genlist_item_append(genlist,					    /* genlist object */
+				            itc,							/* item class */
+				            ugName,							/* item class user data */
+				            NULL,							/* parent item */
+				            ELM_GENLIST_ITEM_NONE,			/* item type */
+				            gl_selected_cb, 				/* select smart callback */
+				            ugName);						/* smart callback user data */
 
 	elm_genlist_item_class_free(itc);
 }
@@ -492,13 +536,13 @@ void append_gl_full_item(Evas_Object *genlist, Evas_Object *(*fullContentCb)(Eva
     itc->func.content_get = _gl_full_content_get_cb;
     itc->func.del = _gl_full_content_del_cb;
 
-    Elm_Object_Item *genlist_item = elm_genlist_item_append(genlist,                        /* genlist object */
-                            itc,                            /* item class */
-                            data,                         /* item class user data */
-                            NULL,                           /* parent item */
-                            ELM_GENLIST_ITEM_NONE,          /* item type */
-                            gl_selected_cb,                 /* select smart callback */
-                            NULL);                      /* smart callback user data */
+    Elm_Object_Item *genlist_item = elm_genlist_item_append(genlist,                    /* genlist object */
+                                                            itc,                        /* item class */
+                                                            data,                       /* item class user data */
+                                                            NULL,                       /* parent item */
+                                                            ELM_GENLIST_ITEM_NONE,      /* item type */
+                                                            gl_selected_cb,             /* select smart callback */
+                                                            NULL);                      /* smart callback user data */
     elm_genlist_item_select_mode_set(genlist_item, ELM_OBJECT_SELECT_MODE_NONE);
     elm_genlist_item_class_free(itc);
 }

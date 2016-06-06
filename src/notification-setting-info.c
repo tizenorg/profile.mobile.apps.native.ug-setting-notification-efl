@@ -80,7 +80,7 @@ void create_app_notification_list()
 
 void create_do_not_disturb_application_list()
 {
-	NOTISET_DBG("");
+	NOTISET_DBG("create_do_not_disturb_application_list");
 	int i = 0;
 	int count = 0;
 	char *package_name = NULL;
