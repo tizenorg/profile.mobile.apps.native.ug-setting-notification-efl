@@ -64,7 +64,7 @@ static Evas_Object *_create_win()
 
 static Eina_Bool _notifiacation_setting_main_pop_cb(void *data, Elm_Object_Item * it)
 {
-	NOTISET_DBG("");
+    NOTISET_TRACE_BEGIN;
 	ug_data *ugd = (ug_data *) data;
 	retv_if(!ugd, EINA_FALSE);
 
@@ -122,7 +122,7 @@ Evas_Object* _create_app_notification_gl(ug_data *ugd)
 
 static void _create_do_not_disturb_view(void *data)
 {
-	NOTISET_DBG("");
+    NOTISET_TRACE_BEGIN;
 	ug_data *ugd = (ug_data *) data;
 	ret_if(!ugd);
 
@@ -141,7 +141,7 @@ static void _create_do_not_disturb_view(void *data)
 
 static void _create_notif_view(void *data)
 {
-	NOTISET_DBG("create main view");
+    NOTISET_TRACE_BEGIN;
 	ug_data *ugd = (ug_data *) data;
 	ret_if(!ugd);
 
@@ -162,7 +162,7 @@ static void _create_notif_view(void *data)
 
 static Evas_Object *_create_fullview(Evas_Object *parent, ug_data *ugd, app_type type)
 {
-	NOTISET_DBG("");
+    NOTISET_TRACE_BEGIN;
 	retv_if(!ugd, NULL);
 
 	switch(type)
@@ -185,7 +185,7 @@ static Evas_Object *_create_fullview(Evas_Object *parent, ug_data *ugd, app_type
 
 static bool on_create(void *priv)
 {
-	NOTISET_DBG("START");
+    NOTISET_TRACE_BEGIN;
 	ug_data *ugd = priv;
 	elm_app_base_scale_set(2.6);
 
@@ -204,7 +204,7 @@ static bool on_create(void *priv)
 
 static void on_destroy(void *priv)
 {
-	NOTISET_DBG("");
+    NOTISET_TRACE_BEGIN;
 	ug_data *ugd = priv;
 	remove_all_apps_list();
 	free(ugd);
@@ -212,7 +212,7 @@ static void on_destroy(void *priv)
 
 static void on_app_control(app_control_h app_control, void *user_data)
 {
-	NOTISET_DBG("");
+    NOTISET_TRACE_BEGIN;
 
 	ug_data *ugd = user_data;
 	char *op_str = NULL;
@@ -253,7 +253,7 @@ static void on_language(app_event_info_h event_info, void *user_data)
 
 int main(int argc, char *argv[])
 {
-	NOTISET_DBG("app init !!!");
+    NOTISET_TRACE_BEGIN;
 
 	ui_app_lifecycle_callback_s event_callback;
 	memset(&event_callback, 0x00, sizeof(ui_app_lifecycle_callback_s));

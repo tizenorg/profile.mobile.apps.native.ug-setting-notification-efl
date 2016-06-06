@@ -8,11 +8,12 @@ SET(VERSION 0.1.0)
 
 SET(SRCS
 	common-efl.c
+	do-not-disturb-efl.c
 	excepted-apps-efl.c
 	main.c
 	notification-setting-info.c
     pkgmgr-setting-info.c
-    do-not-disturb-efl.c
+    set-schedule-info.c
 )
 
 INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/inc/)
