@@ -38,6 +38,7 @@ void do_not_disturb_append_item_in_list(Evas_Object* genlist)
 {
     append_gl_start_option(genlist, "multiline", "do-not-disturb");
     append_gl_start_option(genlist, "multiline", "set-schedule-multiline");
+    append_gl_start_option(genlist, "multiline", "allowed-calls");
     append_gl_full_item(genlist, do_not_disturb_allowed_apps_cont_cb, get_excepted_apps_list());
 }
 
