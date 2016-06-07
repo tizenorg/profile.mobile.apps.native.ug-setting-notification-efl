@@ -18,6 +18,7 @@
 #include "pkgmgr-setting-info.h"
 #include "common-efl.h"
 #include "set-scedule-info.h"
+#include "allowed-calls.h"
 
 #define ICON_SIZE 82
 
@@ -113,8 +114,12 @@ void gl_selected_cb(void *data, Evas_Object *obj EINA_UNUSED, void *event_info)
 	}
 
 	if(data && !strcmp(data, "set-schedule-multiline")) {
-	        gl_set_schedule_selected(&g_ug_data);
+	    gl_set_schedule_selected(&g_ug_data);
     }
+
+	if(data && !strcmp(data, "allowed-calls")) {
+	    gl_allowed_calls_selected();
+	}
 }
 
 void gl_contracted_cb(void *data EINA_UNUSED, Evas_Object *obj EINA_UNUSED, void *event_info)
@@ -374,6 +379,14 @@ static char *_gl_option_text_get_cb(void *data, Evas_Object *obj, const char *pa
 	    return strdup(APP_STRING("IDS_ST_BODY_START_TIME"));
 	} else if(!strcmp(data, "end-time") && !strcmp("elm.text", part)) {
 	    return strdup(APP_STRING("IDS_ST_BODY_END_TIME"));
+	} else if(!strcmp(data, "allowed-calls")) {
+        if (!strcmp("elm.text.multiline", part)) {
+            snprintf(buf, sizeof(buf), "<font_size=30>%s</font_size>", APP_STRING("IDS_QP_TAB4_ALL_M_RECEIVED_ALL"));
+            return strdup(buf);
+        }
+	    if (!strcmp("elm.text", part)) {
+            return strdup(APP_STRING("IDS_ST_MBODY_ALLOWED_CALLS_ABB"));
+        }
 	}
 
 	return NULL;

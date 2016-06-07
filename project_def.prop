@@ -9,7 +9,7 @@ type = app
 profile = mobile-3.0
 
 # C Sources
-USER_SRCS = src/common-efl.c src/do-not-disturb-efl.c src/notification-setting-info.c src/excepted-apps-efl.c src/main.c src/pkgmgr-setting-info.c src/set-schedule-info.c 
+USER_SRCS = src/common-efl.c src/do-not-disturb-efl.c src/notification-setting-info.c src/excepted-apps-efl.c src/main.c src/allowed-calls.c src/pkgmgr-setting-info.c src/set-schedule-info.c 
 USER_SRCS_ABS = 
 
 # EDC Sources
@@ -60,7 +60,7 @@ USER_EDCS_FONT_DIRS_ABS =
 # EDC Flags
 USER_EXT_EDC_KEYS = EDC0 
 
-USER_EXT_EDC0_EDCS = res/edje/repeat_weekly_item.edc res/edje/setting_notification.edc res/edje/time_button_layout.edc 
+USER_EXT_EDC0_EDCS = res/edje/repeat_weekly_item.edc res/edje/setting_notification.edc res/edje/reject_calls_popup.edc res/edje/time_button_layout.edc 
 USER_EXT_EDC0_EDCS_IMAGE_DIRS = edje/images 
 USER_EXT_EDC0_EDCS_IMAGE_DIRS_ABS = 
 USER_EXT_EDC0_EDCS_SOUND_DIRS = edje/sounds 

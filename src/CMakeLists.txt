@@ -7,6 +7,7 @@ SET(LIBDIR "${PREFIX}/lib")
 SET(VERSION 0.1.0)
 
 SET(SRCS
+    allowed-calls.c
 	common-efl.c
 	do-not-disturb-efl.c
 	excepted-apps-efl.c
