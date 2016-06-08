@@ -1,6 +1,6 @@
 Name:       org.tizen.setting-notification
-#VCS_FROM:   profile/mobile/apps/native/ug-setting-notification-efl#979a768f03be43e902f4832c2b517b20828b4fd2
-#RS_Ver:    20160520_2 
+#VCS_FROM:   profile/mobile/apps/native/ug-setting-notification-efl#d06582278e3d81abd59577383871f9b3568c672c
+#RS_Ver:    20160608_1 
 Summary:    notification-setting
 Version:    1.0.0
 Release:    1
@@ -26,7 +26,7 @@ Requires(post):  /usr/bin/tpk-backend
 %endif
 
 %description
-profile/mobile/apps/native/ug-setting-notification-efl#979a768f03be43e902f4832c2b517b20828b4fd2
+profile/mobile/apps/native/ug-setting-notification-efl#d06582278e3d81abd59577383871f9b3568c672c
 This is a container package which have preload TPK files
 
 %prep
