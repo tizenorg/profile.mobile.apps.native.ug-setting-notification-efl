@@ -24,30 +24,6 @@
 #include "common-efl.h"
 #include "do-not-disturb-efl.h"
 
-static Evas_Object* _create_edit_exception_apps_list(ug_data *ugd)
-{
-	Evas_Object *parent = ugd->naviframe;
-	Evas_Object *genlist;
-
-	genlist = elm_genlist_add(parent);
-	elm_genlist_mode_set(genlist, ELM_LIST_SCROLL);
-	elm_genlist_mode_set(genlist, ELM_LIST_COMPRESS);
-
-	/* Add Smart Callback */
-	evas_object_smart_callback_add(genlist, "realized", gl_realized_cb, NULL);
-	evas_object_smart_callback_add(genlist, "loaded", gl_loaded_cb, NULL);
-	evas_object_smart_callback_add(genlist, "longpressed", gl_longpressed_cb, NULL);
-	evas_object_smart_callback_add(genlist, "contracted", gl_contracted_cb, NULL);
-
-	append_gl_group_index(genlist, APP_STRING("IDS_ST_HEADER_EXCLUDED_APPS_ABB"));
-	append_gl_item_list(genlist, get_excepted_apps_list(), ITEM_STYLE_DEFAULT);
-	append_gl_group_index(genlist, APP_STRING("IDS_ST_HEADER_INCLUDED_APPS_ABB"));
-	append_gl_item_list(genlist, get_not_excepted_apps_list(), ITEM_STYLE_DEFAULT);
-
-	return genlist;
-}
-
-
 static void _done_button_cb(void *data, Evas_Object *obj, void *event_info)
 {
     NOTISET_TRACE_BEGIN;
@@ -62,25 +38,16 @@ static void _done_button_cb(void *data, Evas_Object *obj, void *event_info)
 	EVAS_OBJECT_DELIF(u_data->list_sub);
 
 	if (u_data->list_main) {
-		list = get_excepted_apps_list();
+		list = get_all_apps_list();
 		while (list) {
 			item_info_s *item = (item_info_s*)eina_list_data_get(list);
-			if (item->do_not_disturb_except == false) {
-				set_excepted_apps(item->appid, item->do_not_disturb_except);
+			if (item->allow_to_notify == false) {
+				set_excepted_apps(item->appid, item->allow_to_notify);
 			}
 			list = eina_list_next(list);
 		}
 
-		list = get_not_excepted_apps_list();
-		while (list) {
-			item_info_s *item = (item_info_s*)eina_list_data_get(list);
-			if (item->do_not_disturb_except) {
-				set_excepted_apps(item->appid, item->do_not_disturb_except);
-			}
-			list = eina_list_next(list);
-		}
-
-		create_do_not_disturb_application_list();
+		create_app_notification_list();
 		elm_genlist_clear(u_data->list_main);
 		do_not_disturb_append_item_in_list(u_data->list_main);
 
@@ -99,6 +66,29 @@ void _cancel_button_cb(void *data, Evas_Object *obj, void *event_info)
 	EVAS_OBJECT_DELIF(u_data->list_sub);
 }
 
+static Evas_Object* create_allow_notification_gl(ug_data *ugd)
+{
+    Evas_Object *parent = ugd->naviframe;
+    Evas_Object *genlist;
+
+    genlist = elm_genlist_add(parent);
+    elm_genlist_mode_set(genlist, ELM_LIST_SCROLL);
+    elm_genlist_mode_set(genlist, ELM_LIST_COMPRESS);
+    evas_object_size_hint_weight_set(genlist, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+    evas_object_size_hint_align_set(genlist, EVAS_HINT_FILL, EVAS_HINT_FILL);
+    elm_genlist_block_count_set(genlist, 8);
+
+    /* Add Smart Callback */
+    evas_object_smart_callback_add(genlist, "realized", gl_realized_cb, NULL);
+    evas_object_smart_callback_add(genlist, "loaded", gl_loaded_cb, NULL);
+    evas_object_smart_callback_add(genlist, "longpressed", gl_longpressed_cb, NULL);
+    evas_object_smart_callback_add(genlist, "contracted", gl_contracted_cb, NULL);
+
+    append_gl_item_list(genlist, get_all_apps_list(), ITEM_STYLE_ONE_LINE);
+
+    return genlist;
+}
+
 void exception_application_clicked_cb(void *data, Evas_Object *obj, void *event_info)
 {
     NOTISET_TRACE_BEGIN;
@@ -109,13 +99,13 @@ void exception_application_clicked_cb(void *data, Evas_Object *obj, void *event_
 	Evas_Object *cancel_btn = NULL;
 	Evas_Object *done_btn = NULL;
 
-	create_do_not_disturb_application_list();
+	create_app_notification_list();
 
-	u_data->list_sub = _create_edit_exception_apps_list(u_data);
-	//genlist = NULL;
+	u_data->list_sub = create_allow_notification_gl(u_data);
 
 	/* Push to naviframe */
-	navi_item = elm_naviframe_item_push(u_data->naviframe, APP_STRING("IDS_ST_HEADER_MANAGE_EXCLUDED_APPS_ABB"), NULL, NULL, u_data->list_sub, NULL);
+	// TODO: update PO files
+	navi_item = elm_naviframe_item_push(u_data->naviframe, APP_STRING("Select allowed noti."), NULL, NULL, u_data->list_sub, NULL);
 
 	/* Title Cancel Button */
 	cancel_btn = elm_button_add(u_data->naviframe);

@@ -216,9 +216,9 @@ static void _do_not_disturb_check_changed_cb(void *data, Evas_Object *obj, void 
 {
     NOTISET_TRACE_BEGIN;
 
-	Eina_Bool state = elm_check_state_get(obj);
-	set_do_not_disturb(state);
-	NOTISET_DBG("do_not_disturb check value = %s", state==false ? "FALSE":"TRUE");
+    Eina_Bool state = elm_check_state_get(obj);
+    set_do_not_disturb(state);
+    NOTISET_DBG("do_not_disturb check value = %s", state==false ? "FALSE":"TRUE");
 }
 
 static void _set_schedule_check_changed_cb(void *data, Evas_Object *obj, void *event_info)
@@ -396,7 +396,8 @@ static Evas_Object* _gl_option_content_get_cb(void *data, Evas_Object *obj, cons
 {
 	retv_if(!data, NULL);
 
-	if (!strcmp(data, "set-schedule") && !strcmp("elm.swallow.end", part)) {
+	if (!strcmp(data, "set-schedule") && !strcmp("elm.swallow.end", part))
+	{
         Evas_Object *check = elm_check_add(obj);
         elm_object_style_set(check, "on&off");
         elm_check_state_set(check, get_schedule());
@@ -417,7 +418,8 @@ static Evas_Object* _gl_option_content_get_cb(void *data, Evas_Object *obj, cons
 	    return start_end_time_item(obj);
 	}
 
-    if(!strcmp(part, "elm.swallow.end") && !strcmp(data, "do-not-disturb")) {
+	if(!strcmp(part, "elm.swallow.end") && !strcmp(data, "do-not-disturb"))
+    {
         Evas_Object *check = elm_check_add(obj);
         elm_object_style_set(check, "on&off");
         elm_check_state_set(check, get_schedule());
