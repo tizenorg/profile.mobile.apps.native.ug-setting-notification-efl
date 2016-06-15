@@ -83,13 +83,13 @@ msgid "IDS_ST_HEADER_ALLOW_CALLS_FROM_ABB"
 msgstr "От кого разрешить вызовы"
 
 msgid "IDS_ST_MBODY_EVERYONE_ABB"
-msgstr "Ото всех"
+msgstr "Все"
 
 msgid "IDS_ST_MBODY_CONTACTS_ONLY_ABB"
-msgstr "Только от контактов"
+msgstr "Только контакты"
 
 msgid "IDS_ST_MBODY_FAVOURITE_CONTACTS_ONLY_ABB"
-msgstr "Только от избранных контактов"
+msgstr "Только избранные контакты"
 
 msgid "IDS_ST_HEADER_REJECT_ALL_CALLS_ABB"
 msgstr "Отклонение всех вызовов"
@@ -102,4 +102,7 @@ msgstr "Отклонение вызовов"
 
 msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
 msgstr "Входящие звонки от контактов, которые отсутствуют в списке разрешенных, будут отклоняться автоматически."
+
+msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
+msgstr "Разреш. уведомления"
 

@@ -26,8 +26,6 @@
 #include <Elementary.h>
 #include "log.h"
 #include "common-efl.h"
-
-
 void do_not_disturb_append_item_in_list(Evas_Object* genlist);
 Evas_Object *do_not_disturb_allowed_apps_cont_cb(Evas_Object* parent, void *data);
 
