@@ -103,3 +103,6 @@ msgstr "拒接來電"
 msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
 msgstr "將自動拒接未經您允許的聯絡人撥入的來電。"
 
+msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
+msgstr "管理允許的通知"
+

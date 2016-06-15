@@ -103,3 +103,6 @@ msgstr "Відхилення викликів"
 msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
 msgstr "Вхідні виклики від контактів, відсутніх у списку дозволених, будуть відхилятися автоматично."
 
+msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
+msgstr "Дозволені сповіщення"
+

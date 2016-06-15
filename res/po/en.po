@@ -103,3 +103,6 @@ msgstr "Reject calls"
 msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
 msgstr "Incoming calls from contacts you have not allowed will be rejected automatically."
 
+msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
+msgstr "Manage allowed noti."
+

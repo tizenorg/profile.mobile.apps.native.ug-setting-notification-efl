@@ -103,3 +103,6 @@ msgstr "Қоңырауларды қабылдамау"
 msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
 msgstr "Рұқсат берілмеген контактілерден келетін кіріс қоңыраулары автоматты түрде қабылданбайды."
 
+msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
+msgstr "Рұқсаты барды басқ-у."
+
