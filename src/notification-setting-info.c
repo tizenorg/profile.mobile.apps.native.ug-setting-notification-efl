@@ -65,62 +65,9 @@ void create_app_notification_list()
 
 			if (item_info->name && strcmp(package_name, VOICE_CALL_PACKAGE) != 0) {
 				setting_info->all_apps_list = eina_list_append(setting_info->all_apps_list, item_info);
-			} else {
-				FREEIF(package_name);
-				FREEIF(item_info->name);
-				FREEIF(item_info->icon);
-				FREEIF(item_info);
-			}
-		}
-	}
-
-	setting_info->all_apps_list = eina_list_sort(setting_info->all_apps_list, eina_list_count(setting_info->all_apps_list), apps_sort_cb);
-	notification_setting_free_notification(setting_array);
-}
-
-void create_do_not_disturb_application_list()
-{
-    NOTISET_TRACE_BEGIN;
-	int i = 0;
-	int count = 0;
-	char *package_name = NULL;
-	bool allow_to_notify = false;
-	bool do_not_disturb_except = false;
-	notification_setting_h setting_array = NULL;
-	notification_setting_h temp = NULL;
-
-	remove_excepted_apps_list();
-	setting_info = calloc(1, sizeof(setting_info_s));
-
-	notification_setting_get_setting_array(&setting_array, &count);
-	ret_if(!setting_array);
-	NOTISET_DBG("count %d", count);
-
-	item_info_s *item_info = NULL;
-	for (i = 0; i < count; i++) {
-		item_info = calloc(1, sizeof(item_info_s));
-		if (item_info) {
-			temp = setting_array + i;
-
-			notification_setting_get_package_name(temp, &package_name);
-			item_info->appid = package_name;
-
-			notification_setting_get_allow_to_notify(temp, &allow_to_notify);
-			item_info->allow_to_notify = allow_to_notify;
-
-			notification_setting_get_do_not_disturb_except(temp, &do_not_disturb_except);
-			item_info->do_not_disturb_except = do_not_disturb_except;
-
-			item_info->icon = get_app_icon(package_name);
-			item_info->name = get_app_name(package_name);
-
-			item_info->index = i;
-
-			if(item_info->name) {
-				if (do_not_disturb_except) {
-					setting_info->excepted_list = eina_list_append(setting_info->excepted_list, item_info);
-				} else {
-					setting_info->not_excepted_list = eina_list_append(setting_info->not_excepted_list, item_info);
+				if(allow_to_notify)
+				{
+				    setting_info->not_disturb_list = eina_list_append(setting_info->not_disturb_list, item_info);
 				}
 			} else {
 				FREEIF(package_name);
@@ -131,22 +78,21 @@ void create_do_not_disturb_application_list()
 		}
 	}
 
-	setting_info->excepted_list = eina_list_sort(setting_info->excepted_list, eina_list_count(setting_info->excepted_list), apps_sort_cb);
-	setting_info->not_excepted_list = eina_list_sort(setting_info->not_excepted_list, eina_list_count(setting_info->not_excepted_list), apps_sort_cb);
-
+	setting_info->all_apps_list = eina_list_sort(setting_info->all_apps_list, eina_list_count(setting_info->all_apps_list), apps_sort_cb);
+	setting_info->not_disturb_list = eina_list_sort(setting_info->not_disturb_list, eina_list_count(setting_info->not_disturb_list), apps_sort_cb);
 	notification_setting_free_notification(setting_array);
-}
-
-Eina_List *get_excepted_apps_list()
-{
-	NOTISET_TRACE_BEGIN;
-	return setting_info->excepted_list;
 }
 
 Eina_List *get_all_apps_list()
 {
 	NOTISET_TRACE_BEGIN;
 	return setting_info->all_apps_list;
+}
+
+Eina_List *get_not_disturb_list()
+{
+    NOTISET_TRACE_BEGIN;
+    return setting_info->not_disturb_list;
 }
 
 bool get_allow_all()
@@ -191,60 +137,53 @@ void set_allow_all(bool state)
 	}
 }
 
-Eina_List *get_not_excepted_apps_list()
+bool get_do_not_disturb()
 {
-	NOTISET_TRACE_BEGIN;
-	return setting_info->not_excepted_list;
+   NOTISET_TRACE_BEGIN;
+
+   int err = NOTIFICATION_ERROR_NONE;
+   notification_system_setting_h system_setting = NULL;
+   bool do_not_disturb = false;
+
+   err = notification_system_setting_load_system_setting(&system_setting);
+   if (err != NOTIFICATION_ERROR_NONE || system_setting == NULL) {
+       NOTISET_ERR("notification_system_setting_load_system_setting failed [%d]\n", err);
+       goto out;
+   }
+
+   notification_system_setting_get_do_not_disturb(system_setting, &do_not_disturb);
+   NOTISET_DBG("do_not_disturb [%d]\n", do_not_disturb);
+
+out:
+   if (system_setting)
+       notification_system_setting_free_system_setting(system_setting);
+
+   return do_not_disturb;
 }
 
-
-bool get_do_not_disturb() 
+void set_do_not_disturb(bool state)
 {
-	NOTISET_TRACE_BEGIN;
+   NOTISET_TRACE_BEGIN;
+   int err = NOTIFICATION_ERROR_NONE;
+   notification_system_setting_h system_setting = NULL;
 
-	int err = NOTIFICATION_ERROR_NONE;
-	notification_system_setting_h system_setting = NULL;
-	bool do_not_disturb = false;
+   err = notification_system_setting_load_system_setting(&system_setting);
+   if (err != NOTIFICATION_ERROR_NONE || system_setting == NULL) {
+       NOTISET_ERR("notification_system_setting_load_system_setting failed [%d]\n", err);
+       goto out;
+   }
 
-	err = notification_system_setting_load_system_setting(&system_setting);
-	if (err != NOTIFICATION_ERROR_NONE || system_setting == NULL) {
-		NOTISET_ERR("notification_system_setting_load_system_setting failed [%d]\n", err);
-		goto out;
-	}
+   notification_system_setting_set_do_not_disturb(system_setting, state);
+   NOTISET_DBG("set do_not_disturb [%d]\n", state);
 
-	notification_system_setting_get_do_not_disturb(system_setting, &do_not_disturb);
-	NOTISET_DBG("do_not_disturb [%d]\n", do_not_disturb);
-	
+   err = notification_system_setting_update_system_setting(system_setting);
+   if (err != NOTIFICATION_ERROR_NONE) {
+       NOTISET_ERR("notification_setting_update_setting [%d]\n", err);
+       goto out;
+   }
 out:
-	if (system_setting)
-		notification_system_setting_free_system_setting(system_setting);
-
-	return do_not_disturb;
-}
-
-void set_do_not_disturb(bool state) 
-{
-	NOTISET_TRACE_BEGIN;
-	int err = NOTIFICATION_ERROR_NONE;
-	notification_system_setting_h system_setting = NULL;
-
-	err = notification_system_setting_load_system_setting(&system_setting);
-	if (err != NOTIFICATION_ERROR_NONE || system_setting == NULL) {
-		NOTISET_ERR("notification_system_setting_load_system_setting failed [%d]\n", err);
-		goto out;
-	}
-
-	notification_system_setting_set_do_not_disturb(system_setting, state);
-	NOTISET_DBG("set do_not_disturb [%d]\n", state);
-
-	err = notification_system_setting_update_system_setting(system_setting);
-	if (err != NOTIFICATION_ERROR_NONE) {
-		NOTISET_ERR("notification_setting_update_setting [%d]\n", err);
-		goto out;
-	}
-out:
-	if (system_setting)
-		notification_system_setting_free_system_setting(system_setting);
+   if (system_setting)
+       notification_system_setting_free_system_setting(system_setting);
 
 }
 
@@ -330,19 +269,16 @@ static void _remove_apps_list(Eina_List* input_list) {
 	}
 }
 
-
 void remove_all_apps_list() {
 	NOTISET_TRACE_BEGIN;
 	if(setting_info) {
 		_remove_apps_list(setting_info->all_apps_list);
 	}
 }
-void remove_excepted_apps_list(){
-	NOTISET_TRACE_BEGIN;
-	if(setting_info) {
-		_remove_apps_list(setting_info->excepted_list);
-		_remove_apps_list(setting_info->not_excepted_list);
-	}
 
+void remove_not_disturb_list()
+{
+    NOTISET_TRACE_BEGIN;
+    if(setting_info)
+        _remove_apps_list(setting_info->not_disturb_list);
 }
-

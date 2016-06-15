@@ -74,32 +74,35 @@ msgid "IDS_ST_BODY_END_TIME"
 msgstr "Sluttid"
 
 msgid "IDS_ST_MBODY_NOBODY_ABB"
-msgstr "Nobody"
+msgstr "Ingen"
 
 msgid "IDS_ST_MBODY_ALLOWED_CALLS_ABB"
-msgstr "Allowed calls"
+msgstr "Tillåtna samtal"
 
 msgid "IDS_ST_HEADER_ALLOW_CALLS_FROM_ABB"
-msgstr "Allow calls from"
+msgstr "Tillåt samtal från"
 
 msgid "IDS_ST_MBODY_EVERYONE_ABB"
-msgstr "Everyone"
+msgstr "Alla"
 
 msgid "IDS_ST_MBODY_CONTACTS_ONLY_ABB"
-msgstr "Contacts only"
+msgstr "Endast kontakter"
 
 msgid "IDS_ST_MBODY_FAVOURITE_CONTACTS_ONLY_ABB"
-msgstr "Favourite contacts only"
+msgstr "Endast favoritkontakter"
 
 msgid "IDS_ST_HEADER_REJECT_ALL_CALLS_ABB"
-msgstr "Reject all calls"
+msgstr "Avvisa alla samtal"
 
 msgid "IDS_ST_POP_ALL_INCOMING_CALLS_WILL_BE_REJECTED_AUTOMATICALLY"
-msgstr "All incoming calls will be rejected automatically."
+msgstr "Alla inkommande samtal avvisas automatiskt."
 
 msgid "IDS_ST_HEADER_REJECT_CALLS_ABB2"
-msgstr "Reject calls"
+msgstr "Avvisa samtal"
 
 msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
-msgstr "Incoming calls from contacts you have not allowed will be rejected automatically."
+msgstr "Inkommande samtal från kontakter som du inte har tillåtit avvisas automatiskt."
+
+msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
+msgstr "Hant. tillåtna avis."
 

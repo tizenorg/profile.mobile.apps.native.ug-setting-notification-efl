@@ -74,32 +74,35 @@ msgid "IDS_ST_BODY_END_TIME"
 msgstr "Vreme završetka"
 
 msgid "IDS_ST_MBODY_NOBODY_ABB"
-msgstr "Nobody"
+msgstr "Ni od koga"
 
 msgid "IDS_ST_MBODY_ALLOWED_CALLS_ABB"
-msgstr "Allowed calls"
+msgstr "Dozvoljeni pozivi"
 
 msgid "IDS_ST_HEADER_ALLOW_CALLS_FROM_ABB"
-msgstr "Allow calls from"
+msgstr "Dozvolite pozive sa"
 
 msgid "IDS_ST_MBODY_EVERYONE_ABB"
-msgstr "Everyone"
+msgstr "Od svakoga"
 
 msgid "IDS_ST_MBODY_CONTACTS_ONLY_ABB"
-msgstr "Contacts only"
+msgstr "Samo od kontakata"
 
 msgid "IDS_ST_MBODY_FAVOURITE_CONTACTS_ONLY_ABB"
-msgstr "Favourite contacts only"
+msgstr "Samo od omiljenih kontakata"
 
 msgid "IDS_ST_HEADER_REJECT_ALL_CALLS_ABB"
-msgstr "Reject all calls"
+msgstr "Odbijte sve pozive"
 
 msgid "IDS_ST_POP_ALL_INCOMING_CALLS_WILL_BE_REJECTED_AUTOMATICALLY"
-msgstr "All incoming calls will be rejected automatically."
+msgstr "Svi dolazni pozivi će automatski biti odbačeni."
 
 msgid "IDS_ST_HEADER_REJECT_CALLS_ABB2"
-msgstr "Reject calls"
+msgstr "Odbijte pozive"
 
 msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
-msgstr "Incoming calls from contacts you have not allowed will be rejected automatically."
+msgstr "Dolazni pozivi od kontakata koje niste dozvolili će automatski biti odbijeni."
+
+msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
+msgstr "Uprav. dozv. obaveš."
 

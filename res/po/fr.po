@@ -74,32 +74,35 @@ msgid "IDS_ST_BODY_END_TIME"
 msgstr "Heure de fin"
 
 msgid "IDS_ST_MBODY_NOBODY_ABB"
-msgstr "Nobody"
+msgstr "Personne"
 
 msgid "IDS_ST_MBODY_ALLOWED_CALLS_ABB"
-msgstr "Allowed calls"
+msgstr "Appels autorisés"
 
 msgid "IDS_ST_HEADER_ALLOW_CALLS_FROM_ABB"
-msgstr "Allow calls from"
+msgstr "Autorisation des appels de"
 
 msgid "IDS_ST_MBODY_EVERYONE_ABB"
-msgstr "Everyone"
+msgstr "Tout le monde"
 
 msgid "IDS_ST_MBODY_CONTACTS_ONLY_ABB"
-msgstr "Contacts only"
+msgstr "Contacts uniquement"
 
 msgid "IDS_ST_MBODY_FAVOURITE_CONTACTS_ONLY_ABB"
-msgstr "Favourite contacts only"
+msgstr "Contacts favoris uniquement"
 
 msgid "IDS_ST_HEADER_REJECT_ALL_CALLS_ABB"
-msgstr "Reject all calls"
+msgstr "Rejet de tous les appels"
 
 msgid "IDS_ST_POP_ALL_INCOMING_CALLS_WILL_BE_REJECTED_AUTOMATICALLY"
-msgstr "All incoming calls will be rejected automatically."
+msgstr "Tous les appels entrants seront rejetés automatiquement."
 
 msgid "IDS_ST_HEADER_REJECT_CALLS_ABB2"
-msgstr "Reject calls"
+msgstr "Rejet des appels"
 
 msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
-msgstr "Incoming calls from contacts you have not allowed will be rejected automatically."
+msgstr "Les appels entrants provenant de contacts que vous n'avez pas autorisés seront rejetés automatiquement."
+
+msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
+msgstr "Gestion notif. autor."
 

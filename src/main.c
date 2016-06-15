@@ -126,7 +126,7 @@ static void _create_do_not_disturb_view(void *data)
 	ug_data *ugd = (ug_data *) data;
 	ret_if(!ugd);
 
-	create_do_not_disturb_application_list();
+	create_app_notification_list();
 	ugd->list_main = _create_do_not_disturb_gl(ugd);
 
 	/* back Button */
