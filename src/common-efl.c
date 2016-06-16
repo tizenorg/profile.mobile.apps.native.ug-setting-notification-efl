@@ -396,6 +396,19 @@ static Evas_Object* _gl_option_content_get_cb(void *data, Evas_Object *obj, cons
 {
 	retv_if(!data, NULL);
 
+    if(!strcmp(data, "do-not-disturb") && !strcmp(part, "elm.swallow.end"))
+    {
+        Evas_Object *check = NULL;
+        check = elm_check_add(obj);
+        elm_object_style_set(check, "on&off");
+        elm_check_state_set(check, get_do_not_disturb());
+        evas_object_show(check);
+        evas_object_pass_events_set(check, 1);
+        evas_object_smart_callback_add(check, "changed", _do_not_disturb_check_changed_cb, NULL);
+        evas_object_propagate_events_set(check, 0);
+        return check;
+    }
+
 	if (!strcmp(data, "set-schedule") && !strcmp("elm.swallow.end", part)) {
         Evas_Object *check = elm_check_add(obj);
         elm_object_style_set(check, "on&off");
