@@ -25,6 +25,7 @@
 #include "log.h"
 #include "common-efl.h"
 
+void set_schedule_check_changed_cb(void *data, Evas_Object *obj, void *event_info);
 void gl_set_schedule_selected(ug_data *data);
 bool get_schedule();
 Evas_Object *start_end_time_item(Evas_Object* parent);

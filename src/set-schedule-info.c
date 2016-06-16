@@ -55,6 +55,24 @@ typedef struct datetime
     bool is_start_button;
 } datetime_s;
 
+void set_schedule_check_changed_cb(void *data, Evas_Object *obj, void *event_info)
+{
+    NOTISET_TRACE_BEGIN;
+    //TODO: Will be done, after receiving API
+
+    unsigned int i = 0;
+    Eina_Bool check = !elm_check_state_get(obj);
+    unsigned int size = elm_genlist_items_count(g_ug_data.list_sub);
+    Elm_Object_Item *item = elm_genlist_first_item_get(g_ug_data.list_sub);
+    for(i = 1; i < size; ++i)
+    {
+        Elm_Object_Item *next = elm_genlist_item_next_get(item);
+        elm_object_item_disabled_set(next, check);
+        item = next;
+    }
+
+}
+
 static int get_time_format()
 {
     bool timeFormat = false;
@@ -80,7 +98,7 @@ bool get_schedule()
 {
     NOTISET_TRACE_BEGIN;
     // TODO: will be implemented after receiving of API
-    return false;
+    return true;
 }
 
 static Evas_Object *create_week_repeat_layout(Evas_Object* parent)

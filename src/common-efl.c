@@ -221,12 +221,6 @@ static void _do_not_disturb_check_changed_cb(void *data, Evas_Object *obj, void 
     NOTISET_DBG("do_not_disturb check value = %s", state==false ? "FALSE":"TRUE");
 }
 
-static void _set_schedule_check_changed_cb(void *data, Evas_Object *obj, void *event_info)
-{
-    NOTISET_TRACE_BEGIN;
-    //TODO: Will be done, after receiving API
-}
-
 static void _app_notif_allow_all_check_changed_cb(void *data, Evas_Object *obj, void *event_info)
 {
     NOTISET_TRACE_BEGIN;
@@ -404,7 +398,7 @@ static Evas_Object* _gl_option_content_get_cb(void *data, Evas_Object *obj, cons
         evas_object_show(check);
         evas_object_pass_events_set(check, 1);
         evas_object_propagate_events_set(check, 0);
-        evas_object_smart_callback_add(check, "changed", _set_schedule_check_changed_cb, NULL);
+        evas_object_smart_callback_add(check, "changed", set_schedule_check_changed_cb, NULL);
         return check;
 	}
 
