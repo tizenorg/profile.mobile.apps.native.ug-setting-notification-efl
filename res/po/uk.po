@@ -73,3 +73,36 @@ msgstr "Час початку"
 msgid "IDS_ST_BODY_END_TIME"
 msgstr "Час завершення"
 
+msgid "IDS_ST_MBODY_NOBODY_ABB"
+msgstr "Ні від кого"
+
+msgid "IDS_ST_MBODY_ALLOWED_CALLS_ABB"
+msgstr "Дозволені виклики"
+
+msgid "IDS_ST_HEADER_ALLOW_CALLS_FROM_ABB"
+msgstr "Від кого дозволено виклики"
+
+msgid "IDS_ST_MBODY_EVERYONE_ABB"
+msgstr "Від усіх"
+
+msgid "IDS_ST_MBODY_CONTACTS_ONLY_ABB"
+msgstr "Лише від контактів"
+
+msgid "IDS_ST_MBODY_FAVOURITE_CONTACTS_ONLY_ABB"
+msgstr "Лише від обраних контактів"
+
+msgid "IDS_ST_HEADER_REJECT_ALL_CALLS_ABB"
+msgstr "Відхилення всіх викликів"
+
+msgid "IDS_ST_POP_ALL_INCOMING_CALLS_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Усі вхідні виклики відхилятимуться автоматично."
+
+msgid "IDS_ST_HEADER_REJECT_CALLS_ABB2"
+msgstr "Відхилення викликів"
+
+msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Вхідні виклики від контактів, відсутніх у списку дозволених, будуть відхилятися автоматично."
+
+msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
+msgstr "Дозволені сповіщення"
+

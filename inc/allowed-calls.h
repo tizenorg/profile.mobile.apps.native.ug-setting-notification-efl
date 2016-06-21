@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009 - 2015 Samsung Electronics Co., Ltd. All rights reserved.
+ * Copyright (c) 2009 - 2016 Samsung Electronics Co., Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +16,15 @@
  */
 
 
-#ifndef __DO_NOT_DISTURB_EFL_H__
-#define __DO_NOT_DISTURB_EFL_H__
+#ifndef __ALLOWED_CALLS_H__
+#define __ALLOWED_CALLS_H__
 
 #include <Evas.h>
-#include <stdbool.h>
-#include <notification_setting.h>
 
 #include <Elementary.h>
 #include "log.h"
 #include "common-efl.h"
-void do_not_disturb_append_item_in_list(Evas_Object* genlist);
-Evas_Object *do_not_disturb_allowed_apps_cont_cb(Evas_Object* parent, void *data);
 
-#endif //__DO_NOT_DISTURB_EFL_H__
+void gl_allowed_calls_selected();
+
+#endif //__ALLOWED_CALLS_H__

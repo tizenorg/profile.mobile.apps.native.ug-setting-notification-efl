@@ -73,3 +73,36 @@ msgstr "Starttid"
 msgid "IDS_ST_BODY_END_TIME"
 msgstr "Sluttid"
 
+msgid "IDS_ST_MBODY_NOBODY_ABB"
+msgstr "Ingen"
+
+msgid "IDS_ST_MBODY_ALLOWED_CALLS_ABB"
+msgstr "Tillåtna samtal"
+
+msgid "IDS_ST_HEADER_ALLOW_CALLS_FROM_ABB"
+msgstr "Tillåt samtal från"
+
+msgid "IDS_ST_MBODY_EVERYONE_ABB"
+msgstr "Alla"
+
+msgid "IDS_ST_MBODY_CONTACTS_ONLY_ABB"
+msgstr "Endast kontakter"
+
+msgid "IDS_ST_MBODY_FAVOURITE_CONTACTS_ONLY_ABB"
+msgstr "Endast favoritkontakter"
+
+msgid "IDS_ST_HEADER_REJECT_ALL_CALLS_ABB"
+msgstr "Avvisa alla samtal"
+
+msgid "IDS_ST_POP_ALL_INCOMING_CALLS_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Alla inkommande samtal avvisas automatiskt."
+
+msgid "IDS_ST_HEADER_REJECT_CALLS_ABB2"
+msgstr "Avvisa samtal"
+
+msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Inkommande samtal från kontakter som du inte har tillåtit avvisas automatiskt."
+
+msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
+msgstr "Hant. tillåtna avis."
+

@@ -73,3 +73,36 @@ msgstr "Sākuma laiks"
 msgid "IDS_ST_BODY_END_TIME"
 msgstr "Beigu laiks"
 
+msgid "IDS_ST_MBODY_NOBODY_ABB"
+msgstr "Neviens"
+
+msgid "IDS_ST_MBODY_ALLOWED_CALLS_ABB"
+msgstr "Atļautie zvani"
+
+msgid "IDS_ST_HEADER_ALLOW_CALLS_FROM_ABB"
+msgstr "Atļaut zvanus no"
+
+msgid "IDS_ST_MBODY_EVERYONE_ABB"
+msgstr "Ikviens"
+
+msgid "IDS_ST_MBODY_CONTACTS_ONLY_ABB"
+msgstr "Tikai kontakti"
+
+msgid "IDS_ST_MBODY_FAVOURITE_CONTACTS_ONLY_ABB"
+msgstr "Tikai izlases kontakti"
+
+msgid "IDS_ST_HEADER_REJECT_ALL_CALLS_ABB"
+msgstr "Noraidīt visus zvanus"
+
+msgid "IDS_ST_POP_ALL_INCOMING_CALLS_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Visi ienākošie zvani tiks automātiski noraidīti."
+
+msgid "IDS_ST_HEADER_REJECT_CALLS_ABB2"
+msgstr "Noraidīt zvanus"
+
+msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Ienākošie zvani no kontaktiem, ko neesat atļāvis, tiks automātiski noraidīti."
+
+msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
+msgstr "Pārv. atļautos paz."
+

@@ -73,3 +73,36 @@ msgstr "Začetni čas"
 msgid "IDS_ST_BODY_END_TIME"
 msgstr "Končni čas"
 
+msgid "IDS_ST_MBODY_NOBODY_ABB"
+msgstr "Nihče"
+
+msgid "IDS_ST_MBODY_ALLOWED_CALLS_ABB"
+msgstr "Dovoljeni klici"
+
+msgid "IDS_ST_HEADER_ALLOW_CALLS_FROM_ABB"
+msgstr "Dovoli klice od:"
+
+msgid "IDS_ST_MBODY_EVERYONE_ABB"
+msgstr "Vsi"
+
+msgid "IDS_ST_MBODY_CONTACTS_ONLY_ABB"
+msgstr "Samo stiki"
+
+msgid "IDS_ST_MBODY_FAVOURITE_CONTACTS_ONLY_ABB"
+msgstr "Samo priljubljeni stiki"
+
+msgid "IDS_ST_HEADER_REJECT_ALL_CALLS_ABB"
+msgstr "Zavrni vse klice"
+
+msgid "IDS_ST_POP_ALL_INCOMING_CALLS_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Vsi dohodni klici bodo samodejno zavrnjeni."
+
+msgid "IDS_ST_HEADER_REJECT_CALLS_ABB2"
+msgstr "Zavrni klice"
+
+msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Dohodni klici od stikov brez vašega dovoljenja bodo samodejno zavrnjeni."
+
+msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
+msgstr "Uprav. dovolj. obv."
+

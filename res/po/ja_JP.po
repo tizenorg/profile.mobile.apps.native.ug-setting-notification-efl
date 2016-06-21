@@ -73,3 +73,36 @@ msgstr "開始時刻"
 msgid "IDS_ST_BODY_END_TIME"
 msgstr "終了時刻"
 
+msgid "IDS_ST_MBODY_NOBODY_ABB"
+msgstr "許可しない"
+
+msgid "IDS_ST_MBODY_ALLOWED_CALLS_ABB"
+msgstr "着信の許可対象"
+
+msgid "IDS_ST_HEADER_ALLOW_CALLS_FROM_ABB"
+msgstr "着信の許可対象"
+
+msgid "IDS_ST_MBODY_EVERYONE_ABB"
+msgstr "全て"
+
+msgid "IDS_ST_MBODY_CONTACTS_ONLY_ABB"
+msgstr "連絡先のみ"
+
+msgid "IDS_ST_MBODY_FAVOURITE_CONTACTS_ONLY_ABB"
+msgstr "お気に入りの連絡先のみ"
+
+msgid "IDS_ST_HEADER_REJECT_ALL_CALLS_ABB"
+msgstr "全ての着信を拒否"
+
+msgid "IDS_ST_POP_ALL_INCOMING_CALLS_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "全ての着信を自動的に拒否します。"
+
+msgid "IDS_ST_HEADER_REJECT_CALLS_ABB2"
+msgstr "着信拒否"
+
+msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "許可していない連絡先からの着信を自動的に拒否します。"
+
+msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
+msgstr "許可する通知を管理"
+

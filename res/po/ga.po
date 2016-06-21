@@ -73,3 +73,36 @@ msgstr "Am tosaigh"
 msgid "IDS_ST_BODY_END_TIME"
 msgstr "Am deiridh"
 
+msgid "IDS_ST_MBODY_NOBODY_ABB"
+msgstr "Ní ó Dhuine ar bith"
+
+msgid "IDS_ST_MBODY_ALLOWED_CALLS_ABB"
+msgstr "Glaonna ceadaithe"
+
+msgid "IDS_ST_HEADER_ALLOW_CALLS_FROM_ABB"
+msgstr "Ceadaigh glaonna ó"
+
+msgid "IDS_ST_MBODY_EVERYONE_ABB"
+msgstr "Cách"
+
+msgid "IDS_ST_MBODY_CONTACTS_ONLY_ABB"
+msgstr "Teagmhálaithe amháin"
+
+msgid "IDS_ST_MBODY_FAVOURITE_CONTACTS_ONLY_ABB"
+msgstr "Teagmhálaithe ceanáin amháin"
+
+msgid "IDS_ST_HEADER_REJECT_ALL_CALLS_ABB"
+msgstr "Diúltaigh do gach glao"
+
+msgid "IDS_ST_POP_ALL_INCOMING_CALLS_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Diúltófar do gach glao isteach go huathoibríoch."
+
+msgid "IDS_ST_HEADER_REJECT_CALLS_ABB2"
+msgstr "Diúltaigh do ghlaonna"
+
+msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Diúltófar go huathoibríoch do ghlaonna isteach ó theagmhálaithe nach bhfuil ceadaithe agat."
+
+msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
+msgstr "Bainis. fógraí cead."
+

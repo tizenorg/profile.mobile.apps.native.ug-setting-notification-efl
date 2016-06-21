@@ -73,3 +73,36 @@ msgstr "Startzeit"
 msgid "IDS_ST_BODY_END_TIME"
 msgstr "Endzeit"
 
+msgid "IDS_ST_MBODY_NOBODY_ABB"
+msgstr "Niemandem"
+
+msgid "IDS_ST_MBODY_ALLOWED_CALLS_ABB"
+msgstr "Zulässige Anrufe"
+
+msgid "IDS_ST_HEADER_ALLOW_CALLS_FROM_ABB"
+msgstr "Anrufe zulassen von"
+
+msgid "IDS_ST_MBODY_EVERYONE_ABB"
+msgstr "Jedem"
+
+msgid "IDS_ST_MBODY_CONTACTS_ONLY_ABB"
+msgstr "Nur Kontakte"
+
+msgid "IDS_ST_MBODY_FAVOURITE_CONTACTS_ONLY_ABB"
+msgstr "Nur bevorzugte Kontakte"
+
+msgid "IDS_ST_HEADER_REJECT_ALL_CALLS_ABB"
+msgstr "Ablehnen aller Anrufe"
+
+msgid "IDS_ST_POP_ALL_INCOMING_CALLS_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Alle eingehende Anrufe werden automatisch abgewiesen."
+
+msgid "IDS_ST_HEADER_REJECT_CALLS_ABB2"
+msgstr "Ablehnen von Anrufen"
+
+msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Eingehende Anrufe von Kontakten, die Sie nicht zugelassen haben, werden automatisch abgelehnt."
+
+msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
+msgstr "Zugelassenenverwaltung"
+

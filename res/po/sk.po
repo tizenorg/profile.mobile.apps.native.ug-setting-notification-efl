@@ -73,3 +73,36 @@ msgstr "Počiatočný čas"
 msgid "IDS_ST_BODY_END_TIME"
 msgstr "Konečný čas"
 
+msgid "IDS_ST_MBODY_NOBODY_ABB"
+msgstr "Nikto"
+
+msgid "IDS_ST_MBODY_ALLOWED_CALLS_ABB"
+msgstr "Povolené hovory"
+
+msgid "IDS_ST_HEADER_ALLOW_CALLS_FROM_ABB"
+msgstr "Povoliť hovory od"
+
+msgid "IDS_ST_MBODY_EVERYONE_ABB"
+msgstr "Všetci"
+
+msgid "IDS_ST_MBODY_CONTACTS_ONLY_ABB"
+msgstr "Iba kontakty"
+
+msgid "IDS_ST_MBODY_FAVOURITE_CONTACTS_ONLY_ABB"
+msgstr "Iba obľúbené kontakty"
+
+msgid "IDS_ST_HEADER_REJECT_ALL_CALLS_ABB"
+msgstr "Odmietanie všetkých hovorov"
+
+msgid "IDS_ST_POP_ALL_INCOMING_CALLS_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Všetky prichádzajúce hovory sa budú automaticky odmietať."
+
+msgid "IDS_ST_HEADER_REJECT_CALLS_ABB2"
+msgstr "Odmietanie hovorov"
+
+msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Prichádzajúce hovory od kontaktov, ktoré nepovolíte, sa budú automaticky odmietať."
+
+msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
+msgstr "Správa povol. ozn."
+

@@ -24,9 +24,9 @@
 
 
 typedef struct _setting_info_t {
-	Eina_List *not_excepted_list;
-	Eina_List *excepted_list;
-	Eina_List *all_apps_list;
+    Eina_List *not_excepted_list;
+    Eina_List *excepted_list;
+    Eina_List *all_apps_list;
 } setting_info_s;
 
 bool get_do_not_disturb();
@@ -49,4 +49,3 @@ void remove_excepted_apps_list();
 
 
 #endif /* __NOTIFICATION_SETTING_INFO_H__ */
-

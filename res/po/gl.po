@@ -73,3 +73,36 @@ msgstr "Hora de inicio"
 msgid "IDS_ST_BODY_END_TIME"
 msgstr "Hora de finalización"
 
+msgid "IDS_ST_MBODY_NOBODY_ABB"
+msgstr "Ninguén"
+
+msgid "IDS_ST_MBODY_ALLOWED_CALLS_ABB"
+msgstr "Chamadas permitidas"
+
+msgid "IDS_ST_HEADER_ALLOW_CALLS_FROM_ABB"
+msgstr "Permitir chamadas de"
+
+msgid "IDS_ST_MBODY_EVERYONE_ABB"
+msgstr "Todo o mundo"
+
+msgid "IDS_ST_MBODY_CONTACTS_ONLY_ABB"
+msgstr "Só contactos"
+
+msgid "IDS_ST_MBODY_FAVOURITE_CONTACTS_ONLY_ABB"
+msgstr "Só contactos favoritos"
+
+msgid "IDS_ST_HEADER_REJECT_ALL_CALLS_ABB"
+msgstr "Rexeitar todas as chamadas"
+
+msgid "IDS_ST_POP_ALL_INCOMING_CALLS_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Todas as chamadas entrantes rexeitaranse automaticamente."
+
+msgid "IDS_ST_HEADER_REJECT_CALLS_ABB2"
+msgstr "Rexeitar chamadas"
+
+msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "As chamadas entrantes de contactos non permitidos rexeitaranse automaticamente."
+
+msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
+msgstr "Admin. noti. permit."
+

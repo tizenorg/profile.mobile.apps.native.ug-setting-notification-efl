@@ -73,3 +73,36 @@ msgstr "Başlangıç saati"
 msgid "IDS_ST_BODY_END_TIME"
 msgstr "Bitiş saati"
 
+msgid "IDS_ST_MBODY_NOBODY_ABB"
+msgstr "Hiç kimse"
+
+msgid "IDS_ST_MBODY_ALLOWED_CALLS_ABB"
+msgstr "İzin verilen aramalar"
+
+msgid "IDS_ST_HEADER_ALLOW_CALLS_FROM_ABB"
+msgstr "Şu kişiden aramlra izn ver"
+
+msgid "IDS_ST_MBODY_EVERYONE_ABB"
+msgstr "Herkes"
+
+msgid "IDS_ST_MBODY_CONTACTS_ONLY_ABB"
+msgstr "Sadece kişiler"
+
+msgid "IDS_ST_MBODY_FAVOURITE_CONTACTS_ONLY_ABB"
+msgstr "Sadece favori kişiler"
+
+msgid "IDS_ST_HEADER_REJECT_ALL_CALLS_ABB"
+msgstr "Tüm aramaları reddet"
+
+msgid "IDS_ST_POP_ALL_INCOMING_CALLS_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Tüm gelen aramalar otomatik olarak reddedilecek."
+
+msgid "IDS_ST_HEADER_REJECT_CALLS_ABB2"
+msgstr "Aramaları reddet"
+
+msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "İzin vermediğiniz kişilerden gelen aramalar otomatik olarak reddedilecek."
+
+msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
+msgstr "İzn vrln bldrmlr ynt"
+

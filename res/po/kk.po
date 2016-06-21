@@ -73,3 +73,36 @@ msgstr "Бастау уақыты"
 msgid "IDS_ST_BODY_END_TIME"
 msgstr "Аяқтау уақыты"
 
+msgid "IDS_ST_MBODY_NOBODY_ABB"
+msgstr "Ешкім"
+
+msgid "IDS_ST_MBODY_ALLOWED_CALLS_ABB"
+msgstr "Рұқсат берілген қоңыраулар"
+
+msgid "IDS_ST_HEADER_ALLOW_CALLS_FROM_ABB"
+msgstr "Қоңырауларына рұқсат беру"
+
+msgid "IDS_ST_MBODY_EVERYONE_ABB"
+msgstr "Барлығы"
+
+msgid "IDS_ST_MBODY_CONTACTS_ONLY_ABB"
+msgstr "Тек контактілер"
+
+msgid "IDS_ST_MBODY_FAVOURITE_CONTACTS_ONLY_ABB"
+msgstr "Тек таңдаулы контактілер"
+
+msgid "IDS_ST_HEADER_REJECT_ALL_CALLS_ABB"
+msgstr "Барлық қоңырау қабылдамау"
+
+msgid "IDS_ST_POP_ALL_INCOMING_CALLS_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Барлық кіріс қоңыраулары автоматты түрде қабылданбайды."
+
+msgid "IDS_ST_HEADER_REJECT_CALLS_ABB2"
+msgstr "Қоңырауларды қабылдамау"
+
+msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Рұқсат берілмеген контактілерден келетін кіріс қоңыраулары автоматты түрде қабылданбайды."
+
+msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
+msgstr "Рұқсаты барды басқ-у."
+

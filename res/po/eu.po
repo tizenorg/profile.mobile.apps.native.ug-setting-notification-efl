@@ -73,3 +73,36 @@ msgstr "Hasiera ordua"
 msgid "IDS_ST_BODY_END_TIME"
 msgstr "Amaiera ordua"
 
+msgid "IDS_ST_MBODY_NOBODY_ABB"
+msgstr "Bat ere ez"
+
+msgid "IDS_ST_MBODY_ALLOWED_CALLS_ABB"
+msgstr "Onartutako deiak"
+
+msgid "IDS_ST_HEADER_ALLOW_CALLS_FROM_ABB"
+msgstr "Baimendu hauen deiak"
+
+msgid "IDS_ST_MBODY_EVERYONE_ABB"
+msgstr "Guztiak"
+
+msgid "IDS_ST_MBODY_CONTACTS_ONLY_ABB"
+msgstr "Kontaktuak soilik"
+
+msgid "IDS_ST_MBODY_FAVOURITE_CONTACTS_ONLY_ABB"
+msgstr "Gogoko kontaktuak soilik"
+
+msgid "IDS_ST_HEADER_REJECT_ALL_CALLS_ABB"
+msgstr "Ukatu dei guztiak"
+
+msgid "IDS_ST_POP_ALL_INCOMING_CALLS_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Sarrerako dei guztiak automatikoki ukatuko dira."
+
+msgid "IDS_ST_HEADER_REJECT_CALLS_ABB2"
+msgstr "Ukatu deiak"
+
+msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJECTED_AUTOMATICALLY"
+msgstr "Onartu ez diren kontaktuen sarrerako deiak automatikoki ukatuko dira."
+
+msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
+msgstr "Jakinarazpen onartuak"
+
