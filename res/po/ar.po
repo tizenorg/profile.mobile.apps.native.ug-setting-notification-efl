@@ -106,3 +106,9 @@ msgstr "سيتم تلقائياً رفض المكالمات الواردة من 
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "إدارة الإشعارات المسموح بها"
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "أحداث التقويم"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "المنبهات"
+

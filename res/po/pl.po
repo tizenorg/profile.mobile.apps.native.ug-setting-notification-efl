@@ -106,3 +106,9 @@ msgstr "Połączenia przychodzące od kontaktów, na których użycie nie zezwol
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Zarz. dozw. powiad."
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Zdarzenia kalendarza"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Alarmy"
+

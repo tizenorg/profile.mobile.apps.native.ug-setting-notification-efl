@@ -106,3 +106,9 @@ msgstr "Рұқсат берілмеген контактілерден келе�
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Рұқсаты барды басқ-у."
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Күнтізбе оқиғалары"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Дабылдар"
+

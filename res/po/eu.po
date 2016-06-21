@@ -106,3 +106,9 @@ msgstr "Onartu ez diren kontaktuen sarrerako deiak automatikoki ukatuko dira."
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Jakinarazpen onartuak"
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Egutegiko gertaerak"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Alarmak"
+

@@ -106,3 +106,9 @@ msgstr "İzin vermediğiniz kişilerden gelen aramalar otomatik olarak reddedile
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "İzn vrln bldrmlr ynt"
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Takvim etkinlikleri"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Alarmlar"
+

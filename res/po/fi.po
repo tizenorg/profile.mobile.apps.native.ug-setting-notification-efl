@@ -106,3 +106,9 @@ msgstr "Yhteyshenkilöiden saapuvat puhelut, joita et ole sallinut, hylätään 
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Sall. ilm. hallinta"
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Kalenterimerkinnät"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Hälytykset"
+

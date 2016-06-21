@@ -106,3 +106,9 @@ msgstr "Dolazni pozivi od kontakata koje niste dopustili automatski će se odbij
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Uprav. dop. obavij."
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Događaji iz kalendara"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Alarmi"
+

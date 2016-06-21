@@ -106,3 +106,9 @@ msgstr "As chamadas recebidas dos contactos que não permitiu serão rejeitadas 
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Gerir noti. permitidas"
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Eventos do calendário"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Alarmes"
+

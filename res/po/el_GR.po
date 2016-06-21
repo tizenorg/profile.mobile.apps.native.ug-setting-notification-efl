@@ -106,3 +106,9 @@ msgstr "Οι εισερχόμενες κλήσεις από επαφές που 
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Διαχ. επιτρ. ειδοπ."
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Συμβάντα ημερολογίου"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Ειδοποίηση"
+

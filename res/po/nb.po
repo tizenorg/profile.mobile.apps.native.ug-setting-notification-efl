@@ -106,3 +106,9 @@ msgstr "Innkommende anrop fra kontakter som du ikke har tillatt, blir automatisk
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Adm. tillatte merkn."
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Kalenderhendelser"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Alarm"
+

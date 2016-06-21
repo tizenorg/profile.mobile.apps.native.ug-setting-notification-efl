@@ -106,3 +106,9 @@ msgstr "허용되지 않은 연락처에서 걸려오는 전화를 자동으로 
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "알림을 받을 앱 관리"
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "캘린더 일정"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "알람"
+

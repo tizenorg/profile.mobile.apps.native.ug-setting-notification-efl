@@ -106,3 +106,9 @@ msgstr "Inkommande samtal från kontakter som du inte har tillåtit avvisas auto
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Hant. tillåtna avis."
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Kalenderhändelse"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Alarm"
+

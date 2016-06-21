@@ -106,3 +106,9 @@ msgstr "As chamadas recebidas dos contatos não permitidos serão automaticament
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Geren. notif. perm."
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Eventos do calendário"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Alarmes"
+

@@ -106,3 +106,9 @@ msgstr "Diúltófar go huathoibríoch do ghlaonna isteach ó theagmhálaithe nac
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Bainis. fógraí cead."
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Imeachtaí féilire"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Aláraim"
+

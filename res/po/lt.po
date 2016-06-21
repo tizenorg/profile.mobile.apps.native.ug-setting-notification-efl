@@ -106,3 +106,9 @@ msgstr "Gaunami skambučiai iš adresatų, kuriuos uždraudėte, bus automatišk
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Tvark. leid. praneš."
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Kalendoriaus įvykiai"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Signalai"
+

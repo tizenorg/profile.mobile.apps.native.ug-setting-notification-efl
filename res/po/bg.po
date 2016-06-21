@@ -106,3 +106,9 @@ msgstr "Входящите повиквания от контакти, коит�
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Управ. разреш. увед."
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Събития в календара"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Аларми"
+

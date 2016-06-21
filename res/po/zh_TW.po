@@ -106,3 +106,9 @@ msgstr "將自動拒接未經您允許的聯絡人撥入的來電。"
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "管理允許的通知"
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "日曆活動"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "鬧鐘"
+

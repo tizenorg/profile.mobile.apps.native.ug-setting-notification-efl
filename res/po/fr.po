@@ -106,3 +106,9 @@ msgstr "Les appels entrants provenant de contacts que vous n'avez pas autorisés
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Gestion notif. autor."
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Evénements du calendrier"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Alarmes"
+

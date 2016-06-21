@@ -106,3 +106,9 @@ msgstr "Inkomende oproepen van contacten die u niet hebt toegestaan, worden auto
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Meldingen beheren"
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Agenda-items"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Alarmen"
+

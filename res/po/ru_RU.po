@@ -106,3 +106,9 @@ msgstr "Входящие звонки от контактов, которые о
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Разреш. уведомления"
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "События календаря"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Будильник"
+
