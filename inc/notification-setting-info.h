@@ -27,6 +27,8 @@ typedef struct _setting_info_t {
     Eina_List *not_excepted_list;
     Eina_List *excepted_list;
     Eina_List *all_apps_list;
+    Eina_List *first_allowed_list;
+    Eina_List *first_excepted_list;
 } setting_info_s;
 
 bool get_do_not_disturb();
@@ -38,6 +40,8 @@ bool set_excepted_apps(char *pkg_name, bool state);
 bool get_allow_all();
 void set_allow_all(bool state);
 Eina_List *get_all_apps_list();
+Eina_List *get_first_allowed_apps_list();
+Eina_List *get_first_excepted_apps_list();
 Eina_List *get_excepted_apps_list();
 Eina_List *get_not_excepted_apps_list();
 
@@ -46,6 +50,7 @@ void create_do_not_disturb_application_list();
 
 void remove_all_apps_list();
 void remove_excepted_apps_list();
+void remove_arranged_list();
 
 
 #endif /* __NOTIFICATION_SETTING_INFO_H__ */
