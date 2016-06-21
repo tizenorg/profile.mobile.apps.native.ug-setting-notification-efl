@@ -20,10 +20,15 @@
 #include <notification.h>
 #include <notification_setting.h>
 #include <notification_setting_internal.h>
+#include "common-efl.h"
 
 setting_info_s *setting_info = NULL;
 
 #define VOICE_CALL_PACKAGE "org.tizen.call-ui"
+#define CALENDAR_PACKAGE "org.tizen.calendar"
+#define MESSAGES_PACKAGE "org.tizen.message"
+// TODO: we have no clock on device, when it will be add, we will need to change package id
+#define CLOCK_PACKAGE "org.tizen.clock"
 
 void create_app_notification_list()
 {
@@ -52,6 +57,7 @@ void create_app_notification_list()
             notification_setting_get_package_name(temp, &package_name);
             item_info->appid = package_name;
 
+
             notification_setting_get_allow_to_notify(temp, &allow_to_notify);
             item_info->allow_to_notify = allow_to_notify;
 
@@ -63,7 +69,10 @@ void create_app_notification_list()
 
             item_info->index = i;
 
-            if (item_info->name && strcmp(package_name, VOICE_CALL_PACKAGE) != 0) {
+            if (item_info->name && strcmp(package_name, VOICE_CALL_PACKAGE)
+                                && strcmp(package_name, CALENDAR_PACKAGE)
+                                && strcmp(package_name, CLOCK_PACKAGE))
+            {
                 setting_info->all_apps_list = eina_list_append(setting_info->all_apps_list, item_info);
             } else {
                 FREEIF(package_name);
@@ -112,13 +121,31 @@ void create_do_not_disturb_application_list()
             item_info->do_not_disturb_except = do_not_disturb_except;
 
             item_info->icon = get_app_icon(package_name);
-            item_info->name = get_app_name(package_name);
+
+            if(!strcmp(package_name, CALENDAR_PACKAGE))
+                item_info->name = strdup(APP_STRING("IDS_COM_BODY_CALENDAR_EVENTS"));
+            else if(!strcmp(package_name, CLOCK_PACKAGE))
+                item_info->name = strdup(APP_STRING("IDS_ST_BODY_ALARMS"));
+            else
+                item_info->name = get_app_name(package_name);
 
             item_info->index = i;
 
             if(item_info->name)
             {
-                if(allow_to_notify)
+                if((allow_to_notify && !strcmp(package_name, MESSAGES_PACKAGE)) || !strcmp(package_name, CLOCK_PACKAGE)
+                                                                                || !strcmp(package_name, CALENDAR_PACKAGE) )
+                {
+                    setting_info->first_allowed_list = eina_list_append(setting_info->first_allowed_list, item_info);
+                    if(do_not_disturb_except)
+                    {
+                        setting_info->first_excepted_list = eina_list_append(setting_info->first_excepted_list, item_info);
+                    }
+                }
+
+                if(allow_to_notify && strcmp(package_name, MESSAGES_PACKAGE)
+                                   && strcmp(package_name, CALENDAR_PACKAGE)
+                                   && strcmp(package_name, CLOCK_PACKAGE))
                 {
                     if(do_not_disturb_except)
                     {
@@ -138,6 +165,8 @@ void create_do_not_disturb_application_list()
         }
     }
 
+    setting_info->first_excepted_list = eina_list_sort(setting_info->first_excepted_list, eina_list_count(setting_info->first_excepted_list), apps_sort_cb);
+    setting_info->first_allowed_list = eina_list_sort(setting_info->first_allowed_list, eina_list_count(setting_info->first_allowed_list), apps_sort_cb);
     setting_info->excepted_list = eina_list_sort(setting_info->excepted_list, eina_list_count(setting_info->excepted_list), apps_sort_cb);
     setting_info->not_excepted_list = eina_list_sort(setting_info->not_excepted_list, eina_list_count(setting_info->not_excepted_list), apps_sort_cb);
 
@@ -154,6 +183,18 @@ Eina_List *get_all_apps_list()
 {
     NOTISET_TRACE_BEGIN;
     return setting_info->all_apps_list;
+}
+
+Eina_List *get_first_allowed_apps_list()
+{
+    NOTISET_TRACE_BEGIN;
+    return setting_info->first_allowed_list;
+}
+
+Eina_List *get_first_excepted_apps_list()
+{
+    NOTISET_TRACE_BEGIN;
+    return setting_info->first_excepted_list;
 }
 
 bool get_allow_all()
@@ -328,7 +369,7 @@ static void _remove_apps_list(Eina_List* input_list) {
 
     if(input_list) {
         EINA_LIST_FREE(input_list, item_info) {
-            //NOTISET_DBG("remove %s", item_info->name);
+//            NOTISET_DBG("remove %s", item_info->name);
             FREEIF(item_info->appid);
             FREEIF(item_info->name);
             FREEIF(item_info->icon);
@@ -344,11 +385,12 @@ void remove_all_apps_list() {
         _remove_apps_list(setting_info->all_apps_list);
     }
 }
-void remove_excepted_apps_list(){
+void remove_excepted_apps_list()
+{
     NOTISET_TRACE_BEGIN;
-    if(setting_info) {
-        _remove_apps_list(setting_info->excepted_list);
+    if(setting_info)
+    {
+        _remove_apps_list(setting_info->first_allowed_list);
         _remove_apps_list(setting_info->not_excepted_list);
     }
-
 }

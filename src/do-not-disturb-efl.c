@@ -40,7 +40,8 @@ void do_not_disturb_append_item_in_list(Evas_Object* genlist)
 //    TODO: append when API will be implemented, will be move to final release
 //    append_gl_start_option(genlist, "multiline", "set-schedule-multiline");
 //    append_gl_start_option(genlist, "multiline", "allowed-calls");
-    append_gl_full_item(genlist, do_not_disturb_allowed_apps_cont_cb, get_excepted_apps_list());
+    Eina_List *allowed_list = eina_list_merge(get_first_excepted_apps_list(), get_excepted_apps_list());
+    append_gl_full_item(genlist, do_not_disturb_allowed_apps_cont_cb, allowed_list);
 }
 
 Evas_Object *do_not_disturb_allowed_apps_cont_cb(Evas_Object* parent, void *data)
@@ -59,6 +60,7 @@ Evas_Object *do_not_disturb_allowed_apps_cont_cb(Evas_Object* parent, void *data
 
     retv_if(!data, full_layout);
     Eina_List *allowed_apps_list = (Eina_List *)data;
+
     Evas_Object *table = elm_table_add(full_layout);
     elm_table_padding_set(table, 0, APP_LAYOUT_PAD);
     int count = eina_list_count(allowed_apps_list);

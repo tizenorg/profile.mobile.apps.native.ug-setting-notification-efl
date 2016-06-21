@@ -39,6 +39,7 @@ static Evas_Object* _create_edit_exception_apps_list(ug_data *ugd)
     evas_object_smart_callback_add(genlist, "longpressed", gl_longpressed_cb, NULL);
     evas_object_smart_callback_add(genlist, "contracted", gl_contracted_cb, NULL);
 
+    append_gl_item_list(genlist, get_first_allowed_apps_list(), ITEM_STYLE_DEFAULT);
     append_gl_item_list(genlist, get_excepted_apps_list(), ITEM_STYLE_DEFAULT);
     append_gl_item_list(genlist, get_not_excepted_apps_list(), ITEM_STYLE_DEFAULT);
 
@@ -58,20 +59,33 @@ static void _done_button_cb(void *data, Evas_Object *obj, void *event_info)
     EVAS_OBJECT_DELIF(u_data->cancel_button);
     EVAS_OBJECT_DELIF(u_data->list_sub);
 
-    if (u_data->list_main) {
+    if(u_data->list_main)
+    {
+        list = get_first_allowed_apps_list();
+        while(list)
+        {
+            item_info_s *item = (item_info_s*) eina_list_data_get(list);
+            set_excepted_apps(item->appid, item->do_not_disturb_except);
+            list = eina_list_next(list);
+        }
+
         list = get_excepted_apps_list();
-        while (list) {
-            item_info_s *item = (item_info_s*)eina_list_data_get(list);
-            if (item->do_not_disturb_except == false) {
+        while(list)
+        {
+            item_info_s *item = (item_info_s*) eina_list_data_get(list);
+            if(item->do_not_disturb_except == false)
+            {
                 set_excepted_apps(item->appid, item->do_not_disturb_except);
             }
             list = eina_list_next(list);
         }
 
         list = get_not_excepted_apps_list();
-        while (list) {
-            item_info_s *item = (item_info_s*)eina_list_data_get(list);
-            if (item->do_not_disturb_except) {
+        while(list)
+        {
+            item_info_s *item = (item_info_s*) eina_list_data_get(list);
+            if(item->do_not_disturb_except)
+            {
                 set_excepted_apps(item->appid, item->do_not_disturb_except);
             }
             list = eina_list_next(list);
@@ -80,7 +94,6 @@ static void _done_button_cb(void *data, Evas_Object *obj, void *event_info)
         create_do_not_disturb_application_list();
         elm_genlist_clear(u_data->list_main);
         do_not_disturb_append_item_in_list(u_data->list_main);
-
     }
 }
 
