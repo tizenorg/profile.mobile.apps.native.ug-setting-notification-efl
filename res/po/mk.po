@@ -106,3 +106,9 @@ msgstr "Дојдовните повици од контактите што не 
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Уреди дозволени изв."
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Календарски настани"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Аларми"
+

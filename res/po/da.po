@@ -106,3 +106,9 @@ msgstr "Indgående opkald fra kontakter, du ikke har tilladt, vil automatisk bli
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Adm. tilladte medd."
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Kalenderevents"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Alarmer"
+

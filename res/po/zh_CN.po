@@ -106,3 +106,9 @@ msgstr "将自动拒绝您未允许的联系人的来电。"
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "管理允许的通知"
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "日历事件"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "闹钟"
+

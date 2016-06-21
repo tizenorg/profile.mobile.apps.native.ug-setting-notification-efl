@@ -106,3 +106,9 @@ msgstr "İcazə vermədiyiniz kontaktlardan gələn zənglər avtomatik rədd ed
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "İcaz bild idarə et"
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Təqvim olayları"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Xəbərdarlıq siqnalları"
+

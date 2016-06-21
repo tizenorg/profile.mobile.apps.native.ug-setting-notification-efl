@@ -106,3 +106,9 @@ msgstr "Prichádzajúce hovory od kontaktov, ktoré nepovolíte, sa budú automa
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Správa povol. ozn."
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Udalosti v kalendári"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Upozornenia"
+

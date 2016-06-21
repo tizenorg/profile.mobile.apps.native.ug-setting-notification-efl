@@ -106,3 +106,9 @@ msgstr "Dohodni klici od stikov brez vašega dovoljenja bodo samodejno zavrnjeni
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Uprav. dovolj. obv."
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Koledar dogodkov"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Alarmi"
+

@@ -106,3 +106,9 @@ msgstr "Вхідні виклики від контактів, відсутні�
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Дозволені сповіщення"
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Події календаря"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Будильники"
+

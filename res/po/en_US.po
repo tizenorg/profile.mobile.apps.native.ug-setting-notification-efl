@@ -106,3 +106,9 @@ msgstr "Incoming calls from contacts you have not allowed will be rejected autom
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Manage allowed noti."
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Calendar events"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Alarms"
+

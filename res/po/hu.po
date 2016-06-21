@@ -106,3 +106,9 @@ msgstr "A nem engedélyezett partnerektől érkező bejövő hívásokat az eszk
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Eng.zett értes. kez."
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Naptáresemények"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Ébresztőóra"
+

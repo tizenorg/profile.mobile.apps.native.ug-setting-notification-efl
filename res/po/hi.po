@@ -104,5 +104,11 @@ msgid "IDS_ST_BODY_INCOMING_CALLS_FROM_CONTACTS_YOU_HAVE_NOT_ALLOWED_WILL_BE_REJ
 msgstr "आपके द्वारा अनुमति नहीं दिए गए संपर्कों से आनेवाली कॉल्स स्वचालित रूप से अस्वीकृत की जाएँगी।"
 
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
-msgstr "अनुमत अधि. प्रबंधित करें"
+msgstr "अनुमत अधिसूचना प्रबंधन"
+
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "कैलेंडर प्रसंग"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "अलार्म"
 

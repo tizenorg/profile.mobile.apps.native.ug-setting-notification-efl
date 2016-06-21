@@ -106,3 +106,9 @@ msgstr "Saabuvatest kõnedest kontaktidelt, kellele te pole luba andnud, keeldut
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Lubat. teavit. hald."
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Kalendrisündmused"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Alarmid"
+

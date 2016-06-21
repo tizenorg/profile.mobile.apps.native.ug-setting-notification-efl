@@ -106,3 +106,9 @@ msgstr "許可していない連絡先からの着信を自動的に拒否しま
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "許可する通知を管理"
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "カレンダーイベント"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "アラーム"
+

@@ -106,3 +106,9 @@ msgstr "Մտից կանչերն այն կոնտակտներից, որոնց թո
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Կառ. թյլտրվծ ծանուց."
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Օրացույցի իրադարձություններ"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Ազդանշաններ"
+

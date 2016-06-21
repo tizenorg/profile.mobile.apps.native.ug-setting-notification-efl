@@ -106,3 +106,9 @@ msgstr "Ruxsat etilmagan kontaktlardan kiruvchi qo‘ng‘iroqlar avtomatik ravi
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Bildirishnoma boshq."
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Kalendar hodisalari"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Budilnik"
+

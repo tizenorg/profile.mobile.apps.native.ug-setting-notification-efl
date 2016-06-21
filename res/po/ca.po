@@ -106,3 +106,9 @@ msgstr "Les trucades entrants de contactes que no ha permès es rebutjaran autom
 msgid "IDS_ST_HEADER_MANAGE_ALLOWED_NOTI_ABB2"
 msgstr "Gestion notif permes"
 
+msgid "IDS_COM_BODY_CALENDAR_EVENTS"
+msgstr "Esdeveniments de calendari"
+
+msgid "IDS_ST_BODY_ALARMS"
+msgstr "Alarmes"
+
