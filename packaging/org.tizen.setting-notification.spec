@@ -1,6 +1,6 @@
 Name:       org.tizen.setting-notification
 VCS:         profile/mobile/apps/native/ug-setting-notification-efl#943b5c0d5b1c3a719f85a554de44531a37e65dff
-#RS_Ver:    20160622_2 
+#RS_Ver:    20160623_1 
 Summary:    notification-setting
 Version:    1.0.0
 Release:    1
