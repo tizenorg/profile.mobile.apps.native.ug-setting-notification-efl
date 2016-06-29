@@ -38,7 +38,7 @@ void do_not_disturb_append_item_in_list(Evas_Object* genlist)
 {
     append_gl_start_option(genlist, "multiline", "do-not-disturb");
 //    TODO: append when API will be implemented, will be move to final release
-//    append_gl_start_option(genlist, "multiline", "set-schedule-multiline");
+    append_gl_start_option(genlist, "multiline", "set-schedule-multiline");
 //    append_gl_start_option(genlist, "multiline", "allowed-calls");
     Eina_List *allowed_list = eina_list_merge(get_first_excepted_apps_list(), get_excepted_apps_list());
     append_gl_full_item(genlist, do_not_disturb_allowed_apps_cont_cb, allowed_list);

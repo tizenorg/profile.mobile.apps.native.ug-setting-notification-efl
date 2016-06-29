@@ -17,6 +17,7 @@
 
 #include "set-scedule-info.h"
 #include <system_settings.h>
+#include <time.h>
 
 extern ug_data g_ug_data;
 
@@ -52,8 +53,10 @@ typedef struct datetime
     Evas_Object *datetime;
     Evas_Object *popup;
     struct tm saved_time;
-    bool is_start_button;
+    bool is_start_time;
 } datetime_s;
+
+datetime_s start_time_p, end_time_p;
 
 void set_schedule_check_changed_cb(void *data, Evas_Object *obj, void *event_info)
 {
@@ -103,6 +106,7 @@ bool get_schedule()
 
 static Evas_Object *create_week_repeat_layout(Evas_Object* parent)
 {
+
     Evas_Object *layout = elm_layout_add(parent);
 
     char *res_path = app_get_resource_path();
@@ -130,7 +134,9 @@ static void week_button_clicked_cb(void *data, Evas_Object *obj, void *event_inf
     {
         snprintf(buf, sizeof(buf), "<font_size=80><color=#000000>%s</color></font_size>", cc->text);
         elm_object_text_set(cc->label, buf);
-    } else {
+    }
+    else
+    {
         snprintf(buf, sizeof(buf), "<font_size=80><color=#66ff66>%s</color></font_size>", cc->text);
         elm_object_text_set(cc->label, buf);
     }
@@ -209,19 +215,25 @@ static void popup_cancel_btn_clicked_cb(void *data , Evas_Object *obj , void *ev
 static void popup_set_btn_clicked_cb(void *data , Evas_Object *obj , void *event_info)
 {
     NOTISET_TRACE_BEGIN;
-    char buff[TIME_STRING_SIZE] = {0};
+    char buff[TIME_STRING_SIZE] = { 0 };
     const char *format;
     datetime_s *dt = data;
+
     elm_datetime_value_get(dt->datetime, &dt->saved_time);
     format = elm_datetime_format_get(dt->datetime);
 
-    if (!strcmp(format, POPUP_TIME_12_FORMAT)) {
+    if(!strcmp(format, POPUP_TIME_12_FORMAT))
         strftime(buff, TIME_STRING_SIZE, TIME_12_FORMAT, &dt->saved_time);
-        elm_object_text_set(dt->button, buff);
-    } else {
+    else
         strftime(buff, TIME_STRING_SIZE, TIME_24_FORMAT, &dt->saved_time);
-        elm_object_text_set(dt->button, buff);
-    }
+
+    double diff_time = difftime(mktime(&end_time_p.saved_time), mktime(&start_time_p.saved_time));
+    isNextDay = diff_time <= 0 ? true : false;
+    NOTISET_DBG("diff_time = %f", diff_time);
+
+    elm_genlist_item_update(elm_genlist_last_item_get(g_ug_data.list_sub));
+
+    elm_object_text_set(dt->button, buff);
 
     evas_object_del(dt->popup);
 }
@@ -308,23 +320,52 @@ static Evas_Object *create_start_end_time_layout(Evas_Object* parent)
     return layout;
 }
 
-Evas_Object *start_end_time_item(Evas_Object* parent)
+Evas_Object* start_end_time_item(Evas_Object* parent, bool is_start_time_item)
 {
-    Evas_Object *layout = create_start_end_time_layout(parent);
-
+    Evas_Object* layout = create_start_end_time_layout(parent);
+    datetime_s dt;
     char buff[TIME_STRING_SIZE] = {0};
     time_t local_time = time(0);
     struct tm *time_info = localtime(&local_time);
 
-    datetime_s *dt = calloc(1, sizeof(datetime_s));
-    dt->saved_time = *time_info;
+    if(!(!is_start_time_item && (long int)mktime(&end_time_p.saved_time) != -1))
+    {
+        dt.is_start_time = is_start_time_item;
+        dt.saved_time = *time_info;
+        dt.saved_time.tm_min = 0;
+        dt.saved_time.tm_sec = 0;
 
-    if(get_time_format() == time_format_12H) {
-        strftime(buff, TIME_STRING_SIZE, TIME_12_FORMAT, &dt->saved_time);
-        dt->button = create_time_button(layout, buff, TIME_12_FORMAT, dt);
-    } else if(get_time_format() == time_format_24H) {
-        strftime(buff, TIME_STRING_SIZE, TIME_24_FORMAT, &dt->saved_time);
-        dt->button = create_time_button(layout, buff, TIME_24_FORMAT, dt);
+        if(dt.is_start_time)
+        {
+            start_time_p = dt;
+            start_time_p.saved_time.tm_hour = 22;
+        }
+        else
+        {
+            end_time_p = dt;
+            end_time_p.saved_time.tm_hour = 8;
+        }
+    }
+
+    if(get_time_format() == time_format_12H && is_start_time_item)
+    {
+        strftime(buff, TIME_STRING_SIZE, TIME_12_FORMAT, &start_time_p.saved_time);
+        start_time_p.button = create_time_button(layout, buff, TIME_12_FORMAT, &start_time_p);
+    }
+    else if(get_time_format() == time_format_24H && is_start_time_item)
+    {
+        strftime(buff, TIME_STRING_SIZE, TIME_24_FORMAT, &start_time_p.saved_time);
+        start_time_p.button = create_time_button(layout, buff, TIME_24_FORMAT, &start_time_p);
+    }
+    else if(get_time_format() == time_format_12H && !is_start_time_item)
+    {
+        strftime(buff, TIME_STRING_SIZE, TIME_12_FORMAT, &end_time_p.saved_time);
+        end_time_p.button = create_time_button(layout, buff, TIME_12_FORMAT, &end_time_p);
+    }
+    else if(get_time_format() == time_format_24H && !is_start_time_item)
+    {
+        strftime(buff, TIME_STRING_SIZE, TIME_24_FORMAT, &end_time_p.saved_time);
+        end_time_p.button = create_time_button(layout, buff, TIME_24_FORMAT, &end_time_p);
     }
 
     return layout;
@@ -345,6 +386,7 @@ void gl_set_schedule_selected(ug_data *data)
     ugd->list_sub = _create_set_schedule_disturb_gl(ugd);
     append_gl_start_option(ugd->list_sub, "type1", "set-schedule");
     append_gl_full_item(ugd->list_sub, repeat_weekly_layout_cb, NULL);
+    isNextDay = true;
     append_gl_start_option(ugd->list_sub, "type1", "start-time");
     append_gl_start_option(ugd->list_sub, "type1", "end-time");
     ugd->navi_item = elm_naviframe_item_push(ugd->naviframe, APP_STRING("IDS_ST_MBODY_SET_SCHEDULE_M_TIME"), back_btn, NULL, ugd->list_sub, NULL);

@@ -196,7 +196,7 @@ static void create_allow_calls_from_popup()
     /* genlist */
     genlist = elm_genlist_add(box);
 
-    itc.item_style = "1line";;
+    itc.item_style = "type1";
     itc.func.text_get = gl_text_get_cb;
     itc.func.content_get = NULL;
     itc.func.state_get = NULL;

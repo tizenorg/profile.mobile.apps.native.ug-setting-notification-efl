@@ -112,3 +112,6 @@ msgstr "Kalendarski događaji"
 msgid "IDS_ST_BODY_ALARMS"
 msgstr "Alarmi"
 
+msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
+msgstr "sled. dana"
+

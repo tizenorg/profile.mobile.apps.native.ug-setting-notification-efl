@@ -112,3 +112,6 @@ msgstr "캘린더 일정"
 msgid "IDS_ST_BODY_ALARMS"
 msgstr "알람"
 
+msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
+msgstr "다음 날"
+

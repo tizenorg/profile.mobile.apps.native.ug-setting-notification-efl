@@ -112,3 +112,6 @@ msgstr "कैलेंडर प्रसंग"
 msgid "IDS_ST_BODY_ALARMS"
 msgstr "अलार्म"
 
+msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
+msgstr "अगला दिन"
+
