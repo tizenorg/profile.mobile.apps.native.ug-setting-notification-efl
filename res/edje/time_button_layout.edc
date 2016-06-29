@@ -23,6 +23,7 @@ collections {
             scale: 1;
             description { state: "default" 0.0;
                min: 300 78;
+               max: 300 78;
                color: 250 250 250 255;
             }
          }

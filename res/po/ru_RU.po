@@ -112,3 +112,6 @@ msgstr "События календаря"
 msgid "IDS_ST_BODY_ALARMS"
 msgstr "Будильник"
 
+msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
+msgstr "след. день"
+

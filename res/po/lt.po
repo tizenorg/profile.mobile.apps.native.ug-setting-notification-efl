@@ -112,3 +112,6 @@ msgstr "Kalendoriaus įvykiai"
 msgid "IDS_ST_BODY_ALARMS"
 msgstr "Signalai"
 
+msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
+msgstr "kita diena"
+

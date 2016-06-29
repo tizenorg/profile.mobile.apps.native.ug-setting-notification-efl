@@ -27,7 +27,9 @@
 
 void set_schedule_check_changed_cb(void *data, Evas_Object *obj, void *event_info);
 void gl_set_schedule_selected(ug_data *data);
+void remove_datetime_data();
 bool get_schedule();
-Evas_Object *start_end_time_item(Evas_Object* parent);
+Evas_Object* start_end_time_item(Evas_Object* parent, bool is_start_time_item);
+bool isNextDay;
 
 #endif //__SET_SCHEDULE_INFO_H__
