@@ -112,3 +112,6 @@ msgstr "Təqvim olayları"
 msgid "IDS_ST_BODY_ALARMS"
 msgstr "Xəbərdarlıq siqnalları"
 
+msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
+msgstr "növbət gün"
+

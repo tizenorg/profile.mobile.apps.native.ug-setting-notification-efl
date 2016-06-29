@@ -112,3 +112,6 @@ msgstr "Imeachtaí féilire"
 msgid "IDS_ST_BODY_ALARMS"
 msgstr "Aláraim"
 
+msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
+msgstr "lá dár gcionn"
+

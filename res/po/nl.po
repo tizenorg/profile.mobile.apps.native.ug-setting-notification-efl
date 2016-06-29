@@ -112,3 +112,6 @@ msgstr "Agenda-items"
 msgid "IDS_ST_BODY_ALARMS"
 msgstr "Alarmen"
 
+msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
+msgstr "volg. dag"
+

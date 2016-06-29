@@ -112,3 +112,6 @@ msgstr "Kalendar hodisalari"
 msgid "IDS_ST_BODY_ALARMS"
 msgstr "Budilnik"
 
+msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
+msgstr "keyin. kun"
+

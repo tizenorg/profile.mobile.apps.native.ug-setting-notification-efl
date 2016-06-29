@@ -306,7 +306,7 @@ void append_gl_item_list(Evas_Object *genlist, Eina_List* list, int style) {
 	int count = 0;
 
 	if (style == ITEM_STYLE_ONE_LINE){
-		itc->item_style = "1line";
+		itc->item_style = "type1";
 	} else if(style == ITEM_STYLE_ONE_ICON){
 		itc->item_style = "one_icon";
 	} else {
@@ -341,47 +341,71 @@ static char *_gl_option_text_get_cb(void *data, Evas_Object *obj, const char *pa
 {
 	char buf[1024];
 
-	retv_if(!data, NULL);
-	if (!strcmp(data, "app-notifications")) {
-		if (!strcmp("elm.text.multiline", part)) {
-			snprintf(buf, sizeof(buf), "<font_size=30>%s</font_size>", APP_STRING("IDS_QP_BODY_SELECT_THE_APPS_YOU_WANT_TO_RECEIVE_NOTIFICATIONS_FROM_BELOW"));
-			return strdup(buf);
-		}
-	} else if(!strcmp(data, "do-not-disturb")) {
-		if (!strcmp("elm.text.multiline", part)) {
-			snprintf(buf, sizeof(buf), "<font_size=30>%s</font_size>",
-				APP_STRING("IDS_ST_BODY_MUTE_ALL_ALERTS_AND_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ONLY_AND_NOT_IN_POP_UPS_OR_ON_THE_STATUS_BAR_MSG"));
-			return strdup(buf);
-		}
+    retv_if(!data, NULL);
+    if(!strcmp(data, "app-notifications"))
+    {
+        if(!strcmp("elm.text.multiline", part))
+        {
+            snprintf(buf, sizeof(buf), "<font_size=30>%s</font_size>", APP_STRING("IDS_QP_BODY_SELECT_THE_APPS_YOU_WANT_TO_RECEIVE_NOTIFICATIONS_FROM_BELOW"));
+            return strdup(buf);
+        }
+    }
+    else if(!strcmp(data, "do-not-disturb"))
+    {
+        if(!strcmp("elm.text.multiline", part))
+        {
+            snprintf(buf, sizeof(buf), "<font_size=30>%s</font_size>", APP_STRING("IDS_ST_BODY_MUTE_ALL_ALERTS_AND_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ONLY_AND_NOT_IN_POP_UPS_OR_ON_THE_STATUS_BAR_MSG"));
+            return strdup(buf);
+        }
 
-		if (!strcmp(part, "elm.text")) {
-			return strdup(APP_STRING("IDS_ST_HEADER_DO_NOT_DISTURB_ABB"));
-		}
-	} else if(!strcmp(data, "set-schedule-multiline")) {
-	    if (!strcmp("elm.text", part)) {
-	        return strdup(APP_STRING("IDS_ST_MBODY_SET_SCHEDULE_M_TIME"));
-	    }
-	    if (!strcmp("elm.text.multiline", part)) {
-	        snprintf(buf, sizeof(buf), "<font_size=30>%s<br/>%s</font_size>", "M T W T F S S", "10:00 p.m. ~ 7:00 a.m."); //TODO:
-	        return strdup(buf);
-	    }
-	} else if(!strcmp(data, "set-schedule")) {
-        if (!strcmp("elm.text", part)) {
+        if(!strcmp(part, "elm.text"))
+        {
+            return strdup(APP_STRING("IDS_ST_HEADER_DO_NOT_DISTURB_ABB"));
+        }
+    }
+    else if(!strcmp(data, "set-schedule-multiline"))
+    {
+        if(!strcmp("elm.text", part))
+        {
             return strdup(APP_STRING("IDS_ST_MBODY_SET_SCHEDULE_M_TIME"));
         }
-	} else if(!strcmp(data, "start-time") && !strcmp("elm.text", part)) {
-	    return strdup(APP_STRING("IDS_ST_BODY_START_TIME"));
-	} else if(!strcmp(data, "end-time") && !strcmp("elm.text", part)) {
-	    return strdup(APP_STRING("IDS_ST_BODY_END_TIME"));
-	} else if(!strcmp(data, "allowed-calls")) {
-        if (!strcmp("elm.text.multiline", part)) {
+        if(!strcmp("elm.text.multiline", part))
+        {
+            snprintf(buf, sizeof(buf), "<font_size=30>%s<br/>%s</font_size>", "M T W T F S S", "10:00 p.m. ~ 7:00 a.m."); //TODO:
+            return strdup(buf);
+        }
+    }
+    else if(!strcmp(data, "set-schedule"))
+    {
+        if(!strcmp("elm.text", part))
+        {
+            return strdup(APP_STRING("IDS_ST_MBODY_SET_SCHEDULE_M_TIME"));
+        }
+    }
+    else if(!strcmp(data, "start-time") && !strcmp("elm.text", part))
+    {
+        return strdup(APP_STRING("IDS_ST_BODY_START_TIME"));
+    }
+    else if(!strcmp(data, "end-time") && !strcmp("elm.text", part))
+    {
+        return strdup(APP_STRING("IDS_ST_BODY_END_TIME"));
+    }
+    else if(!strcmp(data, "end-time") && !strcmp("elm.text.sub", part) && isNextDay)
+    {
+        return strdup(APP_STRING("IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"));
+    }
+    else if(!strcmp(data, "allowed-calls"))
+    {
+        if(!strcmp("elm.text.multiline", part))
+        {
             snprintf(buf, sizeof(buf), "<font_size=30>%s</font_size>", APP_STRING("IDS_QP_TAB4_ALL_M_RECEIVED_ALL"));
             return strdup(buf);
         }
-	    if (!strcmp("elm.text", part)) {
+        if(!strcmp("elm.text", part))
+        {
             return strdup(APP_STRING("IDS_ST_MBODY_ALLOWED_CALLS_ABB"));
         }
-	}
+    }
 
 	return NULL;
 }
@@ -417,12 +441,12 @@ static Evas_Object* _gl_option_content_get_cb(void *data, Evas_Object *obj, cons
 
     if(!strcmp(data, "start-time") && !strcmp("elm.swallow.end", part))
     {
-        return start_end_time_item(obj);
+        return start_end_time_item(obj, true);
     }
 
     if(!strcmp(data, "end-time") && !strcmp("elm.swallow.end", part))
     {
-        return start_end_time_item(obj);
+        return start_end_time_item(obj, false);
     }
     return NULL;
 }
@@ -460,7 +484,7 @@ Elm_Widget_Item *append_gl_allow_all(Evas_Object *genlist)
 	if (!itc)
 		return NULL;
 
-	itc->item_style = "1line";
+	itc->item_style = "type1";
 	itc->func.text_get = _gl_app_notif_allow_all_text_get_cb;
 	itc->func.content_get = _gl_app_notif_allow_all_content_get_cb;
 	itc->func.del = gl_del_cb;
