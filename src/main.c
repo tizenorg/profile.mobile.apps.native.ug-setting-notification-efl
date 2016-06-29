@@ -115,7 +115,7 @@ Evas_Object* _create_app_notification_gl(ug_data *ugd)
 
 	append_gl_allow_all(genlist);
 	append_gl_start_option(genlist, "multiline", "app-notifications");
-	append_gl_item_list(genlist, get_all_apps_list(), ITEM_STYLE_ONE_LINE);
+	append_gl_item_list(genlist, get_all_apps_list(), ITEM_STYLE_TYPE_ONE);
 
 	return genlist;
 }

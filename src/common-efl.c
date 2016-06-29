@@ -259,7 +259,7 @@ static Evas_Object* gl_content_get_cb(void *data, Evas_Object *obj, const char *
 	}
 
 	if (!strcmp(part, "elm.swallow.end")) {
-		if (data_list->item_style == ITEM_STYLE_ONE_LINE) {
+		if (data_list->item_style == ITEM_STYLE_TYPE_ONE) {
 			content = elm_check_add(obj);
 			elm_object_style_set(content, "on&off");
 			elm_check_state_set(content, data_list->allow_to_notify);
@@ -305,8 +305,8 @@ void append_gl_item_list(Evas_Object *genlist, Eina_List* list, int style) {
 	char *before_text = NULL;
 	int count = 0;
 
-	if (style == ITEM_STYLE_ONE_LINE){
-		itc->item_style = "1line";
+	if (style == ITEM_STYLE_TYPE_ONE){
+		itc->item_style = "type1";
 	} else if(style == ITEM_STYLE_ONE_ICON){
 		itc->item_style = "one_icon";
 	} else {
@@ -460,7 +460,7 @@ Elm_Widget_Item *append_gl_allow_all(Evas_Object *genlist)
 	if (!itc)
 		return NULL;
 
-	itc->item_style = "1line";
+	itc->item_style = "type1";
 	itc->func.text_get = _gl_app_notif_allow_all_text_get_cb;
 	itc->func.content_get = _gl_app_notif_allow_all_content_get_cb;
 	itc->func.del = gl_del_cb;

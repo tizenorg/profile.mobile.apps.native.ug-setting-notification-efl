@@ -72,7 +72,7 @@ typedef struct ug_data_t
 
 enum {
 	ITEM_STYLE_DEFAULT = 0,
-	ITEM_STYLE_ONE_LINE,
+	ITEM_STYLE_TYPE_ONE,
 	ITEM_STYLE_ONE_ICON,
 };
 
