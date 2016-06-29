@@ -302,7 +302,6 @@ void append_gl_item_list(Evas_Object *genlist, Eina_List* list, int style) {
 	ret_if(!itc);
 
 	item_info_s *item;
-	char *before_text = NULL;
 	int count = 0;
 
 	if (style == ITEM_STYLE_TYPE_ONE){
@@ -332,8 +331,6 @@ void append_gl_item_list(Evas_Object *genlist, Eina_List* list, int style) {
 		list = eina_list_next(list);
 	}
 	elm_genlist_item_class_free(itc);
-	if (before_text)
-		free(before_text);
 }
 
 
