@@ -112,3 +112,6 @@ msgstr "Συμβάντα ημερολογίου"
 msgid "IDS_ST_BODY_ALARMS"
 msgstr "Ειδοποίηση"
 
+msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
+msgstr "επ. ημέρα"
+

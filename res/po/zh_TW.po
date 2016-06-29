@@ -112,3 +112,6 @@ msgstr "日曆活動"
 msgid "IDS_ST_BODY_ALARMS"
 msgstr "鬧鐘"
 
+msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
+msgstr "次日"
+

@@ -112,3 +112,6 @@ msgstr "Naptáresemények"
 msgid "IDS_ST_BODY_ALARMS"
 msgstr "Ébresztőóra"
 
+msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
+msgstr "másnap"
+
