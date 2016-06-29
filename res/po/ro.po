@@ -112,3 +112,6 @@ msgstr "Evenimente Calendar"
 msgid "IDS_ST_BODY_ALARMS"
 msgstr "Alarmă"
 
+msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
+msgstr "ziua următ."
+
