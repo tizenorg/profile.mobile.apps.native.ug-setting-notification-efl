@@ -112,3 +112,6 @@ msgstr "Kalendāra notikumi"
 msgid "IDS_ST_BODY_ALARMS"
 msgstr "Modinātāji"
 
+msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
+msgstr "nāk. dienā"
+
