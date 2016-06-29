@@ -112,3 +112,6 @@ msgstr "أحداث التقويم"
 msgid "IDS_ST_BODY_ALARMS"
 msgstr "المنبهات"
 
+msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
+msgstr "اليوم التالي"
+

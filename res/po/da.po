@@ -112,3 +112,6 @@ msgstr "Kalenderevents"
 msgid "IDS_ST_BODY_ALARMS"
 msgstr "Alarmer"
 
+msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
+msgstr "næste dag"
+
