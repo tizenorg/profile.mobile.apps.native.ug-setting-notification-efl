@@ -23,7 +23,7 @@
 #define ICON_SIZE 82
 
 extern ug_data g_ug_data;
-extern isNextDay;
+extern bool isNextDay;
 
 Evas_Object *create_layout(Evas_Object *parent)
 {
@@ -260,7 +260,7 @@ static Evas_Object* gl_content_get_cb(void *data, Evas_Object *obj, const char *
 	}
 
 	if (!strcmp(part, "elm.swallow.end")) {
-		if (data_list->item_style == ITEM_STYLE_ONE_LINE) {
+		if (data_list->item_style == ITEM_STYLE_TYPE_ONE) {
 			content = elm_check_add(obj);
 			elm_object_style_set(content, "on&off");
 			elm_check_state_set(content, data_list->allow_to_notify);
@@ -303,10 +303,9 @@ void append_gl_item_list(Evas_Object *genlist, Eina_List* list, int style) {
 	ret_if(!itc);
 
 	item_info_s *item;
-	char *before_text = NULL;
 	int count = 0;
 
-	if (style == ITEM_STYLE_ONE_LINE){
+	if (style == ITEM_STYLE_TYPE_ONE){
 		itc->item_style = "type1";
 	} else if(style == ITEM_STYLE_ONE_ICON){
 		itc->item_style = "one_icon";
@@ -333,8 +332,6 @@ void append_gl_item_list(Evas_Object *genlist, Eina_List* list, int style) {
 		list = eina_list_next(list);
 	}
 	elm_genlist_item_class_free(itc);
-	if (before_text)
-		free(before_text);
 }
 
 
