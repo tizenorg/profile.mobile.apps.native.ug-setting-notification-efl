@@ -33,7 +33,6 @@ typedef enum
 	DO_NOT_DISTURB_APP_TYPE
 } app_type;
 
-ug_data g_ug_data;
 
 static Evas_Object *_create_win()
 {
@@ -253,7 +252,11 @@ static void on_language(app_event_info_h event_info, void *user_data)
 
 int main(int argc, char *argv[])
 {
-    NOTISET_TRACE_BEGIN;
+	NOTISET_TRACE_BEGIN;
+
+	ug_data *ug_main = calloc(1, sizeof(ug_data));
+
+	set_app_ui_data(ug_main);
 
 	ui_app_lifecycle_callback_s event_callback;
 	memset(&event_callback, 0x00, sizeof(ui_app_lifecycle_callback_s));
@@ -263,7 +266,7 @@ int main(int argc, char *argv[])
 	event_callback.app_control = on_app_control;
 
 	app_event_handler_h ev = NULL;
-	ui_app_add_event_handler(&ev, APP_EVENT_LANGUAGE_CHANGED, on_language, &g_ug_data);
+	ui_app_add_event_handler(&ev, APP_EVENT_LANGUAGE_CHANGED, on_language, ug_main);
 
-	return ui_app_main(argc, argv, &event_callback, &g_ug_data);
+	return ui_app_main(argc, argv, &event_callback, ug_main);
 }

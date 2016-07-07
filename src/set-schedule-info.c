@@ -18,8 +18,6 @@
 #include "set-scedule-info.h"
 #include <system_settings.h>
 
-extern ug_data g_ug_data;
-
 enum TimeFormat
     {
         time_format_unknown,
@@ -59,11 +57,13 @@ void set_schedule_check_changed_cb(void *data, Evas_Object *obj, void *event_inf
 {
     NOTISET_TRACE_BEGIN;
     //TODO: Will be done, after receiving API
+    ug_data *ug_main = get_app_ui_data();
+    ret_if(ug_main == NULL);
 
     unsigned int i = 0;
     Eina_Bool check = !elm_check_state_get(obj);
-    unsigned int size = elm_genlist_items_count(g_ug_data.list_sub);
-    Elm_Object_Item *item = elm_genlist_first_item_get(g_ug_data.list_sub);
+    unsigned int size = elm_genlist_items_count(ug_main->list_sub);
+    Elm_Object_Item *item = elm_genlist_first_item_get(ug_main->list_sub);
     for(i = 1; i < size; ++i)
     {
         Elm_Object_Item *next = elm_genlist_item_next_get(item);
@@ -229,8 +229,10 @@ static void popup_set_btn_clicked_cb(void *data , Evas_Object *obj , void *event
 static void create_datetime_popup(datetime_s *dt)
 {
     Evas_Object *set_btn, *cancel_btn;
+    ug_data *ug_main = get_app_ui_data();
+    ret_if(ug_main == NULL);
 
-    dt->popup = elm_popup_add(g_ug_data.naviframe);
+    dt->popup = elm_popup_add(ug_main->naviframe);
     eext_object_event_callback_add(dt->popup, EEXT_CALLBACK_BACK, eext_popup_back_cb, NULL);
     evas_object_size_hint_weight_set(dt->popup, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
     elm_popup_align_set(dt->popup, ELM_NOTIFY_ALIGN_FILL, 0.5);
@@ -254,8 +256,10 @@ static void launch_popup_cb(void *data , Evas_Object *obj , void *event_info)
     datetime_s *dt = data;
     create_datetime_popup(dt);
     Evas_Object *box = elm_box_add(dt->popup);
+    ug_data *ug_main = get_app_ui_data();
+    ret_if(ug_main == NULL);
 
-    dt->datetime = elm_datetime_add(g_ug_data.naviframe);
+    dt->datetime = elm_datetime_add(ug_main->naviframe);
 
     format = evas_object_data_get(obj, "format");
     bool fmt12hours = !strcmp(format, TIME_12_FORMAT);
