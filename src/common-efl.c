@@ -23,7 +23,6 @@
 #define ICON_SIZE 82
 
 extern ug_data g_ug_data;
-extern bool isNextDay;
 
 Evas_Object *create_layout(Evas_Object *parent)
 {
@@ -369,7 +368,11 @@ static char *_gl_option_text_get_cb(void *data, Evas_Object *obj, const char *pa
         }
         if(!strcmp("elm.text.multiline", part))
         {
-            snprintf(buf, sizeof(buf), "<font_size=30>%s<br/>%s</font_size>", "M T W T F S S", "10:00 p.m. ~ 7:00 a.m."); //TODO:
+            if(get_schedule())
+                snprintf(buf, sizeof(buf), "<font_size=30>%s<br/>%s</font_size>", get_day_string(), get_time_string());
+            else
+                snprintf(buf, sizeof(buf), "<font_size=30>%s</font_size>", "OFF"); // TODO: update IDS
+
             return strdup(buf);
         }
     }
@@ -388,7 +391,7 @@ static char *_gl_option_text_get_cb(void *data, Evas_Object *obj, const char *pa
     {
         return strdup(APP_STRING("IDS_ST_BODY_END_TIME"));
     }
-    else if(!strcmp(data, "end-time") && !strcmp("elm.text.sub", part) && isNextDay)
+    else if(!strcmp(data, "end-time") && !strcmp("elm.text.sub", part) && is_next_day())
     {
         return strdup(APP_STRING("IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"));
     }

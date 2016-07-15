@@ -207,7 +207,7 @@ static void on_destroy(void *priv)
     NOTISET_TRACE_BEGIN;
 	ug_data *ugd = priv;
 	remove_all_apps_list();
-	free(ugd);
+//	free(ugd);
 }
 
 static void on_app_control(app_control_h app_control, void *user_data)
