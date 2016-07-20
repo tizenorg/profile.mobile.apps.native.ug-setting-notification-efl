@@ -17,8 +17,6 @@
 
 #include "allowed-calls.h"
 
-extern ug_data g_ug_data;
-
 static char *items[4] = {
     "IDS_QP_TAB4_ALL_M_RECEIVED_ALL",
     "IDS_CST_OPT_CONTACTS_ONLY",
@@ -53,7 +51,11 @@ static void create_reject_calls_popup(const char *title_text, const char *conten
     Evas_Object *scroller;
     Evas_Object *label;
     Evas_Object *check;
-    Evas_Object *win = g_ug_data.win;
+    Evas_Object *win;
+    ug_data *ug_main = get_app_ui_data();
+    ret_if(ug_main == NULL);
+
+    win = ug_main->win;
 
     popup = elm_popup_add(win);
     elm_popup_align_set(popup, ELM_NOTIFY_ALIGN_FILL, 1.0);
@@ -172,7 +174,11 @@ static void create_allow_calls_from_popup()
     Evas_Object *box;
     Evas_Object *genlist;
     int i;
-    Evas_Object *win = g_ug_data.win;
+    Evas_Object *win;
+    ug_data *ug_main = get_app_ui_data();
+    ret_if(ug_main == NULL);
+
+    win = ug_main->win;
 
     popup = elm_popup_add(win);
     elm_popup_orient_set(popup, ELM_POPUP_ORIENT_BOTTOM);
