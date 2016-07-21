@@ -32,8 +32,6 @@
 #define APP_LAYOUT_HEADER 95 + 64
 #define ITEMS_PER_ROW 5
 
-extern ug_data g_ug_data;
-
 void do_not_disturb_append_item_in_list(Evas_Object* genlist)
 {
     append_gl_start_option(genlist, "multiline", "do-not-disturb");
@@ -46,6 +44,9 @@ void do_not_disturb_append_item_in_list(Evas_Object* genlist)
 
 Evas_Object *do_not_disturb_allowed_apps_cont_cb(Evas_Object* parent, void *data)
 {
+	ug_data *ug_main = get_app_ui_data();
+	retv_if(ug_main == NULL, NULL);
+
     Evas_Object *full_layout = create_custom_layout(parent, ALLOWED_LAYOUT_NAME);
     elm_object_part_text_set(full_layout, ALLOWED_LAYOUT_TEXT_PART, APP_STRING("IDS_QP_HEADER_ALLOW_NOTIFICATIONS_FROM_ABB"));
 
@@ -53,7 +54,8 @@ Evas_Object *do_not_disturb_allowed_apps_cont_cb(Evas_Object* parent, void *data
     evas_object_size_hint_weight_set(select_button, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
     evas_object_size_hint_align_set(select_button, EVAS_HINT_FILL, EVAS_HINT_FILL);
     elm_object_text_set(select_button, APP_STRING("IDS_ST_SK_SELECT_LITE"));
-    evas_object_smart_callback_add(select_button, "clicked", exception_application_clicked_cb, &g_ug_data);
+
+    evas_object_smart_callback_add(select_button, "clicked", exception_application_clicked_cb, ug_main);
     evas_object_show(select_button);
 
     elm_object_part_content_set(full_layout, ALLOWED_LAYOUT_BUTTON_PART,select_button);

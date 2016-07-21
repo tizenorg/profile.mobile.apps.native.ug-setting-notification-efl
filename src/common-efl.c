@@ -22,8 +22,16 @@
 
 #define ICON_SIZE 82
 
-extern ug_data g_ug_data;
 extern bool isNextDay;
+static ug_data *g_ug_data = NULL;
+
+ug_data* get_app_ui_data() {
+	return g_ug_data;
+}
+
+void set_app_ui_data(ug_data *data) {
+	g_ug_data = data;
+}
 
 Evas_Object *create_layout(Evas_Object *parent)
 {
@@ -115,7 +123,7 @@ void gl_selected_cb(void *data, Evas_Object *obj EINA_UNUSED, void *event_info)
 	}
 
 	if(data && !strcmp(data, "set-schedule-multiline")) {
-	    gl_set_schedule_selected(&g_ug_data);
+	    gl_set_schedule_selected(g_ug_data);
     }
 
 	if(data && !strcmp(data, "allowed-calls")) {
@@ -242,7 +250,7 @@ static void _allow_to_nofity_check_changed_cb(void *data, Evas_Object *obj, void
 	set_allow_to_nofity(data_list->appid, state);
 	data_list->allow_to_notify = state;
 	/* Update allow all item*/
-	elm_genlist_item_update(elm_genlist_first_item_get(g_ug_data.list_main));
+	elm_genlist_item_update(elm_genlist_first_item_get(g_ug_data->list_main));
 	NOTISET_DBG("appid = %s state = %d", data_list->appid, state);
 }
 

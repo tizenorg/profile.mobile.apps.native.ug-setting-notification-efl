@@ -77,6 +77,9 @@ enum {
 };
 
 
+ug_data* get_app_ui_data() ;
+void set_app_ui_data(ug_data *data);
+
 Evas_Object *create_layout(Evas_Object *parent);
 Evas_Object *create_background(Evas_Object *parent);
 Evas_Object *create_naviframe(Evas_Object *parent);
