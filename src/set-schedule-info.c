@@ -165,14 +165,19 @@ const char *get_day_string()
     if(system_setting)
         notification_system_setting_free_system_setting(system_setting);
 
-
-    strcat(buff, make_color_text(DND_SCHEDULE_WEEK_FLAG_MONDAY, "M "));
-    strcat(buff, make_color_text(DND_SCHEDULE_WEEK_FLAG_TUESDAY, "T "));
-    strcat(buff, make_color_text(DND_SCHEDULE_WEEK_FLAG_WEDNESDAY, "W "));
-    strcat(buff, make_color_text(DND_SCHEDULE_WEEK_FLAG_THURSDAY, "T "));
-    strcat(buff, make_color_text(DND_SCHEDULE_WEEK_FLAG_FRIDAY, "F "));
-    strcat(buff, make_color_text(DND_SCHEDULE_WEEK_FLAG_SATURDAY, "S "));
-    strcat(buff, make_color_text(DND_SCHEDULE_WEEK_FLAG_SUNDAY, "S"));
+    strcat(buff, make_color_text(DND_SCHEDULE_WEEK_FLAG_MONDAY, APP_STRING("WDS_ALM_BUTTON_M_M_MONDAY_ABB")));
+    strcat(buff, " ");
+    strcat(buff, make_color_text(DND_SCHEDULE_WEEK_FLAG_TUESDAY, APP_STRING("WDS_ALM_BUTTON_T_M_TUESDAY_ABB")));
+    strcat(buff, " ");
+    strcat(buff, make_color_text(DND_SCHEDULE_WEEK_FLAG_WEDNESDAY, APP_STRING("WDS_ALM_BUTTON_W_M_WEDNESDAY_ABB")));
+    strcat(buff, " ");
+    strcat(buff, make_color_text(DND_SCHEDULE_WEEK_FLAG_THURSDAY, APP_STRING("WDS_ALM_BUTTON_T_M_THURSDAY_ABB")));
+    strcat(buff, " ");
+    strcat(buff, make_color_text(DND_SCHEDULE_WEEK_FLAG_FRIDAY, APP_STRING("WDS_ALM_BUTTON_F_M_FRIDAY_ABB")));
+    strcat(buff, " ");
+    strcat(buff, make_color_text(DND_SCHEDULE_WEEK_FLAG_SATURDAY, APP_STRING("WDS_ALM_BUTTON_S_M_SATURDAY_ABB")));
+    strcat(buff, " ");
+    strcat(buff, make_color_text(DND_SCHEDULE_WEEK_FLAG_SUNDAY, APP_STRING("WDS_ALM_BUTTON_S_M_SUNDAY_ABB")));
 
     return strdup(buff);
 }
@@ -385,12 +390,14 @@ static Evas_Object *create_week_button(Evas_Object *parent, const char *text, dn
 static Evas_Object *repeat_weekly_layout_cb(Evas_Object* parent, void *data)
 {
     Evas_Object *layout = create_week_repeat_layout(parent);
-
+    char buf[MAX_TEXT_SIZE] = {0, };
     // Set text into layout
     Evas_Object *text = elm_label_add(layout);
+    elm_label_ellipsis_set(text, EINA_TRUE);
     evas_object_size_hint_weight_set(text, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
     evas_object_size_hint_align_set(text, EVAS_HINT_FILL, EVAS_HINT_FILL);
-    elm_object_text_set(text, "<font_size=40>Repeat weekly</font_size>");
+    snprintf(buf, sizeof(buf), "<font_size=40>%s</font_size>", APP_STRING("IDS_ST_BODY_REPEAT_WEEKLY_ABB"));
+    elm_object_text_set(text, strdup(buf));
     elm_object_part_content_set(layout, "elm.swallow.text", text);
     evas_object_show(text);
 
@@ -401,13 +408,13 @@ static Evas_Object *repeat_weekly_layout_cb(Evas_Object* parent, void *data)
     elm_box_horizontal_set(box, EINA_TRUE);
     elm_object_part_content_set(layout, "elm.box.content", box);
 
-    create_week_button(box, "M", DND_SCHEDULE_WEEK_FLAG_MONDAY);
-    create_week_button(box, "T", DND_SCHEDULE_WEEK_FLAG_TUESDAY);
-    create_week_button(box, "W", DND_SCHEDULE_WEEK_FLAG_WEDNESDAY);
-    create_week_button(box, "T", DND_SCHEDULE_WEEK_FLAG_THURSDAY);
-    create_week_button(box, "F", DND_SCHEDULE_WEEK_FLAG_FRIDAY);
-    create_week_button(box, "S", DND_SCHEDULE_WEEK_FLAG_SATURDAY);
-    create_week_button(box, "S", DND_SCHEDULE_WEEK_FLAG_SUNDAY);
+    create_week_button(box, APP_STRING("WDS_ALM_BUTTON_M_M_MONDAY_ABB"), DND_SCHEDULE_WEEK_FLAG_MONDAY);
+    create_week_button(box, APP_STRING("WDS_ALM_BUTTON_T_M_TUESDAY_ABB"), DND_SCHEDULE_WEEK_FLAG_TUESDAY);
+    create_week_button(box, APP_STRING("WDS_ALM_BUTTON_W_M_WEDNESDAY_ABB"), DND_SCHEDULE_WEEK_FLAG_WEDNESDAY);
+    create_week_button(box, APP_STRING("WDS_ALM_BUTTON_T_M_THURSDAY_ABB"), DND_SCHEDULE_WEEK_FLAG_THURSDAY);
+    create_week_button(box, APP_STRING("WDS_ALM_BUTTON_F_M_FRIDAY_ABB"), DND_SCHEDULE_WEEK_FLAG_FRIDAY);
+    create_week_button(box, APP_STRING("WDS_ALM_BUTTON_S_M_SATURDAY_ABB"), DND_SCHEDULE_WEEK_FLAG_SATURDAY);
+    create_week_button(box, APP_STRING("WDS_ALM_BUTTON_S_M_SUNDAY_ABB"), DND_SCHEDULE_WEEK_FLAG_SUNDAY);
 
     evas_object_show(box);
     elm_box_recalculate(box);
@@ -505,7 +512,6 @@ static void launch_popup_cb(void *data , Evas_Object *obj , void *event_info)
     const char *fmt = fmt12hours ? TIME_12_LAYOUT : TIME_24_LAYOUT;
     const char* timeMask = fmt12hours ? POPUP_TIME_12_FORMAT : POPUP_TIME_24_FORMAT;
 
-    elm_object_part_text_set(dt->popup, "title,text", "Time Picker");
     elm_object_style_set(dt->datetime, fmt);
     elm_datetime_format_set(dt->datetime, timeMask);
 
