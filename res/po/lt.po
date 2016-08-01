@@ -115,3 +115,42 @@ msgstr "Signalai"
 msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
 msgstr "kita diena"
 
+msgid "IDS_QP_HEADER_LOCK_SCREEN_CONTENT_ABB"
+msgstr "Užrakin. ekr. turinys"
+
+msgid "IDS_QP_OPT_SHOW_ALL_CONTENT_ABB"
+msgstr "Rodyti visą turinį"
+
+msgid "IDS_QP_OPT_HIDE_SENSITIVE_CONTENT_ABB"
+msgstr "Slėpti slaptą turinį"
+
+msgid "IDS_QP_OPT_DONT_SHOW_NOTIFICATIONS_ABB"
+msgstr "Nerodyti pranešimų"
+
+msgid "WDS_ST_ACBUTTON_OFF_ABB2"
+msgstr "IŠJUNGTA"
+
+msgid "IDS_ST_BODY_REPEAT_WEEKLY_ABB"
+msgstr "Kartot kas sav."
+
+msgid "WDS_ALM_BUTTON_M_M_MONDAY_ABB"
+msgstr "P"
+
+msgid "WDS_ALM_BUTTON_T_M_THURSDAY_ABB"
+msgstr "K"
+
+msgid "WDS_ALM_BUTTON_T_M_TUESDAY_ABB"
+msgstr "A"
+
+msgid "WDS_ALM_BUTTON_W_M_WEDNESDAY_ABB"
+msgstr "T"
+
+msgid "WDS_ALM_BUTTON_F_M_FRIDAY_ABB"
+msgstr "P"
+
+msgid "WDS_ALM_BUTTON_S_M_SATURDAY_ABB"
+msgstr "Š"
+
+msgid "WDS_ALM_BUTTON_S_M_SUNDAY_ABB"
+msgstr "S"
+

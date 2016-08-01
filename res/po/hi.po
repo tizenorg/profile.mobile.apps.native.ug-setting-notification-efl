@@ -14,7 +14,7 @@ msgid "IDS_ST_HEADER_DO_NOT_DISTURB_ABB"
 msgstr "परेशान न करें"
 
 msgid "IDS_ST_BODY_MUTE_ALL_ALERTS_AND_SHOW_NOTIFICATIONS_IN_THE_NOTIFICATION_PANEL_ONLY_AND_NOT_IN_POP_UPS_OR_ON_THE_STATUS_BAR_MSG"
-msgstr "सभी सतर्क मूक करें और अधिसूचनाएँ केवल अधिसूचना पैनल में दिखाएँ न कि पॉप-अप्स या स्थिति पट्टी में। आप नीचे इस मोड से निकाली जाने वाली एप्लीकेशंस चुन सकते हैं।"
+msgstr "सभी सतर्क मूक करें और अधिसूचनाएँ केवल अधिसूचना पैनल में दिखाएँ न कि पॉप-अप्स या स्टेटस बार में। आप नीचे इस मोड से निकाली जाने वाली एप्लीकेशंस चुन सकते हैं।"
 
 msgid "IDS_ST_HEADER_INCLUDED_APPS_ABB"
 msgstr "शामिल एप्स"
@@ -114,4 +114,43 @@ msgstr "अलार्म"
 
 msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
 msgstr "अगला दिन"
+
+msgid "IDS_QP_HEADER_LOCK_SCREEN_CONTENT_ABB"
+msgstr "लॉक स्क्रीन सामग्री"
+
+msgid "IDS_QP_OPT_SHOW_ALL_CONTENT_ABB"
+msgstr "सभी सामग्री दिखाएँ"
+
+msgid "IDS_QP_OPT_HIDE_SENSITIVE_CONTENT_ABB"
+msgstr "संवेदनशील सामग्री छिपाएँ"
+
+msgid "IDS_QP_OPT_DONT_SHOW_NOTIFICATIONS_ABB"
+msgstr "अधिसूचनाएँ नहीं दिखाएँ"
+
+msgid "WDS_ST_ACBUTTON_OFF_ABB2"
+msgstr "बंद"
+
+msgid "IDS_ST_BODY_REPEAT_WEEKLY_ABB"
+msgstr "साप्ताहिक दोहराएँ"
+
+msgid "WDS_ALM_BUTTON_M_M_MONDAY_ABB"
+msgstr "सो"
+
+msgid "WDS_ALM_BUTTON_T_M_THURSDAY_ABB"
+msgstr "गु"
+
+msgid "WDS_ALM_BUTTON_T_M_TUESDAY_ABB"
+msgstr "मं"
+
+msgid "WDS_ALM_BUTTON_W_M_WEDNESDAY_ABB"
+msgstr "बु"
+
+msgid "WDS_ALM_BUTTON_F_M_FRIDAY_ABB"
+msgstr "शु"
+
+msgid "WDS_ALM_BUTTON_S_M_SATURDAY_ABB"
+msgstr "श"
+
+msgid "WDS_ALM_BUTTON_S_M_SUNDAY_ABB"
+msgstr "र"
 

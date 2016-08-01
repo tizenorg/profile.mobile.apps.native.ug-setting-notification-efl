@@ -33,7 +33,7 @@
 
 #define PKGNAME NULL
 #define APP_STRING(str)			dgettext(NULL, str)
-
+#define MAX_TEXT_SIZE 1024
 
 typedef struct _data_list data_list_t;
 struct _data_list
@@ -74,6 +74,7 @@ enum {
 	ITEM_STYLE_DEFAULT = 0,
 	ITEM_STYLE_TYPE_ONE,
 	ITEM_STYLE_ONE_ICON,
+	ITEM_STYLE_RADIO,
 };
 
 
@@ -95,6 +96,7 @@ void gl_contracted_cb(void *data EINA_UNUSED, Evas_Object *obj EINA_UNUSED, void
 void gl_del_cb(void *data, Evas_Object *obj EINA_UNUSED);
 
 void append_gl_group_index(Evas_Object *genlist, char* text);
+void append_gl_radio_item_list(Evas_Object *genlist, Eina_List* list, char *style);
 void append_gl_item_list(Evas_Object *genlist, Eina_List* list, int style);
 void append_gl_start_option(Evas_Object *genlist, char *style, char *ugName);
 Elm_Widget_Item *append_gl_allow_all(Evas_Object *genlist);
@@ -102,6 +104,8 @@ void append_gl_full_item(Evas_Object *genlist, Evas_Object *(*fullContentCb)(Eva
 
 
 void back_button_cb(void *data, Evas_Object *obj, void *event_info);
+void cancel_button_noti_ls_cb(void *data, Evas_Object *obj, void *event_info);
+void done_button_noti_ls_cb(void *data, Evas_Object *obj, void *event_info);
 
 
 #endif //__COMMON_EFL_H__

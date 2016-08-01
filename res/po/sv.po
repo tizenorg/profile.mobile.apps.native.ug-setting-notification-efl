@@ -115,3 +115,42 @@ msgstr "Alarm"
 msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
 msgstr "nästa dag"
 
+msgid "IDS_QP_HEADER_LOCK_SCREEN_CONTENT_ABB"
+msgstr "Låsskärmsinnehåll"
+
+msgid "IDS_QP_OPT_SHOW_ALL_CONTENT_ABB"
+msgstr "Visa allt innehåll"
+
+msgid "IDS_QP_OPT_HIDE_SENSITIVE_CONTENT_ABB"
+msgstr "Dölj känsligt innehåll"
+
+msgid "IDS_QP_OPT_DONT_SHOW_NOTIFICATIONS_ABB"
+msgstr "Visa inte aviseringar"
+
+msgid "WDS_ST_ACBUTTON_OFF_ABB2"
+msgstr "AV"
+
+msgid "IDS_ST_BODY_REPEAT_WEEKLY_ABB"
+msgstr "Upprepa veckovis"
+
+msgid "WDS_ALM_BUTTON_M_M_MONDAY_ABB"
+msgstr "M"
+
+msgid "WDS_ALM_BUTTON_T_M_THURSDAY_ABB"
+msgstr "T"
+
+msgid "WDS_ALM_BUTTON_T_M_TUESDAY_ABB"
+msgstr "T"
+
+msgid "WDS_ALM_BUTTON_W_M_WEDNESDAY_ABB"
+msgstr "O"
+
+msgid "WDS_ALM_BUTTON_F_M_FRIDAY_ABB"
+msgstr "F"
+
+msgid "WDS_ALM_BUTTON_S_M_SATURDAY_ABB"
+msgstr "L"
+
+msgid "WDS_ALM_BUTTON_S_M_SUNDAY_ABB"
+msgstr "S"
+

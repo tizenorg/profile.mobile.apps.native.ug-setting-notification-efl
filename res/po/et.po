@@ -115,3 +115,42 @@ msgstr "Alarmid"
 msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
 msgstr "järg. päev"
 
+msgid "IDS_QP_HEADER_LOCK_SCREEN_CONTENT_ABB"
+msgstr "Lukustusekraani sisu"
+
+msgid "IDS_QP_OPT_SHOW_ALL_CONTENT_ABB"
+msgstr "Näita kogu sisu"
+
+msgid "IDS_QP_OPT_HIDE_SENSITIVE_CONTENT_ABB"
+msgstr "Peida tundlik sisu"
+
+msgid "IDS_QP_OPT_DONT_SHOW_NOTIFICATIONS_ABB"
+msgstr "Ära kuva teavitusi"
+
+msgid "WDS_ST_ACBUTTON_OFF_ABB2"
+msgstr "VÄLJAS"
+
+msgid "IDS_ST_BODY_REPEAT_WEEKLY_ABB"
+msgstr "Iganädalane kordus"
+
+msgid "WDS_ALM_BUTTON_M_M_MONDAY_ABB"
+msgstr "E"
+
+msgid "WDS_ALM_BUTTON_T_M_THURSDAY_ABB"
+msgstr "N"
+
+msgid "WDS_ALM_BUTTON_T_M_TUESDAY_ABB"
+msgstr "T"
+
+msgid "WDS_ALM_BUTTON_W_M_WEDNESDAY_ABB"
+msgstr "K"
+
+msgid "WDS_ALM_BUTTON_F_M_FRIDAY_ABB"
+msgstr "R"
+
+msgid "WDS_ALM_BUTTON_S_M_SATURDAY_ABB"
+msgstr "L"
+
+msgid "WDS_ALM_BUTTON_S_M_SUNDAY_ABB"
+msgstr "P"
+
