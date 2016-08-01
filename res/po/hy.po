@@ -115,3 +115,42 @@ msgstr "Ազդանշաններ"
 msgid "IDS_ST_SBODY_NEXT_DAY_M_LC_ABB"
 msgstr "հաջորդ օր"
 
+msgid "IDS_QP_HEADER_LOCK_SCREEN_CONTENT_ABB"
+msgstr "Կողպել էկրանի բվնդկթյն"
+
+msgid "IDS_QP_OPT_SHOW_ALL_CONTENT_ABB"
+msgstr "Ցույց տալ ամբողջ բովանդակություն"
+
+msgid "IDS_QP_OPT_HIDE_SENSITIVE_CONTENT_ABB"
+msgstr "Թաքցնել զգայուն բովանդակությունը"
+
+msgid "IDS_QP_OPT_DONT_SHOW_NOTIFICATIONS_ABB"
+msgstr "Ցույց չտալ ծանուցումներ"
+
+msgid "WDS_ST_ACBUTTON_OFF_ABB2"
+msgstr "ԱՆՋԱՏԵԼ"
+
+msgid "IDS_ST_BODY_REPEAT_WEEKLY_ABB"
+msgstr "Կրկնել շաբաթական"
+
+msgid "WDS_ALM_BUTTON_M_M_MONDAY_ABB"
+msgstr "Ե"
+
+msgid "WDS_ALM_BUTTON_T_M_THURSDAY_ABB"
+msgstr "Հ"
+
+msgid "WDS_ALM_BUTTON_T_M_TUESDAY_ABB"
+msgstr "Ե"
+
+msgid "WDS_ALM_BUTTON_W_M_WEDNESDAY_ABB"
+msgstr "Չ"
+
+msgid "WDS_ALM_BUTTON_F_M_FRIDAY_ABB"
+msgstr "Ո"
+
+msgid "WDS_ALM_BUTTON_S_M_SATURDAY_ABB"
+msgstr "Շ"
+
+msgid "WDS_ALM_BUTTON_S_M_SUNDAY_ABB"
+msgstr "Կ"
+

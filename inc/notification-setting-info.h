@@ -29,6 +29,9 @@ typedef struct _setting_info_t {
     Eina_List *all_apps_list;
     Eina_List *first_allowed_list;
     Eina_List *first_excepted_list;
+    Eina_List *show_all_content_list;
+    Eina_List *hide_sensitive_content_list;
+    Eina_List *lower_noti_list;
 } setting_info_s;
 
 bool get_do_not_disturb();
@@ -44,10 +47,22 @@ Eina_List *get_first_allowed_apps_list();
 Eina_List *get_first_excepted_apps_list();
 Eina_List *get_excepted_apps_list();
 Eina_List *get_not_excepted_apps_list();
+/**
+ *@brief Get list that should be shown in lower part of screen in lock screen content menu
+ *@return Eina_List with commands that can be done in lock screen content menu
+ */
+Eina_List *get_lower_noti_list();
 
 void create_app_notification_list();
 void create_do_not_disturb_application_list();
-
+/**
+ *@brief Create list that should be shown in lower part of screen in lock screen content menu
+ */
+void create_notification_on_ls_list();
+/**
+ *@brief Remove list that should be shown in lower part of screen in lock screen content menu
+ */
+void remove_lower_noti_list();
 void remove_all_apps_list();
 void remove_excepted_apps_list();
 void remove_arranged_list();

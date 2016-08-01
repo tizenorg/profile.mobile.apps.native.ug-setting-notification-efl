@@ -173,6 +173,35 @@ void create_do_not_disturb_application_list()
     notification_setting_free_notification(setting_array);
 }
 
+void create_notification_on_ls_list()
+{
+    NOTISET_TRACE_BEGIN;
+
+    remove_lower_noti_list();
+
+    setting_info = calloc(1, sizeof(setting_info_s));
+    item_info_s *item_info = NULL;
+
+    item_info = calloc(1, sizeof(item_info_s));
+    item_info->name = strdup(APP_STRING("IDS_QP_OPT_SHOW_ALL_CONTENT_ABB"));
+    setting_info->lower_noti_list = eina_list_append(setting_info->lower_noti_list, item_info);
+
+    item_info = calloc(1, sizeof(item_info_s));
+    item_info->name = strdup(APP_STRING("IDS_QP_OPT_HIDE_SENSITIVE_CONTENT_ABB"));
+    setting_info->lower_noti_list = eina_list_append(setting_info->lower_noti_list, item_info);
+
+    item_info = calloc(1, sizeof(item_info_s));
+    item_info->name = strdup(APP_STRING("IDS_QP_OPT_DONT_SHOW_NOTIFICATIONS_ABB"));
+    setting_info->lower_noti_list = eina_list_append(setting_info->lower_noti_list, item_info);
+    NOTISET_TRACE_BEGIN;
+}
+
+Eina_List *get_lower_noti_list()
+{
+    NOTISET_TRACE_BEGIN;
+    return setting_info->lower_noti_list;
+}
+
 Eina_List *get_excepted_apps_list()
 {
     NOTISET_TRACE_BEGIN;
@@ -378,6 +407,12 @@ static void _remove_apps_list(Eina_List* input_list) {
     }
 }
 
+void remove_lower_noti_list()
+{
+    NOTISET_TRACE_BEGIN;
+    if(setting_info)
+        _remove_apps_list(setting_info->lower_noti_list);
+}
 
 void remove_all_apps_list() {
     NOTISET_TRACE_BEGIN;

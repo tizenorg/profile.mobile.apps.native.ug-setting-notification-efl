@@ -62,9 +62,8 @@ Evas_Object *create_background(Evas_Object *parent)
 	bg = elm_bg_add(parent);
 
 	evas_object_size_hint_weight_set(bg, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-	elm_object_style_set(bg, "group_list");
+	elm_object_style_set(bg, "default");
 
-	elm_object_part_content_set(parent, "elm.swallow.bg", bg);
 	evas_object_show(bg);
 
 	return bg;
@@ -256,40 +255,64 @@ static void _allow_to_nofity_check_changed_cb(void *data, Evas_Object *obj, void
 
 static Evas_Object* gl_content_get_cb(void *data, Evas_Object *obj, const char *part)
 {
-	retv_if(!data, NULL);
+    retv_if(!data, NULL);
 
-	Evas_Object *content = NULL;
+    Evas_Object *content = NULL;
 
-	item_info_s *data_list = data;
-	if (!strcmp(part, "elm.swallow.icon") || !strcmp(part, "elm.icon.left") ) {
-		Evas_Object *icon = create_icon(obj, data_list->icon);
-		evas_object_show(icon);
-		return icon;
-	}
+    item_info_s *data_list = data;
+    if(!strcmp(part, "elm.swallow.icon") || !strcmp(part, "elm.icon.left"))
+    {
+        if(data_list->item_style != ITEM_STYLE_RADIO)
+        {
+            Evas_Object *icon = create_icon(obj, data_list->icon);
+            evas_object_show(icon);
+            return icon;
+        }
+    }
 
-	if (!strcmp(part, "elm.swallow.end")) {
-		if (data_list->item_style == ITEM_STYLE_TYPE_ONE) {
-			content = elm_check_add(obj);
-			elm_object_style_set(content, "on&off");
-			elm_check_state_set(content, data_list->allow_to_notify);
-			evas_object_show(content);
-			evas_object_pass_events_set(content, 1);
-			evas_object_smart_callback_add(content, "changed", _allow_to_nofity_check_changed_cb, data_list);
-			evas_object_propagate_events_set(content, 0);
-			return content;
-		} else if (data_list->item_style == ITEM_STYLE_DEFAULT) {
-			content = elm_check_add(obj);
-			elm_object_style_set(content, "on&off");
-			elm_check_state_set(content, data_list->do_not_disturb_except);
-			evas_object_show(content);
-			evas_object_pass_events_set(content, 1);
-			evas_object_smart_callback_add(content, "changed", _excepted_check_changed_cb, data_list);
-			evas_object_propagate_events_set(content, 0);
-			return content;
-		}
-	}
+    if(!strcmp(part, "elm.swallow.end"))
+    {
+        if(data_list->item_style == ITEM_STYLE_TYPE_ONE)
+        {
+            content = elm_check_add(obj);
+            elm_object_style_set(content, "on&off");
+            elm_check_state_set(content, data_list->allow_to_notify);
+            evas_object_show(content);
+            evas_object_pass_events_set(content, 1);
+            evas_object_smart_callback_add(content, "changed", _allow_to_nofity_check_changed_cb, data_list);
+            evas_object_propagate_events_set(content, 0);
+            return content;
+        }
+        else if(data_list->item_style == ITEM_STYLE_DEFAULT)
+        {
+            content = elm_check_add(obj);
+            elm_object_style_set(content, "on&off");
+            elm_check_state_set(content, data_list->do_not_disturb_except);
+            evas_object_show(content);
+            evas_object_pass_events_set(content, 1);
+            evas_object_smart_callback_add(content, "changed", _excepted_check_changed_cb, data_list);
+            evas_object_propagate_events_set(content, 0);
+            return content;
+        }
+        else if(data_list->item_style == ITEM_STYLE_RADIO)
+        {
+            int count = data_list->index;
+            Elm_Object_Item *it = elm_genlist_nth_item_get(obj, count);
+            Evas_Object *radio = NULL;
+            Evas_Object *radio_main = evas_object_data_get(obj, "radio");
+            radio = elm_radio_add(obj);
+            elm_radio_group_add(radio, radio_main);
+            elm_radio_state_value_set(radio, count + 1);
+            evas_object_size_hint_weight_set(radio, EVAS_HINT_EXPAND,EVAS_HINT_EXPAND);
+            evas_object_size_hint_align_set(radio, EVAS_HINT_FILL, EVAS_HINT_FILL);
+            evas_object_propagate_events_set(radio, EINA_FALSE);
+            elm_atspi_accessible_relationship_append(it, ELM_ATSPI_RELATION_DESCRIBED_BY, radio);
+            elm_atspi_accessible_relationship_append(radio, ELM_ATSPI_RELATION_CONTROLLED_BY, it);
+            return radio;
+        }
+    }
 
-	return content;
+    return content;
 }
 
 static char* gl_text_get_cb(void *data, Evas_Object *obj, const char *part)
@@ -302,6 +325,56 @@ static char* gl_text_get_cb(void *data, Evas_Object *obj, const char *part)
 	}
 
 	return NULL;
+}
+
+static void gl_radio_sel_cb(void *data, Evas_Object *obj, void *event_info)
+{
+    NOTISET_TRACE_BEGIN;
+    Elm_Object_Item *it = event_info;
+    int index = (int)data;
+
+    Evas_Object *radio = NULL;
+
+    elm_genlist_item_selected_set(it, EINA_FALSE);
+    radio = elm_object_item_part_content_get(it, "elm.swallow.end");
+    elm_radio_value_set(radio, index + 1);
+}
+
+void append_gl_radio_item_list(Evas_Object *genlist, Eina_List* list, char *style)
+{
+    NOTISET_TRACE_BEGIN;
+    Elm_Genlist_Item_Class *itc = elm_genlist_item_class_new();
+    ret_if(!itc);
+
+    item_info_s *item;
+    int count = 0;
+
+    Evas_Object *radio = elm_radio_add(genlist);
+    elm_radio_state_value_set(radio, 0);
+    elm_radio_value_set(radio, 0);
+    evas_object_data_set(genlist, "radio", radio);
+
+    itc->item_style = style;
+    itc->func.text_get = gl_text_get_cb;
+    itc->func.content_get = gl_content_get_cb;
+    itc->func.del = gl_del_cb;
+
+    while(list)
+    {
+        item = (item_info_s*)eina_list_data_get(list);
+        item->index = count;
+        item->item_style = ITEM_STYLE_RADIO;
+        elm_genlist_item_append(genlist,                        /* genlist object */
+                                itc,                            /* item class */
+                                item,                           /* item class user data */
+                                NULL,                           /* parent item */
+                                ELM_GENLIST_ITEM_NONE,          /* item type */
+                                gl_radio_sel_cb,                /* select smart callback */
+                                (void *)count);                 /* smart callback user data */
+        list = eina_list_next(list);
+        ++count;
+    }
+    elm_genlist_item_class_free(itc);
 }
 
 void append_gl_item_list(Evas_Object *genlist, Eina_List* list, int style) {
@@ -345,7 +418,7 @@ void append_gl_item_list(Evas_Object *genlist, Eina_List* list, int style) {
 
 static char *_gl_option_text_get_cb(void *data, Evas_Object *obj, const char *part)
 {
-	char buf[1024] = {0,};
+	char buf[MAX_TEXT_SIZE] = {0,};
 
     retv_if(!data, NULL);
     if(!strcmp(data, "app-notifications"))
@@ -380,7 +453,7 @@ static char *_gl_option_text_get_cb(void *data, Evas_Object *obj, const char *pa
             if(get_schedule())
                 snprintf(buf, sizeof(buf), "<font_size=30>%s<br/>%s</font_size>", get_day_string(), get_time_string());
             else
-                snprintf(buf, sizeof(buf), "<font_size=30>%s</font_size>", "OFF"); // TODO: update IDS
+                snprintf(buf, sizeof(buf), "<font_size=30>%s</font_size>", APP_STRING("WDS_ST_ACBUTTON_OFF_ABB2"));
 
             return strdup(buf);
         }
@@ -533,6 +606,24 @@ void append_gl_start_option(Evas_Object *genlist, char *style, char *ugName) {
 	elm_genlist_item_class_free(itc);
 }
 
+void cancel_button_noti_ls_cb(void *data, Evas_Object *obj, void *event_info)
+{
+    NOTISET_TRACE_BEGIN;
+    ug_data* u_data = data;
+    ret_if(!data);
+    elm_naviframe_item_pop(u_data->naviframe);
+
+    EVAS_OBJECT_DELIF(u_data->done_button);
+    EVAS_OBJECT_DELIF(u_data->cancel_button);
+    EVAS_OBJECT_DELIF(u_data->list_sub);
+    EVAS_OBJECT_DELIF(u_data->list_main);
+}
+
+void done_button_noti_ls_cb(void *data, Evas_Object *obj, void *event_info)
+{
+    NOTISET_TRACE_BEGIN;
+    // TODO: add implementation when platform API will be available
+}
 
 void back_button_cb(void *data, Evas_Object *obj, void *event_info)
 {
